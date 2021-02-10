@@ -14,17 +14,17 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended text-shadow grey lighten-1">
+        <nav class="nav-extended text-shadow red accent-2">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo main-text-styling">Recipes</a>
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo logo-text main-text-styling">Recipes</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_recipes') }}" class="main-text-styling black-text">Home</a></li>
-                    <li><a href="#" class="main-text-styling black-text">Profile</a></li>
-                    <li><a href="#" class="main-text-styling black-text">New Recipe</a></li>
-                    <li><a href="#" class="main-text-styling black-text">Log Out</a></li>
-                    <li><a href="#" class="main-text-styling black-text">Log In</a></li>
-                    <li><a href="#" class="main-text-styling black-text">Register</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Home</a></li>
+                    <li><a href="#" class="nav-text-styling black-text">Profile</a></li>
+                    <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
+                    <li><a href="#" class="nav-text-styling black-text">Log Out</a></li>
+                    <li><a href="#" class="nav-text-styling black-text">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}" class="nav-text-styling black-text">Register</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,12 +32,12 @@
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align main-text-styling grey-text text-lighten-1">Recipe</h4></li>
-            <li><a href="{{ url_for('get_recipes') }}" class="main-text-styling black-text">Home</a></li>
-            <li><a href="#" class="main-text-styling black-text">Profile</a></li>
-            <li><a href="#" class="main-text-styling black-text">New Recipe</a></li>
-            <li><a href="#" class="main-text-styling black-text">Log Out</a></li>
-            <li><a href="#" class="main-text-styling black-text">Log In</a></li>
-            <li><a href="#" class="main-text-styling black-text">Register</a></li>
+            <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Home</a></li>
+            <li><a href="#" class="nav-text-styling black-text">Profile</a></li>
+            <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
+            <li><a href="#" class="nav-text-styling black-text">Log Out</a></li>
+            <li><a href="#" class="nav-text-styling black-text">Log In</a></li>
+            <li><a href="{{ url_for('register') }}" class="nav-text-styling black-text">Register</a></li>
         </ul>
     </header>
 
