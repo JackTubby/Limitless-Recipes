@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+
+/* 
+#F78888 Pinky
+#F3D250 Yellow
+#bdbdbd grey lighten-1
+#90CCF4 Light Blue
+#5DA2D5 Dark Blue
+*/
+
+.main-text-styling {
+    text-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
