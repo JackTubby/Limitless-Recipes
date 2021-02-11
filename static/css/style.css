@@ -22,3 +22,16 @@
 .flashes h4 {
     line-height: 2;
 }
+
+/* Register.html */
+#background-register-image {
+    background-image: url(../images/register-img.jpg);
+}
+
+.margin-top-register {
+    margin-top: 20px;
+}
+
+.register-button-text {
+    font-size: 24px;
+}
