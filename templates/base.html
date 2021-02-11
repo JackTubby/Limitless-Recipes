@@ -20,7 +20,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Home</a></li>
-                    <li><a href="#" class="nav-text-styling black-text">Profile</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-text-styling black-text">Profile</a></li>
                     <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
                     <li><a href="#" class="nav-text-styling black-text">Log Out</a></li>
                     <li><a href="{{ url_for('login') }}" class="nav-text-styling black-text">Log In</a></li>
@@ -33,7 +33,7 @@
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align main-text-styling grey-text text-lighten-1">Recipe</h4></li>
             <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Home</a></li>
-            <li><a href="#" class="nav-text-styling black-text">Profile</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-text-styling black-text">Profile</a></li>
             <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
             <li><a href="#" class="nav-text-styling black-text">Log Out</a></li>
             <li><a href="{{ url_for('login') }}" class="nav-text-styling black-text">Log In</a></li>
