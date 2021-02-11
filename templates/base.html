@@ -23,7 +23,7 @@
                     <li><a href="#" class="nav-text-styling black-text">Profile</a></li>
                     <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
                     <li><a href="#" class="nav-text-styling black-text">Log Out</a></li>
-                    <li><a href="#" class="nav-text-styling black-text">Log In</a></li>
+                    <li><a href="{{ url_for('login') }}" class="nav-text-styling black-text">Log In</a></li>
                     <li><a href="{{ url_for('register') }}" class="nav-text-styling black-text">Register</a></li>
                 </ul>
             </div>
@@ -36,7 +36,7 @@
             <li><a href="#" class="nav-text-styling black-text">Profile</a></li>
             <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
             <li><a href="#" class="nav-text-styling black-text">Log Out</a></li>
-            <li><a href="#" class="nav-text-styling black-text">Log In</a></li>
+            <li><a href="{{ url_for('login') }}" class="nav-text-styling black-text">Log In</a></li>
             <li><a href="{{ url_for('register') }}" class="nav-text-styling black-text">Register</a></li>
         </ul>
     </header>

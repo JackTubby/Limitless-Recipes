@@ -1,36 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align main-text-styling">Register</h3>
+    <h3 class="center-align main-text-styling">Log In</h3>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel">
                 <!-- username -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fas fa-user-plus prefix red-text text-accent-2"></i>
+                        <i class="prefix red-text text-accent-2"></i>
                         <input id="username" name="username" type="text" minlength="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
-                    </div>
-                </div>
-                <!-- first name -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-user-plus prefix red-text text-accent-2"></i>
-                        <input id="first_name" name="first_name" type="text" 
-                            pattern="^[a-zA-Z]{2,15}$" class="validate" required>
-                        <label for="first_name">First Name</label>
-                    </div>
-                </div>
-                <!-- last name -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-user-plus prefix red-text text-accent-2"></i>
-                        <input id="last_name" name="last_name" type="text" 
-                            pattern="^[a-zA-Z]{2,15}$" class="validate" required>
-                        <label for="last_name">Last Name</label>
                     </div>
                 </div>
                 <!-- password -->
@@ -42,10 +24,10 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <!-- register -->
+                <!-- login -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large red accent-2 main-text-styling">
-                        Register <i class="fas fa-sign-in-alt"></i>
+                        Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </div>
@@ -55,8 +37,8 @@
     <div class="row">
         <div class="col s12">
             <p class="center-align">
-                Already have an account?
-                <a href="{{ url_for('login') }}">Log In</a>
+                Dont't have an account? 
+                <a href="{{ url_for('register') }}">Register Account</a>
             </p>
         </div>
     </div>
