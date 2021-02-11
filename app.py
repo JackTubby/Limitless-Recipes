@@ -85,6 +85,10 @@ def profile(username):
     # grab the session user's username from the db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    print(f"Username direct from db: {username}")
+    user = mongo.db.users.find_one({"username": session["user"]})
+    print(f"User direct from db: {user}")
+    print(f"Username from the USER: {user['first_name']}")
     return render_template("profile.html", username=username)
 
 
