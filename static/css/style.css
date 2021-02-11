@@ -18,3 +18,7 @@
     text-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
     font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
+
+.flashes h4 {
+    line-height: 2;
+}
