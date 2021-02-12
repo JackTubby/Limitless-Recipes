@@ -22,7 +22,7 @@
                     <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Home</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-text-styling black-text">Profile</a></li>
-                        <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}" class="nav-text-styling black-text">New Recipe</a></li>
                         <li><a href="{{ url_for('logout') }}" class="nav-text-styling black-text">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}" class="nav-text-styling black-text">Log In</a></li>
@@ -36,9 +36,9 @@
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align main-text-styling grey-text text-lighten-1">Recipe</h4></li>
             <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Home</a></li>
-            {% if session.user %}
+            {% if session.user %} 
                 <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-text-styling black-text">Profile</a></li>
-                <li><a href="#" class="nav-text-styling black-text">New Recipe</a></li>
+                <li><a href="{{ url_for('add_recipe') }}" class="nav-text-styling black-text">New Recipe</a></li>
                 <li><a href="{{ url_for('logout') }}" class="nav-text-styling black-text">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}" class="nav-text-styling black-text">Log In</a></li>
