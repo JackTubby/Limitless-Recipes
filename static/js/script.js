@@ -1,6 +1,13 @@
 $(document).ready(function () {
     $('.sidenav').sidenav({ inDuration: 800, outDuration: 800 });
     $('.collapsible').collapsible();
+    $('input.autocomplete').autocomplete({
+        data: {
+            "Indian": null,
+            "Chinese": null,
+            "Italian": null
+        },
+    });
 });
 
 /*
