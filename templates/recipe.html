@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row ">
-        <div class="col s12 m6">
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col m4">
             <div class="card">
-                {% for recipe in recipes %}
                 <div class="card-image">
                     <img src="static/images/register-img.jpg">
                 </div>
@@ -21,12 +21,12 @@
                             <div class="collapsible-body"><span>{{ recipe.recipe_method }}</span></div>
                         </li>
                     </ul>
-                    <h6>Published by 'USER'</h6>
+                    <h6><em>Published by {{ recipe.created_by }}</em></h6>
                     <a class="waves-effect waves-light btn">Save</a>
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
