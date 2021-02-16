@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('.sidenav').sidenav({ inDuration: 800, outDuration: 800 });
     $('.collapsible').collapsible();
     $('select').formSelect();
+    $('.modal').modal();
     $('input.autocomplete').autocomplete({
         data: {
             "Indian": null,
