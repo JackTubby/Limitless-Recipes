@@ -8,19 +8,61 @@
 #00b0ff light-blue accent-3
 */
 
+/*
+#116466 Dark Blue/Green
+#D1E8E2 Light Blue/Green
+#FFCB9A Beige
+*/
+/* website styles */
+.text-shadow {
+    text-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
 
+.flashes h4 {
+    line-height: 2;
+}
+/* navbar */
 .nav-text-styling {
     text-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
     font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif; 
 }
 
-.main-text-styling {
-    text-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+/* index.html */
+#hero-image{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/hero-image.jpg);
+    width: auto;
+    height: 74em;
+    background-size: cover;
+    
 }
 
-.flashes h4 {
-    line-height: 2;
+.index-content-wrapper {
+    padding-top: 34em;
+}
+
+.index-h1 {
+    font-size: 76px;
+    text-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    color: #D1E8E2;
+    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    margin: 0;
+}
+
+.index-p {
+    font-size: 38px;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    color: white;
+    margin: 0;
+}
+
+.discover-button {
+    margin-right: 25em;
+    padding-left: 60px;
+    padding-right: 60px;
+    border: 2px solid #116466;
+    font-family: 'Lexend Mega', sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Register.html */
