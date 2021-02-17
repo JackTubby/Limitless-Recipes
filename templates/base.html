@@ -18,21 +18,21 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended text-shadow red accent-2">
+        <nav class="navbar nav-extended text-shadow">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo logo-text">Recipes</a>
+                <a href="{{ url_for('get_recipes') }}" class="logo-header logo-text">Recipes</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('index') }}" class="nav-text-styling black-text">Home</a></li>
-                    <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Recipes</a></li>
+                    <li><a href="{{ url_for('index') }}" class="nav-text-styling">Home</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling">Recipes</a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}"
-                            class="nav-text-styling black-text">Profile</a></li>
-                    <li><a href="{{ url_for('add_recipe') }}" class="nav-text-styling black-text">New Recipe</a></li>
-                    <li><a href="{{ url_for('logout') }}" class="nav-text-styling black-text">Log Out</a></li>
+                            class="nav-text-styling">Profile</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}" class="nav-text-styling">New Recipe</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="nav-text-styling">Log Out</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('login') }}" class="nav-text-styling black-text">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}" class="nav-text-styling black-text">Register</a></li>
+                    <li><a href="{{ url_for('login') }}" class="nav-text-styling">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}" class="nav-text-styling">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
