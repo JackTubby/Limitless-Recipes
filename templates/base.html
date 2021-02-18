@@ -20,7 +20,7 @@
         <!-- top navbar -->
         <nav class="navbar nav-extended text-shadow">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class="logo-header logo-text">Recipes</a>
+                <a href="{{ url_for('index') }}" class="logo-header logo-text">Recipes</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('index') }}" class="nav-text-styling">Home</a></li>
@@ -41,7 +41,7 @@
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li>
-                <h4 class="center-align grey-text text-lighten-1">Recipe</h4>
+                <h4 class="center-align grey-text text-lighten-1">Recipes</h4>
             </li>
             <li><a href="{{ url_for('index') }}" class="nav-text-styling black-text">Home</a></li>
             <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling black-text">Recipes</a></li>

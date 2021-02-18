@@ -3,11 +3,11 @@
 
 <div class="row">
     {% for recipe in recipes %}
-    <div class="col s3">
+    <div class="col s12 m4 l4">
         <div class="card">
             <div class="card-image">
                 <img src="static/images/register-img.jpg">
-                <span class="card-title text-shadow">
+                <span class="card-title text-shadow s12">
                     <!-- recipe name -->
                     <h3 class="recipe-name"><strong>{{ recipe.recipe_name }}</strong></h3>
                     <br>
@@ -44,7 +44,7 @@
             </div>
             <!-- card reveal content-->
             <div class="card-reveal">
-                <div class="card-title grey-text text-darken-4 info-main-wrapper">
+                <div class="card-title grey-text text-darken-4 info-main-wrapper s12 m12 l6">
                     <span class="card-title-wrapper">{{ recipe.recipe_name }}</span>
                     <i class="far fa-window-close right close-icon"></i>
                 </div>
