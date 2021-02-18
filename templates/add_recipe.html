@@ -9,7 +9,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <input id="icon_prefix" name="recipe_name" max-length="13" type="text" class="validate" required>
-                <label for="icon_prefix">Recipe Name</label>
+                <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
             </div>
         </div>
         <!-- recipe category -->
@@ -21,7 +21,7 @@
                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endfor %}
                 </select>
-                <label for="category_name">Task Category</label>
+                <label class="add-recipe-label" for="category_name">Task Category</label>
             </div>
         </div>
         <!-- desription -->
@@ -30,7 +30,7 @@
                 <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="49"
                     class="materialize-textarea" onkeyup="countChar(this)" required></textarea>
                 <span id="charNum" class="charnum"></span>
-                <label for="recipe_description">Description</label>
+                <label class="add-recipe-label" for="recipe_description">Description</label>
             </div>
         </div>
         <!-- prep time -->
@@ -46,7 +46,7 @@
             <div class="input-field col s12">
                 <input id="prep_time" name="prep_time" max-length="10" type="text" class="validate" pattern="^[0-9]$"
                     required>
-                <label for="prep_time">Preparation Time</label>
+                <label class="add-recipe-label" for="prep_time">Preparation Time</label>
             </div>
         </div>
         <!-- cooking time -->
@@ -62,7 +62,7 @@
             <div class="input-field col s12">
                 <input id="cooking_time" name="cooking_time" max-length="30" type="text" class="validate" pattern="^[0-9]$"
                     required>
-                <label for="cooking_time">Cooking Time</label>
+                <label class="add-recipe-label" for="cooking_time">Cooking Time</label>
             </div>
         </div>
         <!-- recipe ingredients -->
@@ -70,7 +70,7 @@
             <div class="input-field col s12">
                 <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10" class="materialize-textarea"
                     required></textarea>
-                <label for="recipe_ingredients">Ingredients</label>
+                <label class="add-recipe-label" for="recipe_ingredients">Ingredients</label>
             </div>
         </div>
         <!-- recipe steps -->
@@ -78,7 +78,7 @@
             <div class="input-field col s12">
                 <textarea id="recipe_method" name="recipe_method" minlength="10" class="materialize-textarea"
                     required></textarea>
-                <label for="recipe_method">Steps</label>
+                <label class="add-recipe-label" for="recipe_method">Steps</label>
             </div>
         </div>
         <!-- recipe submit button -->
