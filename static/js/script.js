@@ -12,6 +12,17 @@ $(document).ready(function () {
     });
 });
 
+// https://stackoverflow.com/questions/5371089/count-characters-in-textarea
+// Add Recipe Char Countdown
+function countChar(val) {
+    var len = val.value.length;
+    if (len >= 500) {
+        val.value = val.value.substring(0, 98);
+    } else {
+        $('#charNum').text(98 - len);
+    }
+};
+
 /*
 $('#password, #confirm_password').on('keyup', function () {
     if ($('#password').val() == $('#confirm_password').val()) {

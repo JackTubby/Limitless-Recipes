@@ -17,7 +17,7 @@
             </div>
             <div class="card-content">
                 <!-- description -->
-                <p>{{ recipe.recipe_description }}</p>
+                <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
                 <!-- buttons -->
                 <div class="button-wrappers center-align">
                     <!-- save -->
@@ -44,15 +44,28 @@
             </div>
             <!-- card reveal content-->
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">
-                    {{ recipe.recipe_name }}
-                    <i class="material-icons right">close</i>
-                </span>
-                <div class="center-align">
-                    <span>Prep Time: </span>{{recipe.prep_time}}<span>Cooking Time: </span>{{recipe.cooking_time}}
-                    <p>{{ recipe.recipe_ingredients }}</p>
-                    <p>{{ recipe.recipe_method }}</p>
-                    <p>Published by {{ recipe.created_by }}</p>
+                <div class="card-title grey-text text-darken-4 info-main-wrapper">
+                    <span class="card-title-wrapper">{{ recipe.recipe_name }}</span>
+                    <i class="far fa-window-close right close-icon"></i>
+                </div>
+                <div class="center-align recipe-info-wrapper">
+                    <div>
+                        <span class="recipe-info-heading">Prep Time: </span>
+                        <span class="recipe-info">{{recipe.prep_time}}</span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span class="recipe-info-heading">Cooking Time: </span>
+                        <span class="recipe-info">{{recipe.cooking_time}}</span>
+                    </div>
+                    <hr>
+                    <h5 class="recipe-info-heading">Recipe Ingredients:</h5>
+                    <p class="recipe-info">{{ recipe.recipe_ingredients }}</p>
+                    <hr>
+                    <h5 class="recipe-info-heading">Recipe Steps:</h5>
+                    <p class="recipe-info">{{ recipe.recipe_method }}</p>
+                    <hr>
+                    <p class="published-by">Published by {{ recipe.created_by }}</p>
                 </div>
             </div>
             {% endif %}

@@ -27,9 +27,10 @@
         <!-- desription -->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="recipe_description" name="recipe_description" minlength="10" class="materialize-textarea"
-                    required></textarea>
-                <label for="recipe_description">Short Description</label>
+                <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="98"
+                    class="materialize-textarea" onkeyup="countChar(this)" required></textarea>
+                <span id="charNum" class="charnum"></span>
+                <label for="recipe_description">Description</label>
             </div>
         </div>
         <!-- prep time -->

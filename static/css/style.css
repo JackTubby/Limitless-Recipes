@@ -124,6 +124,12 @@
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
+.recipe-desc {
+    padding-bottom: 10px;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
 .recipe-btn {
     border: 2px solid #116466;
     color: black;
@@ -137,10 +143,6 @@
     line-height: 1.5;
 }
 
-.published-by {
-    font-size: 14px;
-}
-
 .see-more {
     color: #116466;
     cursor: pointer;
@@ -149,6 +151,44 @@
 .see-more:hover {
     color: #FFCB9A;
 }
+
+.info-main-wrapper {
+    margin-bottom: 20px;
+}
+
+.card-title-wrapper {
+    text-decoration: underline;
+    color: #116466;
+    font-size: 28px;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.close-icon {
+    color: red;
+    font-size: 28px;
+}
+
+.recipe-info-heading {
+    color: black;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 22px;
+}
+
+.recipe-info {
+    color: black;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.published-by {
+    font-size: 14px;
+}
+
+/* new recipe */
+.charnum {
+    color: #116466;
+}
+
 
 /* register.html */
 #background-register-image {
@@ -184,5 +224,3 @@
     padding-top: 10px;
     font-size: 18px;
 }
-
-
