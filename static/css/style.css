@@ -200,11 +200,6 @@
     color: #116466;
 }
 
-.add-recipe-label {
-    width: 80% !important;
-}
-
-
 /* register.html */
 #background-register-image {
     background-image: url(../images/register-img.jpg);
