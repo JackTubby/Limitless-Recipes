@@ -66,12 +66,12 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -112,7 +112,9 @@ def add_recipe():
             "recipe_name":  request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "minutes_hours": request.form.get("minutes_hours"),
             "prep_time": request.form.get("prep_time"),
+            "cooking_minutes_hours": request.form.get("cooking_minutes_hours"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
@@ -122,8 +124,13 @@ def add_recipe():
         flash("Recipe Added Successfully")
         return redirect(url_for("get_recipes"))
 
+    cooking_min_hour = mongo.db.cooking_min_hour.find().sort(
+        "cooking_minutes_hours", 1)
+    min_hour = mongo.db.min_hour.find().sort("minutes_hours", 1)
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_recipe.html", categories=categories)
+    return render_template(
+        "add_recipe.html", categories=categories, min_hour=min_hour,
+        cooking_min_hour=cooking_min_hour)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["POST", "GET"])
@@ -154,5 +161,5 @@ def delete_recipe(recipe_id):
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")), 
+            port=int(os.environ.get("PORT")),
             debug=True)
