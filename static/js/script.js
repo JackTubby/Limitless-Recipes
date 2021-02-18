@@ -17,9 +17,9 @@ $(document).ready(function () {
 function countChar(val) {
     var len = val.value.length;
     if (len >= 500) {
-        val.value = val.value.substring(0, 98);
+        val.value = val.value.substring(0, 49);
     } else {
-        $('#charNum').text(98 - len);
+        $('#charNum').text(49 - len);
     }
 };
 

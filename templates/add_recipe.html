@@ -8,7 +8,7 @@
         <!-- recipe name -->
         <div class="row">
             <div class="input-field col s12">
-                <input id="icon_prefix" name="recipe_name" max-length="30" type="text" class="validate" required>
+                <input id="icon_prefix" name="recipe_name" max-length="13" type="text" class="validate" required>
                 <label for="icon_prefix">Recipe Name</label>
             </div>
         </div>
@@ -27,7 +27,7 @@
         <!-- desription -->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="98"
+                <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="49"
                     class="materialize-textarea" onkeyup="countChar(this)" required></textarea>
                 <span id="charNum" class="charnum"></span>
                 <label for="recipe_description">Description</label>
@@ -38,8 +38,8 @@
             <div class="input-field col s12">
                 <select id="prep-min-hours" name="prep-min-hours" class="validate" required>
                     <option value="" disabled selected>Minutes or Hours</option>
-                    {% for mins_hours in min_hour %}
-                    <option value="{{ mins_hours.cooking_minutes_hours }}">{{ mins_hours.minutes_hours }}</option>
+                    {% for prep_mins_hours in prep_min_hour %}
+                    <option value="{{ prep_mins_hours.prep_minutes_hours }}">{{ prep_mins_hours.prep_minutes_hours }}</option>
                     {% endfor %}
                 </select>
             </div>

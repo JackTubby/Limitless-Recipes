@@ -51,12 +51,14 @@
                 <div class="center-align recipe-info-wrapper">
                     <div>
                         <span class="recipe-info-heading">Prep Time: </span>
-                        <span class="recipe-info">{{recipe.prep_time}}</span>
+                        <span class="recipe-info">{{ recipe.prep_time }}</span>
+                        <span class="recipe-info">{{ recipe.minutes_hours }}</span>
                     </div>
                     <hr>
                     <div>
                         <span class="recipe-info-heading">Cooking Time: </span>
                         <span class="recipe-info">{{recipe.cooking_time}}</span>
+                        <span class="recipe-info">{{ recipe.cooking_minutes_hours }}</span>
                     </div>
                     <hr>
                     <h5 class="recipe-info-heading">Recipe Ingredients:</h5>

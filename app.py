@@ -112,7 +112,7 @@ def add_recipe():
             "recipe_name":  request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_description": request.form.get("recipe_description"),
-            "minutes_hours": request.form.get("minutes_hours"),
+            "prep_minutes_hours": request.form.get("prep_minutes_hours"),
             "prep_time": request.form.get("prep_time"),
             "cooking_minutes_hours": request.form.get("cooking_minutes_hours"),
             "cooking_time": request.form.get("cooking_time"),
@@ -126,10 +126,11 @@ def add_recipe():
 
     cooking_min_hour = mongo.db.cooking_min_hour.find().sort(
         "cooking_minutes_hours", 1)
-    min_hour = mongo.db.min_hour.find().sort("minutes_hours", 1)
+    prep_min_hour = mongo.db.prep_min_hour.find().sort("prep_minutes_hours", 1)
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
-        "add_recipe.html", categories=categories, min_hour=min_hour,
+        "add_recipe.html", categories=categories,
+        prep_min_hour=prep_min_hour,
         cooking_min_hour=cooking_min_hour)
 
 
