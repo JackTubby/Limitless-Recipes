@@ -57,24 +57,29 @@
                     <i class="far fa-window-close right close-icon"></i>
                 </div>
                 <div class="center-align recipe-info-wrapper">
+                    <!-- prep time -->
                     <div>
                         <span class="recipe-info-heading">Prep Time: </span>
                         <span class="recipe-info">{{ recipe.prep_time }}</span>
-                        <span class="recipe-info">{{ prep_minutes_hours }}</span>
+                        <span class="recipe-info">{{ recipe.prep_min_hour }}</span>
                     </div>
                     <hr>
+                    <!-- cooking time -->
                     <div>
                         <span class="recipe-info-heading">Cooking Time: </span>
                         <span class="recipe-info">{{recipe.cooking_time}}</span>
-                        <span class="recipe-info">{{ recipe.cooking_minutes_hours }}</span>
+                        <span class="recipe-info">{{ recipe.cooking_min_hour }}</span>
                     </div>
                     <hr>
+                    <!-- ingredients -->
                     <h5 class="recipe-info-heading">Recipe Ingredients:</h5>
                     <p class="recipe-info">{{ recipe.recipe_ingredients }}</p>
                     <hr>
+                    <!-- steps -->
                     <h5 class="recipe-info-heading">Recipe Steps:</h5>
                     <p class="recipe-info">{{ recipe.recipe_method }}</p>
                     <hr>
+                    <!-- published by -->
                     <p class="published-by">Published by {{ recipe.created_by }}</p>
                 </div>
             </div>

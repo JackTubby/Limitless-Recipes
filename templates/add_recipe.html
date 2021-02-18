@@ -36,10 +36,10 @@
         <!-- prep time -->
         <div class="row">
             <div class="input-field col s12">
-                <select id="prep-min-hours" name="prep-min-hours" class="validate" required>
+                <select id="prep_min_hour" name="prep_min_hour" class="validate" required>
                     <option value="" disabled selected>Minutes or Hours</option>
-                    {% for prep_mins_hours in prep_min_hour %}
-                    <option value="{{ prep_mins_hours.prep_minutes_hours }}">{{ prep_mins_hours.prep_minutes_hours }}</option>
+                    {% for prep_minutes_hours in prep_mins_hours %}
+                    <option value="{{ prep_minutes_hours.prep_min_hour }}">{{ prep_minutes_hours.prep_min_hour }}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -52,10 +52,10 @@
         <!-- cooking time -->
         <div class="row">
             <div class="input-field col s12">
-                <select id="cooking-min-hours" name="cooking-min-hours" class="validate" required>
+                <select id="cooking_min_hour" name="cooking_min_hour" class="validate" required>
                     <option value="" disabled selected>Minutes or Hours</option>
-                    {% for cooking_mins_hours in cooking_min_hour %}
-                    <option value="{{ cooking_mins_hours.cooking_minutes_hours }}">{{ cooking_mins_hours.cooking_minutes_hours }}</option>
+                    {% for cooking_minutes_hours in cooking_mins_hours %}
+                    <option value="{{ cooking_minutes_hours.cooking_min_hour }}">{{ cooking_minutes_hours.cooking_min_hour }}</option>
                     {% endfor %}
                 </select>
             </div>
