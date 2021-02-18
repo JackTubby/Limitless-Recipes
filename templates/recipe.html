@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="row center-align">
+    <a class="waves-effect waves-light btn">All</a>
+    <a class="waves-effect waves-light btn">Breakfast</a>
+    <a class="waves-effect waves-light btn">Lunch</a>
+    <a class="waves-effect waves-light btn">Dinner</a>
+    <a class="waves-effect waves-light btn">Dessert</a>
+</div>
+<hr>
 <div class="row">
     {% for recipe in recipes %}
     <div class="col s12 m4 l3">
