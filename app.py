@@ -30,6 +30,30 @@ def get_recipes():
     return render_template("recipe.html", recipes=recipes)
 
 
+@app.route("/breakfast")
+def breakfast():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("breakfast.html", recipes=recipes)
+
+
+@app.route("/lunch")
+def lunch():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("lunch.html", recipes=recipes)
+
+
+@app.route("/dinner")
+def dinner():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("dinner.html", recipes=recipes)
+
+
+@app.route("/dessert")
+def dessert():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("dessert.html", recipes=recipes)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

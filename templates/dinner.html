@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% if recipes|length > 0 %}
+
 <div class="row center-align">
     <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn">All</a>
     <a href="{{ url_for('breakfast') }}" class="waves-effect waves-light btn">Breakfast</a>
@@ -11,6 +13,7 @@
 <hr>
 <div class="row">
     {% for recipe in recipes %}
+    {% if recipe.category_name == "Dinner" %}
     <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image">
@@ -67,7 +70,7 @@
                     <!-- cooking time -->
                     <div>
                         <span class="recipe-info-heading">Cooking Time: </span>
-                        <span class="recipe-info">{{recipe.cooking_time}}</span> 
+                        <span class="recipe-info">{{recipe.cooking_time}}</span>
                         <span class="recipe-info">{{ recipe.cooking_min_hour }}</span>
                     </div>
                     <hr>
@@ -86,7 +89,11 @@
             </div>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
 </div>
+{% else %}
+<h3 class="red-text text-darken-4 center-align text-shadow">No Results Found!</h3>
+{% endif %}
 
 {% endblock %}
