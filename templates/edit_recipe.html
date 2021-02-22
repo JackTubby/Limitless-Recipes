@@ -1,64 +1,122 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align light-blue-text text-darken-4">Edit Recipe</h3>
+<h3 class="center-align light-blue-text text-darken-4">Edit Recipe</h3>
 
-    <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-            <!-- recipe name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="icon_prefix" name="recipe_name" value="{{ recipe.recipe_name }}" 
-                        max-length="30" type="text" class="validate" required>
-                    <label for="icon_prefix">Recipe Name</label>
-                </div>
+<div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <!-- recipe name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="icon_prefix" value="{{ recipe.recipe_name }}" name="recipe_name" max-length="13" type="text" class="validate">
+                <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
             </div>
-            <!-- recipe category -->
-			<div class="row">
-				<div class="input-field col s12">
-					<select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled>Choose Category</option>
-                        {% for category in categories %}
-                            {% if category.category_name == recipe.category_name %}
-                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                            {% else %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-					<label for="category_name">Task Category</label>
-				</div>
-			</div>
-            <!-- recipe ingredients -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10" class="materialize-textarea"
-                        required>
+        </div>
+        <!-- recipe category -->
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="category_name" name="category_name" class="validate">
+                    <option value="" disabled>Choose Category</option>
+                    {% for category in categories %}
+                    {% if category.category_name == recipe.category_name %}
+                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    {% else %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label class="add-recipe-label" for="category_name">Task Category</label>
+            </div>
+        </div>
+        <!-- desription -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="49"
+                    class="materialize-textarea" onkeyup="countChar(this)">
+                    {{- recipe.recipe_description -}}
+                </textarea>
+                <span id="charNum" class="charnum"></span>
+                <label class="add-recipe-label" for="recipe_description">Description</label>
+            </div>
+        </div>
+        <!-- prep time -->
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="prep_time" value="{{ recipe.prep_time }}" name="prep_time" 
+                    max-length="10" type="text" class="validate" pattern="[0-9]+">
+                <label class="add-recipe-label" for="prep_time">Preparation Time</label>
+            </div>
+            <div class="input-field col s6">
+                <select id="prep_min_hour" name="prep_min_hour" class="validate">
+                    <option value="" disabled>Minutes or Hours</option>
+                    {% for prep_minutes_hours in prep_mins_hours %}
+                    {% if prep_minutes_hours.prep_min_hour == recipe.prep_min_hour %}
+                    <option value="{{ prep_minutes_hours.prep_min_hour }}" selected>
+                        {{- prep_minutes_hours.prep_min_hour -}}
+                    </option>
+                    {% else %}
+                    <option value="{{ prep_minutes_hours.prep_min_hour }}" selected>
+                        {{- prep_minutes_hours.prep_min_hour -}}
+                    </option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <!-- cooking time -->
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="cooking_time" value="{{ recipe.cooking_time }}" name="cooking_time" 
+                    max-length="30" type="text" class="validate"
+                    pattern="[0-9]+">
+                <label class="add-recipe-label" for="cooking_time">Cooking Time</label>
+            </div>
+            <div class="input-field col s6">
+                <select id="cooking_min_hour" name="cooking_min_hour" class="validate">
+                    <option value="" disabled>Minutes or Hours</option>
+                    {% for cooking_minutes_hours in cooking_mins_hours %}
+                    {% if cooking_minutes_hours.cooking_min_hour == recipe.cooking_min_hour %}
+                    <option value="{{ cooking_minutes_hours.cooking_min_hour }}" selected>
+                        {{- cooking_minutes_hours.cooking_min_hour -}}</option>
+                    {% else %}
+                    <option value="{{ cooking_minutes_hours.cooking_min_hour }}">
+                        {{- cooking_minutes_hours.cooking_min_hour -}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <!-- recipe ingredients -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10"
+                    class="materialize-textarea">
                     {{- recipe.recipe_ingredients -}}
-                    </textarea>
-                    <label for="textarea1">Ingredients</label>
-                </div>
+                </textarea>
+                <label class="add-recipe-label" for="recipe_ingredients">Ingredients</label>
             </div>
-            <!-- recipe steps -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="recipe_method" name="recipe_method" minlength="10" class="materialize-textarea"
-                        required>
+        </div>
+        <!-- recipe steps -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="recipe_method" name="recipe_method" minlength="10"
+                    class="materialize-textarea">
                     {{- recipe.recipe_method -}}
-                    </textarea>
-                    <label for="textarea1">Steps</label>
-                </div>
+                </textarea>
+                <label class="add-recipe-label" for="recipe_method">Steps</label>
             </div>
-            <!-- recipe submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('get_recipes') }}" class="btn-large red">Cancel</a>
-                    <button class="btn-large waves-effect waves-light" type="submit">
-                        Edit Recipe
-                    </button>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <!-- cancel form -->
+                <a href="{{ url_for('get_recipes') }}" class="btn-large red">Cancel</a>
+                <!-- edit submit -->
+                <button class="btn-large waves-effect waves-light" type="submit">
+                    Edit Recipe
+                </button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
