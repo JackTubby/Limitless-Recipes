@@ -53,6 +53,7 @@
 
 .nav-text-styling:hover {
     color: #FFCB9A;
+    text-decoration: underline;
 }
 
 /* index.html */
@@ -120,6 +121,23 @@
 		transform: scale(0.95);
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	}
+}
+
+/* recipe pages */
+.recipe-page-options {
+    background-color: white;
+}
+
+#recipe-page-content {
+    background-color: white;
+}
+
+#recipe-page-titles {
+    margin: 0;
+    color: #116466;
+    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    padding-bottom: 12px;
+    padding-left: 5px;
 }
 
 /* recipe cards */
@@ -271,3 +289,5 @@
     padding-top: 10px;
     font-size: 18px;
 }
+
+
