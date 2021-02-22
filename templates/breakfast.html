@@ -3,13 +3,12 @@
 
 {% if recipes|length > 0 %}
 
-
-<div class="row center-align">
-    <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn">All</a>
-    <a href="{{ url_for('breakfast') }}" class="waves-effect waves-light btn">Breakfast</a>
-    <a href="{{ url_for('lunch') }}" class="waves-effect waves-light btn">Lunch</a>
-    <a href="{{ url_for('dinner') }}" class="waves-effect waves-light btn">Dinner</a>
-    <a href="{{ url_for('dessert') }}" class="waves-effect waves-light btn">Dessert</a>
+<div class="row center-align recipe-pages-wrapper">
+    <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">All</a>
+    <a href="{{ url_for('breakfast') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Breakfast</a>
+    <a href="{{ url_for('lunch') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Lunch</a>
+    <a href="{{ url_for('dinner') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Dinner</a>
+    <a href="{{ url_for('dessert') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Dessert</a>
 </div>
 <h2 id="recipe-page-titles" class="text-shadow">Breakfast Recipes</h2>
 <div class="row">

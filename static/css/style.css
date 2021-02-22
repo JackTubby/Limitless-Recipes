@@ -146,6 +146,26 @@
     padding-left: 5px;
 }
 
+.recipe-pages-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.recipe-pages-btn {
+    color: #FFCB9A;
+    background: none;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    text-transform: capitalize;
+}
+
+.recipe-pages-btn:hover {
+    color: #116466;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
 /* recipe cards */
 .recipe-name {
     margin: 0;
@@ -295,5 +315,3 @@
     padding-top: 10px;
     font-size: 18px;
 }
-
-
