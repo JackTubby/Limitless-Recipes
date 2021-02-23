@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import date
 if os.path.exists("env.py"):
     import env
 
@@ -118,7 +119,9 @@ def profile(username):
     if session["user"]:
         recipes = list(mongo.db.recipes.find(
             {'created_by': session.get('user')}))
-    return render_template("profile.html", user=user, recipes=recipes)
+
+    return render_template(
+        "profile.html", user=user, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -196,7 +199,28 @@ def delete_recipe(recipe_id):
     flash("Recipe Deleted")
     return redirect(url_for("get_recipes"))
 
-    
+
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+
+    if request.method == "POST":
+
+        today_date = date.today()
+        current_date = today_date.strftime("%d %b %y")
+        add_review = {
+            "username": session["user"],
+            "recipe_rating": request.form.get("recipe_rating"),
+            "recipe_review": request.form.get("recipe_review"),
+            "review_date": current_date
+        }
+        mongo.db.reviews.insert_one(add_review)
+
+        flash("Review Added")
+        return redirect(url_for("get_recipes"))
+
+    return render_template("add_review.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
