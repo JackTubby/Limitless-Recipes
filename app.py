@@ -117,7 +117,7 @@ def profile(username):
 
     if session["user"]:
         recipes = list(mongo.db.recipes.find(
-            {'created_by':session.get('user')}))
+            {'created_by': session.get('user')}))
     return render_template("profile.html", user=user, recipes=recipes)
 
     return redirect(url_for("login"))
@@ -196,7 +196,7 @@ def delete_recipe(recipe_id):
     flash("Recipe Deleted")
     return redirect(url_for("get_recipes"))
 
-
+    
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

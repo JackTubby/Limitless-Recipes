@@ -30,7 +30,7 @@
                     <!-- buttons -->
                     <div class="button-wrappers center-align">
                         <!-- save -->
-                        <a class="waves-effect waves-light btn recipe-btn">Save</a>
+                        <a class="waves-effect waves-light btn recipe-btn">{{ user.save_recipe }}</a>
                         <!-- edit -->
                         {% if session.user | lower == recipe.created_by | lower %}
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
