@@ -7,7 +7,7 @@
 
         <div class="row margin-top-register">
             <div class="col s6"></div>
-            <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+            <form class="col s12" method="POST" action="{{ url_for('add_review', recipe_id=recipe_id) }}">
                 <div class="card-panel">
                     <!-- star rating -->
                     <div class="input-field col s12">
