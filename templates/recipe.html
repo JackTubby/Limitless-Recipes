@@ -9,8 +9,7 @@
         <a href="{{ url_for('lunch') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Lunch</a>
         <a href="{{ url_for('dinner') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Dinner</a>
         <a href="{{ url_for('dessert') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Dessert</a>
-        <a href="{{ url_for('add_review') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Add
-            Review</a>
+
     </div>
     <h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
     <div class="row">
@@ -32,12 +31,16 @@
                     <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
                     <!-- reviews -->
                     <!-- review modal trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#reviews">Reviews</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#reviews-{{recipe._id}}">Reviews</a>
                     <!-- modal structure -->
-                    <div id="reviews" class="modal">
+                    <div id="reviews-{{recipe._id}}" class="modal">
                         <div class="modal-content">
+                            <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
+                                class="recipe-pages-btn text-shadow waves-effect waves-light btn">Add
+                                Review</a>
+                            <!-- converts number into star rating -->
                             <h4>{{ recipe.recipe_name }}</h4>
-                            {% for review in reviews %}
+                            {% for review in recipe.reviews %}
                             {% if review.recipe_rating == "5" %}
                             <h4 class="review">5 star</h4>
                             {% elif review.recipe_rating == "4" %}
@@ -49,8 +52,11 @@
                             {% elif review.recipe_rating == "1" %}
                             <h4 class="review">1star</h4>
                             {% endif %}
+                            <!-- recipe review description -->
                             <p>{{ review.recipe_review }}</p>
+                            <!-- recipe review date -->
                             <p>{{ review.review_date }}</p>
+                            <!-- recipe review username -->
                             <p>{{ review.username }}</p>
                             {% endfor %}
                         </div>
@@ -119,7 +125,7 @@
             </div>
         </div>
         {% endfor %}
-
+    </div>
 
 </body>
 
