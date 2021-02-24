@@ -56,6 +56,7 @@ def dessert():
     return render_template("dessert.html", recipes=recipes)
 
 
+# --- Register --- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -82,6 +83,7 @@ def register():
     return render_template("register.html")
 
 
+# --- Login --- #
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -111,6 +113,7 @@ def login():
     return render_template("login.html")
 
 
+# --- Profile --- #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from the db
@@ -127,6 +130,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# --- Logout --- #
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -135,6 +139,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# --- Add Recipe --- #
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -166,6 +171,7 @@ def add_recipe():
         cooking_mins_hours=cooking_mins_hours)
 
 
+# --- Edit Recipe --- #
 @app.route("/edit_recipe/<recipe_id>", methods=["POST", "GET"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -194,6 +200,7 @@ def edit_recipe(recipe_id):
         prep_mins_hours=prep_mins_hours, cooking_mins_hours=cooking_mins_hours)
 
 
+# --- Delete Recipe --- #
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
@@ -201,8 +208,9 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
-@app.route("/add_review", methods=["GET", "POST"])
-def add_review():
+# --- Add Review --- #
+@app.route("/add_review/<recipe_id>", methods=["GET", "POST"])
+def add_review(recipe_id):
 
     if request.method == "POST":
 
@@ -214,12 +222,20 @@ def add_review():
             "recipe_review": request.form.get("recipe_review"),
             "review_date": current_date
         }
-        mongo.db.reviews.insert_one(add_review)
+        review = mongo.db.reviews.insert(add_review)
+
+        
+
+        mongo.db.recipes.update(
+            {"_id": ObjectId(recipe_id)}, {"$push": {"reviews": add_review}})
+       
+        # print(review)
 
         flash("Review Added")
         return redirect(url_for("get_recipes"))
 
-    return render_template("add_review.html")
+    return render_template(
+        "add_review.html", recipe_id=recipe_id)
 
 
 if __name__ == "__main__":
