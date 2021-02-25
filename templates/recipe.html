@@ -32,30 +32,69 @@
                     <!-- modal structure -->
                     <div id="reviews-{{recipe._id}}" class="modal">
                         <div class="modal-content">
-                            <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
-                                class="recipe-pages-btn text-shadow waves-effect waves-light btn">Add
-                                Review</a>
-                            <!-- converts number into star rating -->
-                            <h4>{{ recipe.recipe_name }}</h4>
-                            {% for review in recipe.reviews %}
-                            {% if review.recipe_rating == "5" %}
-                            <h4 class="review">5 star</h4>
-                            {% elif review.recipe_rating == "4" %}
-                            <h4 class="review">4 star</h4>
-                            {% elif review.recipe_rating == "3" %}
-                            <h4 class="review">3 star</h4>
-                            {% elif review.recipe_rating == "2" %}
-                            <h4 class="review">2 star</h4>
-                            {% elif review.recipe_rating == "1" %}
-                            <h4 class="review">1star</h4>
-                            {% endif %}
-                            <!-- recipe review description -->
-                            <p>{{ review.recipe_review }}</p>
-                            <!-- recipe review date -->
-                            <p>{{ review.review_date }}</p>
-                            <!-- recipe review username -->
-                            <p>{{ review.username }}</p>
-                            {% endfor %}
+                            <div class="row s6">
+                                <span class="left-align">{{ recipe.recipe_name }}</span>
+                                <span class="right-align">
+                                    <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
+                                        class="recipe-pages-btn waves-effect waves-light btn">
+                                        Add Review
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <div class="card blue-grey darken-1">
+                                        <div class="card-content white-text">
+                                            {% for review in recipe.reviews %}
+                                            <span class="card-title">
+                                                <!-- converts number into star rating -->
+                                                {% if review.recipe_rating == "5" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                {% elif review.recipe_rating == "4" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% elif review.recipe_rating == "3" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% elif review.recipe_rating == "2" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% elif review.recipe_rating == "1" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% endif %}
+                                            </span>
+                                            <!-- recipe review description -->
+                                            <p class="recipe-review-text">
+                                                <i class="fas fa-quote-left"></i>
+                                                {{ review.recipe_review }}"
+                                                <i class="fas fa-quote-right"></i>
+                                            </p>
+                                            <!-- recipe review username -->
+                                            <p class="recipe-review-username">{{ review.username }}</p>
+                                            <!-- recipe review date -->
+                                            <p class="recipe-review-date">{{ review.review_date }}</p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -64,7 +103,8 @@
                     <!-- buttons -->
                     <div class="button-wrappers center-align">
                         <!-- review modal trigger -->
-                        <a class="waves-effect waves-light btn recipe-btn modal-trigger" href="#reviews-{{recipe._id}}">Reviews</a>
+                        <a class="waves-effect waves-light btn recipe-btn modal-trigger"
+                            href="#reviews-{{recipe._id}}">Reviews</a>
                         <!-- save -->
                         <a class="waves-effect waves-light btn recipe-btn">Save</a>
                         <!-- edit -->
