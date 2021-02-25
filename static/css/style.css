@@ -152,17 +152,15 @@
 }
 
 .recipe-pages-btn {
-    color: #FFCB9A;
+    color: #116466;
     background: none;
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 30px;
     text-transform: capitalize;
 }
 
 .recipe-pages-btn:hover {
-    color: #116466;
-    text-decoration: underline;
     background-color: transparent;
 }
 
