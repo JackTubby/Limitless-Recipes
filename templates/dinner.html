@@ -1,99 +1,134 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if recipes|length > 0 %}
+<body id="recipe-page-content recipe-pages-wrapper">
+    <div class="row center-align recipe-page-options">
+        <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn waves-effect waves-light btn">All</a>
+        <a href="{{ url_for('breakfast') }}" class="recipe-pages-btn waves-effect waves-light btn">Breakfast</a>
+        <a href="{{ url_for('lunch') }}" class="recipe-pages-btn waves-effect waves-light btn">Lunch</a>
+        <a href="{{ url_for('dinner') }}" class="recipe-pages-btn waves-effect waves-light btn">Dinner</a>
+        <a href="{{ url_for('dessert') }}" class="recipe-pages-btn waves-effect waves-light btn">Dessert</a>
 
-<div class="row center-align recipe-pages-wrapper">
-    <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">All</a>
-    <a href="{{ url_for('breakfast') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Breakfast</a>
-    <a href="{{ url_for('lunch') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Lunch</a>
-    <a href="{{ url_for('dinner') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Dinner</a>
-    <a href="{{ url_for('dessert') }}" class="recipe-pages-btn text-shadow waves-effect waves-light btn">Dessert</a>
-</div>
-<h2 id="recipe-page-titles" class="text-shadow">Dinner Recipes</h2>
-<div class="row">
-    {% for recipe in recipes %}
-    {% if recipe.category_name == "Dinner" %}
-    <div class="col s12 m4 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="static/images/register-img.jpg">
-                <span class="card-title text-shadow s12">
-                    <!-- recipe name -->
-                    <h3 class="recipe-name"><strong>{{ recipe.recipe_name }}</strong></h3>
-                    <br>
-                    <!-- recipe category -->
-                    <h5 class="recipe-category">{{ recipe.category_name }}</h5>
-                </span>
-            </div>
-            <div class="card-content">
-                <!-- description -->
-                <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
-                <!-- buttons -->
-                <div class="button-wrappers center-align">
-                    <!-- save -->
-                    <a class="waves-effect waves-light btn recipe-btn">Save</a>
-                    <!-- edit -->
-                    {% if session.user | lower == recipe.created_by | lower %}
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                        class="waves-effect waves-light btn recipe-btn">Edit</a>
-                    <!-- delete | modal trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger recipe-btn"
-                        href="#delete_task_modal-{{loop.index}}">Delete</a>
+    </div>
+    <h2 id="recipe-page-titles" class="text-shadow">Dinner</h2>
+    <div class="row">
+        {% for recipe in recipes %}
+        {% if recipe.category_name == "Dinner" %}
+        <div class="col s12 m4 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="static/images/register-img.jpg">
+                    <span class="card-title text-shadow s12">
+                        <!-- recipe name -->
+                        <h3 class="recipe-name"><strong>{{ recipe.recipe_name }}</strong></h3>
+                        <br>
+                        <!-- recipe category -->
+                        <h5 class="recipe-category">{{ recipe.category_name }}</h5>
+                    </span>
                 </div>
-                <!-- modal content -->
-                <div id="delete_task_modal-{{loop.index}}" class="modal">
-                    <div class="modal-content center-align">
-                        <h4>Are You Sure You Want To Delete This Recipe</h4>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                            class="modal-close waves-effect waves-light btn recipe-btn">Delete</a>
+                <div class="card-content">
+                    <!-- description -->
+                    <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
+                    <!-- reviews -->
+                    <!-- modal structure -->
+                    <div id="reviews-{{recipe._id}}" class="modal">
+                        <div class="modal-content">
+                            <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
+                                class="recipe-pages-btn text-shadow waves-effect waves-light btn">Add
+                                Review</a>
+                            <!-- converts number into star rating -->
+                            <h4>{{ recipe.recipe_name }}</h4>
+                            {% for review in recipe.reviews %}
+                            {% if review.recipe_rating == "5" %}
+                            <h4 class="review">5 star</h4>
+                            {% elif review.recipe_rating == "4" %}
+                            <h4 class="review">4 star</h4>
+                            {% elif review.recipe_rating == "3" %}
+                            <h4 class="review">3 star</h4>
+                            {% elif review.recipe_rating == "2" %}
+                            <h4 class="review">2 star</h4>
+                            {% elif review.recipe_rating == "1" %}
+                            <h4 class="review">1star</h4>
+                            {% endif %}
+                            <!-- recipe review description -->
+                            <p>{{ review.recipe_review }}</p>
+                            <!-- recipe review date -->
+                            <p>{{ review.review_date }}</p>
+                            <!-- recipe review username -->
+                            <p>{{ review.username }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
                     </div>
+                    <!-- buttons -->
+                    <div class="button-wrappers center-align">
+                        <!-- review modal trigger -->
+                        <a class="waves-effect waves-light btn recipe-btn modal-trigger"
+                            href="#reviews-{{recipe._id}}">Reviews</a>
+                        <!-- save -->
+                        <a class="waves-effect waves-light btn recipe-btn">Save</a>
+                        <!-- edit -->
+                        {% if session.user | lower == recipe.created_by | lower %}
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                            class="waves-effect waves-light btn recipe-btn">Edit</a>
+                        <!-- delete | modal trigger -->
+                        <a class="waves-effect waves-light btn modal-trigger recipe-btn"
+                            href="#delete_task_modal-{{loop.index}}">Delete</a>
+                        {% endif %}
+                    </div>
+                    <!-- modal content -->
+                    <div id="delete_task_modal-{{loop.index}}" class="modal">
+                        <div class="modal-content center-align">
+                            <h4>Are You Sure You Want To Delete This Recipe</h4>
+                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                                class="modal-close waves-effect waves-light btn recipe-btn">Delete</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- card reveal -->
+                    <h5 class="activator center-align see-more"><i class="fas fa-info"></i></h5>
                 </div>
-                <hr>
-                <!-- card reveal -->
-                <h5 class="activator center-align see-more"><i class="fas fa-info"></i></h5>
-            </div>
-            <!-- card reveal content-->
-            <div class="card-reveal">
-                <div class="card-title grey-text text-darken-4 info-main-wrapper s12 m12 l6">
-                    <span class="card-title-wrapper">{{ recipe.recipe_name }}</span>
-                    <i class="far fa-window-close right close-icon"></i>
-                </div>
-                <div class="center-align recipe-info-wrapper">
-                    <!-- prep time -->
-                    <div>
-                        <span class="recipe-info-heading">Prep Time: </span>
-                        <span class="recipe-info">{{ recipe.prep_time }}</span>
-                        <span class="recipe-info">{{ recipe.prep_min_hour }}</span>
+                <!-- card reveal content-->
+                <div class="card-reveal">
+                    <div class="card-title grey-text text-darken-4 info-main-wrapper s12 m12 l6">
+                        <span class="card-title-wrapper">{{ recipe.recipe_name }}</span>
+                        <i class="far fa-window-close right close-icon"></i>
                     </div>
-                    <hr>
-                    <!-- cooking time -->
-                    <div>
-                        <span class="recipe-info-heading">Cooking Time: </span>
-                        <span class="recipe-info">{{recipe.cooking_time}}</span>
-                        <span class="recipe-info">{{ recipe.cooking_min_hour }}</span>
+                    <div class="center-align recipe-info-wrapper">
+                        <!-- prep time -->
+                        <div>
+                            <span class="recipe-info-heading">Prep Time: </span>
+                            <span class="recipe-info">{{ recipe.prep_time }}</span>
+                            <span class="recipe-info">{{ recipe.prep_min_hour }}</span>
+                        </div>
+                        <hr>
+                        <!-- cooking time -->
+                        <div>
+                            <span class="recipe-info-heading">Cooking Time: </span>
+                            <span class="recipe-info">{{recipe.cooking_time}}</span>
+                            <span class="recipe-info">{{ recipe.cooking_min_hour }}</span>
+                        </div>
+                        <hr>
+                        <!-- ingredients -->
+                        <h5 class="recipe-info-heading">Recipe Ingredients:</h5>
+                        <p class="recipe-info">{{ recipe.recipe_ingredients }}</p>
+                        <hr>
+                        <!-- steps -->
+                        <h5 class="recipe-info-heading">Recipe Steps:</h5>
+                        <p class="recipe-info">{{ recipe.recipe_method }}</p>
+                        <hr>
+                        <!-- published by -->
+                        <p class="published-by">Published by {{ recipe.created_by }}</p>
                     </div>
-                    <hr>
-                    <!-- ingredients -->
-                    <h5 class="recipe-info-heading">Recipe Ingredients:</h5>
-                    <p class="recipe-info">{{ recipe.recipe_ingredients }}</p>
-                    <hr>
-                    <!-- steps -->
-                    <h5 class="recipe-info-heading">Recipe Steps:</h5>
-                    <p class="recipe-info">{{ recipe.recipe_method }}</p>
-                    <hr>
-                    <!-- published by -->
-                    <p class="published-by">Published by {{ recipe.created_by }}</p>
-                    {% endif %}
                 </div>
             </div>
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
-</div>
-{% else %}
-<h3 class="red-text text-darken-4 center-align text-shadow">No Results Found!</h3>
-{% endif %}
+
+</body>
 
 {% endblock %}
