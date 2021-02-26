@@ -238,6 +238,10 @@
 }
 
 /* reviews */
+.modal-review {
+    width: 30% !important;
+}
+
 .recipe-review-text {
     color: white;
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
