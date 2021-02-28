@@ -181,6 +181,7 @@
     padding-bottom: 10px;
     font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
+    word-wrap: break-word;
 }
 
 .recipe-btn {
@@ -271,6 +272,26 @@
 
 .review-cards {
     background-color: #116466;
+}
+
+/* media query for review modal width */
+
+@media (min-width:1024px) and (max-width:1366px){
+.modal-review {
+    width: 80% !important;
+}
+}
+
+@media (min-width:481px) and (max-width:768px){
+.modal-review {
+    width: 70% !important;
+}
+}
+
+@media (min-width:280px) and (max-width:653px){
+.modal-review {
+    width: 100% !important;
+}
 }
 
 /* new recipe */
