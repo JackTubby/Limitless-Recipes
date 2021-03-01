@@ -40,6 +40,7 @@
         </h6>
     </div>
 </div>
+<hr class="view-hr">
 <!-- Recipe Ingredients & Steps -->
 <div class="row center-align">
     <div class="col s12 l6">
@@ -51,11 +52,11 @@
         <p>{{ recipe.recipe_method }}</p>
     </div>
 </div>
-<hr>
+<hr class="view-hr">
 <!-- Recipe Reviews-->
 <div class="row">
     {% for review in recipe.reviews %}
-    <div class="col s3">
+    <div class="col s12 m4 l3">
         <div class="card review-cards">
             <div class="card-content white-text">
                 <span class="card-title">
