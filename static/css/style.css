@@ -265,17 +265,6 @@
     margin-left: 8rem;
 }
 
-/* media query for smaller screens, fixes image and recipe details */
-@media (min-width:280px) and (max-width:1212px){
-.view-recipe-img {
-    height: 46vh;
-    width: 100%;
-    object-fit: fill;
-    margin: 0;
-    padding: 0;
-}
-}
-
 .back-to-recipes {
     font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 22px;
@@ -296,8 +285,25 @@
 }
 
 hr.view-hr {
-	border-top: 1px dashed #116466;
-	border-bottom: 1px dashed #fff;
+	border-top: 1px solid #116466;
+    border-bottom: 1px solid #fff;
+    width: 80%;
+}
+
+/* media query for smaller screens, fixes image and recipe details */
+@media (min-width:280px) and (max-width:1212px){
+.view-recipe-headers, .view-recipe-details {
+    font-size: 28px;
+}
+}
+@media (min-width:280px) and (max-width:653px){
+.view-recipe-img {
+    height: 46vh;
+    width: 100%;
+    object-fit: fill;
+    margin: 0;
+    padding: 0;
+}
 }
 
 /* reviews */
