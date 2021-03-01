@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.side').sidenav({ inDuration: 800, outDuration: 800, edge: 'right'});
+    $('.sidenav').sidenav({ inDuration: 800, outDuration: 800});
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('.modal').modal();
