@@ -56,6 +56,16 @@ def dessert():
     return render_template("dessert.html", recipes=recipes)
 
 
+# --- View Recipe --- #
+@app.route("/view_recipe/<recipe_id>")
+def view_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    reviews = list(mongo.db.reviews.find())
+    return render_template(
+        "view_recipe.html", recipe_id=recipe_id,
+        recipe=recipe, reviews=reviews)
+
+
 # --- Register --- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -222,11 +232,11 @@ def add_review(recipe_id):
         }
         review = mongo.db.reviews.insert(add_review)
 
-        
+
 
         mongo.db.recipes.update(
             {"_id": ObjectId(recipe_id)}, {"$push": {"reviews": add_review}})
-       
+
         # print(review)
 
         flash("Review Added")

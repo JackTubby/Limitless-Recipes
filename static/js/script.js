@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('select').formSelect();
     $('.modal').modal();
     $('.timepicker').timepicker();
+    $('.materialboxed').materialbox();
     $('input.autocomplete').autocomplete({
         data: {
             "Indian": null,

@@ -252,6 +252,37 @@
 }
 }
 
+/* view recipe */
+.view-recipe-wrapper {
+    margin-left: 20em;
+    margin-top: 2em;
+}
+
+.view-recipe-img {
+    height: 46vh;
+    width: 36vw;
+    object-fit: cover;
+    margin-left: 8rem;
+}
+
+.back-to-recipes {
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.view-recipe-details {
+    color: #116466;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 36px;
+} 
+
+.view-recipe-headers {
+    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 36px;
+}
+
 /* reviews */
 .modal-review {
     width: 30% !important;

@@ -105,8 +105,9 @@
                         <!-- review modal trigger -->
                         <a class="waves-effect waves-light btn recipe-btn modal-trigger"
                             href="#reviews-{{recipe._id}}">Reviews</a>
-                        <!-- save -->
-                        <a class="waves-effect waves-light btn recipe-btn">Save</a>
+                        <!-- view -->
+                        <a class="waves-effect waves-light btn recipe-btn"
+                            href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View</a>
                         <!-- edit -->
                         {% if session.user | lower == recipe.created_by | lower %}
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
@@ -139,14 +140,12 @@
                         <div>
                             <span class="recipe-info-heading">Prep Time: </span>
                             <span class="recipe-info">{{ recipe.prep_time }}</span>
-                            <span class="recipe-info">{{ recipe.prep_min_hour }}</span>
                         </div>
                         <hr>
                         <!-- cooking time -->
                         <div>
                             <span class="recipe-info-heading">Cooking Time: </span>
                             <span class="recipe-info">{{recipe.cooking_time}}</span>
-                            <span class="recipe-info">{{ recipe.cooking_min_hour }}</span>
                         </div>
                         <hr>
                         <!-- ingredients -->
