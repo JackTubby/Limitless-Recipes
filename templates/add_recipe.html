@@ -38,37 +38,16 @@
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
                     </div>
-                    <!-- prep time -->
+                    <!-- new prep time -->
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="prep_time" name="prep_time" max-length="10" type="text" class="validate"
-                                pattern="[0-9]+" required>
+                            <input type="time" id="prep_time" name="prep_time" step="1" required>
                             <label class="add-recipe-label" for="prep_time">Preparation Time</label>
                         </div>
-                        <div class="input-field col s6">
-                            <select id="prep_min_hour" name="prep_min_hour" class="validate" required>
-                                <option value="" disabled selected>Minutes or Hours</option>
-                                {% for prep_minutes_hours in prep_mins_hours %}
-                                <option value="{{ prep_minutes_hours.prep_min_hour }}">{{ prep_minutes_hours.prep_min_hour }}
-                                </option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
                     <!-- cooking time -->
-                    <div class="row">
                         <div class="input-field col s6">
-                            <input id="cooking_time" name="cooking_time" max-length="30" type="text" class="validate"
-                                pattern="[0-9]+" required>
+                            <input type="time" id="cooking_time" name="cooking_time" step="1" required>
                             <label class="add-recipe-label" for="cooking_time">Cooking Time</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <select id="cooking_min_hour" name="cooking_min_hour" class="validate" required>
-                                <option value="" disabled selected>Minutes or Hours</option>
-                                {% for cooking_minutes_hours in cooking_mins_hours %}
-                                <option value="{{ cooking_minutes_hours.cooking_min_hour }}">{{ cooking_minutes_hours.cooking_min_hour }}</option>
-                                {% endfor %}
-                            </select>
                         </div>
                     </div>
                     <!-- recipe ingredients -->
