@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('.modal').modal();
+    $('.timepicker').timepicker();
     $('input.autocomplete').autocomplete({
         data: {
             "Indian": null,
