@@ -2,9 +2,8 @@
 {% block content %}
 
 <body id="background-register-image">
-    <div class="row margin-top-register">
-        <div class="col s6"></div>
-        <form class="col s6" method="POST" action="{{ url_for('register') }}">
+    <div class="row center-align margin-register">
+        <form class="col s12 l6" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel">
                 <h3 class="main-text-styling">Sign Up</h3>
                 <!-- username -->
@@ -41,7 +40,7 @@
                 </div>
                 <!-- register -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large red accent-2 main-text-styling register-button-text">
+                    <button type="submit" class="col s12 btn register-btn main-text-styling register-button-text">
                         Sign Up <i class="fas fa-chevron-right register-button-text"></i>
                     </button>
                 </div>

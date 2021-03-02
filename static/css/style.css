@@ -408,12 +408,31 @@ hr.view-hr {
     background-size: cover;
 }
 
-.margin-top-register {
+.margin-register {
     margin-top: 20px;
 }
 
 .register-button-text {
     font-size: 24px;
+}
+
+.register-btn {
+    color: #116466;
+    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    border: 1px solid #116466;
+    border-radius: 3px;
+    background: linear-gradient(to right, #116466 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+    height: 4rem;
+}
+
+.register-btn:hover {
+    background-position: left bottom;
+    color: white;
+    cursor: pointer;
 }
 
 /* footer */
