@@ -25,6 +25,7 @@ def index():
     return render_template("index.html")
 
 
+# --- Recipe Pages --- #
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
@@ -233,8 +234,6 @@ def add_review(recipe_id):
         mongo.db.recipes.update(
             {"_id": ObjectId(recipe_id)}, {"$push": {"reviews": add_review}})
 
-        # print(review)
-
         flash("Review Added")
         return redirect(url_for("get_recipes"))
 
@@ -242,11 +241,12 @@ def add_review(recipe_id):
         "add_review.html", recipe_id=recipe_id)
 
 
-@app.route("/delete_review/<reviews_id>")
-def delete_review(reviews_id):
-    mongo.db.recipes.update(
-        {"_id": ObjectId(reviews_id)}, {"$pull": {"reviews": add_review}})
-    flash("Review Deleted")
+# --- Delete Review --- #
+@app.route("/delete_review/<recipe_id>/<review_id>")
+def delete_review(recipe_id, review_id):
+    mongo.db.recipes.update_one(
+        {"_id": ObjectId(recipe_id)},
+        {"$pull": {'reviews': {'_id': ObjectId(review_id)}}})
     return redirect(url_for("get_recipes"))
 
 
