@@ -104,8 +104,10 @@
                 <!-- recipe review date -->
                 <p class="recipe-review-date right-align">{{ review.review_date }}</p>
                 <!-- recipe review delete -->
+                {% if session.user | lower == recipe.created_by | lower %}
                 <a href="{{ url_for('delete_review', recipe_id=recipe._id, review_id=review._id) }}"
                     class="waves-effect waves-light btn recipe-btn">Delete</a>
+                {% endif %}
             </div>
 
         </div>
