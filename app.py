@@ -57,6 +57,14 @@ def dessert():
     return render_template("dessert.html", recipes=recipes)
 
 
+# --- Search --- #
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipe.html", recipes=recipes)
+
+
 # --- View Recipe --- #
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
