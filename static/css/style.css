@@ -195,6 +195,11 @@
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
+.recipe-image {
+    width: 8rem;
+    height: 30rem;
+}
+
 .recipe-desc {
     padding-bottom: 10px;
     font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
