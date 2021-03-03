@@ -1,20 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 
-<body id="recipe-page-content recipe-pages-wrapper">
+<body id="recipe-page-content">
+
+    <div class="row card-panel search-card">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate search-input" required>
+                    <label for="query">Search Recipes</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_recipes') }}" class="red btn text-shadow">Reset</a>
+                    <button type="submit" class="light-blue darken-1 btn text-shadow">
+                        <i class="fas fa-search left"></i> Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
     <div class="row center-align recipe-page-options">
         <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn waves-effect waves-light btn">All</a>
         <a href="{{ url_for('breakfast') }}" class="recipe-pages-btn waves-effect waves-light btn">Breakfast</a>
         <a href="{{ url_for('lunch') }}" class="recipe-pages-btn waves-effect waves-light btn">Lunch</a>
         <a href="{{ url_for('dinner') }}" class="recipe-pages-btn waves-effect waves-light btn">Dinner</a>
         <a href="{{ url_for('dessert') }}" class="recipe-pages-btn waves-effect waves-light btn">Dessert</a>
-
+   </div>
     </div>
-    <h2 id="recipe-page-titles" class="text-shadow">Dinner</h2>
+    <h2 id="recipe-page-titles" class="text-shadow">Dinner Recipes</h2>
     <div class="row">
         {% for recipe in recipes %}
         {% if recipe.category_name == "Dinner" %}
-        <div class="col s12 m4 l3">
+        <div class="col s12 m6 l3">
             <div class="card">
                 <div class="card-image">
                     <img src="static/images/register-img.jpg">
@@ -31,35 +49,74 @@
                     <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
                     <!-- reviews -->
                     <!-- modal structure -->
-                    <div id="reviews-{{recipe._id}}" class="modal">
+                    <div id="reviews-{{recipe._id}}" class="modal modal-review">
                         <div class="modal-content">
-                            <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
-                                class="recipe-pages-btn text-shadow waves-effect waves-light btn">Add
-                                Review</a>
-                            <!-- converts number into star rating -->
-                            <h4>{{ recipe.recipe_name }}</h4>
-                            {% for review in recipe.reviews %}
-                            {% if review.recipe_rating == "5" %}
-                            <h4 class="review">5 star</h4>
-                            {% elif review.recipe_rating == "4" %}
-                            <h4 class="review">4 star</h4>
-                            {% elif review.recipe_rating == "3" %}
-                            <h4 class="review">3 star</h4>
-                            {% elif review.recipe_rating == "2" %}
-                            <h4 class="review">2 star</h4>
-                            {% elif review.recipe_rating == "1" %}
-                            <h4 class="review">1star</h4>
-                            {% endif %}
-                            <!-- recipe review description -->
-                            <p>{{ review.recipe_review }}</p>
-                            <!-- recipe review date -->
-                            <p>{{ review.review_date }}</p>
-                            <!-- recipe review username -->
-                            <p>{{ review.username }}</p>
-                            {% endfor %}
+                            <div class="row">
+                                <div class="col s12 m6 recipe-name-title">{{ recipe.recipe_name }}</div>
+                                <div class="col s12 m6 right-align-add-review">
+                                    <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
+                                        class="recipe-pages-btn waves-effect waves-light btn">
+                                        Add Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    {% for review in recipe.reviews %}
+                                    <div class="card review-cards">
+                                        <div class="card-content white-text">
+                                            <span class="card-title">
+                                                <!-- converts number into star rating -->
+                                                {% if review.recipe_rating == "5" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                {% elif review.recipe_rating == "4" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% elif review.recipe_rating == "3" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% elif review.recipe_rating == "2" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% elif review.recipe_rating == "1" %}
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                {% endif %}
+                                            </span>
+                                            <!-- recipe review description -->
+                                            <p class="recipe-review-text review-quotes center-align">
+                                                <span class="recipe-review-desc">
+                                                    "{{ review.recipe_review }}"
+                                                </span>
+                                            </p>
+                                            <!-- recipe review username -->
+                                            <p class="recipe-review-username right-align">{{ review.username }}</p>
+                                            <!-- recipe review date -->
+                                            <p class="recipe-review-date right-align">{{ review.review_date }}</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
                         </div>
                     </div>
                     <!-- buttons -->
@@ -67,8 +124,9 @@
                         <!-- review modal trigger -->
                         <a class="waves-effect waves-light btn recipe-btn modal-trigger"
                             href="#reviews-{{recipe._id}}">Reviews</a>
-                        <!-- save -->
-                        <a class="waves-effect waves-light btn recipe-btn">Save</a>
+                        <!-- view -->
+                        <a class="waves-effect waves-light btn recipe-btn"
+                            href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View</a>
                         <!-- edit -->
                         {% if session.user | lower == recipe.created_by | lower %}
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
@@ -101,14 +159,12 @@
                         <div>
                             <span class="recipe-info-heading">Prep Time: </span>
                             <span class="recipe-info">{{ recipe.prep_time }}</span>
-                            <span class="recipe-info">{{ recipe.prep_min_hour }}</span>
                         </div>
                         <hr>
                         <!-- cooking time -->
                         <div>
                             <span class="recipe-info-heading">Cooking Time: </span>
                             <span class="recipe-info">{{recipe.cooking_time}}</span>
-                            <span class="recipe-info">{{ recipe.cooking_min_hour }}</span>
                         </div>
                         <hr>
                         <!-- ingredients -->
