@@ -8,7 +8,8 @@
         <!-- recipe name -->
         <div class="row">
             <div class="input-field col s12">
-                <input id="icon_prefix" value="{{ recipe.recipe_name }}" name="recipe_name" max-length="13" type="text" class="validate">
+                <input id="icon_prefix" value="{{ recipe.recipe_name }}" name="recipe_name" max-length="13" type="text"
+                    class="validate">
                 <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
             </div>
         </div>
@@ -39,11 +40,20 @@
                 <label class="add-recipe-label" for="recipe_description">Description</label>
             </div>
         </div>
+        <!-- recipe image -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea type="url" id="image_url" name="image_url" class="materialize-textarea">
+                    {{- recipe.image_url -}}
+                </textarea>
+                <label class="add-recipe-label" for="image_url">Image URL</label>
+            </div>
+        </div>
         <!-- prep time -->
         <div class="row">
             <div class="input-field col s6">
-                <input id="prep_time" value="{{ recipe.prep_time }}" name="prep_time" 
-                    max-length="10" type="text" class="validate" pattern="[0-9]+">
+                <input id="prep_time" value="{{ recipe.prep_time }}" name="prep_time" max-length="10" type="text"
+                    class="validate" pattern="[0-9]+">
                 <label class="add-recipe-label" for="prep_time">Preparation Time</label>
             </div>
             <div class="input-field col s6">
@@ -66,9 +76,8 @@
         <!-- cooking time -->
         <div class="row">
             <div class="input-field col s6">
-                <input id="cooking_time" value="{{ recipe.cooking_time }}" name="cooking_time" 
-                    max-length="30" type="text" class="validate"
-                    pattern="[0-9]+">
+                <input id="cooking_time" value="{{ recipe.cooking_time }}" name="cooking_time" max-length="30"
+                    type="text" class="validate" pattern="[0-9]+">
                 <label class="add-recipe-label" for="cooking_time">Cooking Time</label>
             </div>
             <div class="input-field col s6">
@@ -89,8 +98,7 @@
         <!-- recipe ingredients -->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10"
-                    class="materialize-textarea">
+                <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10" class="materialize-textarea">
                     {{- recipe.recipe_ingredients -}}
                 </textarea>
                 <label class="add-recipe-label" for="recipe_ingredients">Ingredients</label>
@@ -99,8 +107,7 @@
         <!-- recipe steps -->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="recipe_method" name="recipe_method" minlength="10"
-                    class="materialize-textarea">
+                <textarea id="recipe_method" name="recipe_method" minlength="10" class="materialize-textarea">
                     {{- recipe.recipe_method -}}
                 </textarea>
                 <label class="add-recipe-label" for="recipe_method">Steps</label>
