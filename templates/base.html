@@ -18,25 +18,27 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="navbar nav-extended text-shadow">
-            <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="logo-header logo-text">Limitless Recipes</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('index') }}" class="nav-text-styling">Home</a></li>
-                    <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling">Recipes</a></li>
-                    {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}"
-                            class="nav-text-styling">Profile</a></li>
-                    <li><a href="{{ url_for('add_recipe') }}" class="nav-text-styling">New Recipe</a></li>
-                    <li><a href="{{ url_for('logout') }}" class="nav-text-styling">Log Out</a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('login') }}" class="nav-text-styling">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}" class="nav-text-styling">Register</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav class="navbar nav-extended text-shadow">
+                <div class="nav-wrapper">
+                    <a href="{{ url_for('index') }}" class="logo-header logo-text">Limitless Recipes</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('index') }}" class="nav-text-styling">Home</a></li>
+                        <li><a href="{{ url_for('get_recipes') }}" class="nav-text-styling">Recipes</a></li>
+                        {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}"
+                                class="nav-text-styling">Profile</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}" class="nav-text-styling">New Recipe</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="nav-text-styling">Log Out</a></li>
+                        {% else %}
+                        <li><a href="{{ url_for('login') }}" class="nav-text-styling">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}" class="nav-text-styling">Register</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
@@ -83,7 +85,8 @@
                 <span><a class="text-lighten-3" href="#!"><i class="icons fab fa-instagram"></i></a></span>
             </div>
             <div class="center-align copyright">
-                © 2021 <!--WEBSITE NAME--> by Jack Tubby
+                © 2021
+                <!--WEBSITE NAME--> by Jack Tubby
             </div>
         </div>
     </footer>
