@@ -3,22 +3,19 @@
 
 <!-- session user profile name -->
 <div class="row">
-    <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
-            <h3 class="center-align light-blue-text text-darken-4">
-                {{ user.first_name }}'s Profile
-            </h3>
-        </div>
-    </div>
+    <h3 class="center-align profile-name text text-shadow">
+        {{ user.first_name }}'s Profile
+    </h3>
 </div>
+
 <!-- session user's add recipes -->
 <h2 id="recipe-page-titles" class="text-shadow">Your Recipes</h2>
 <div class="row">
     {% for recipe in recipes %}
-    <div class="col s12 m4 l3">
+    <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-image">
-                <img src="../static/images/register-img.jpg">
+                <img class="recipe-image" src="{{ recipe.image_url }}">
                 <span class="card-title text-shadow s12">
                     <!-- recipe name -->
                     <h3 class="recipe-name"><strong>{{ recipe.recipe_name }}</strong></h3>
@@ -30,10 +27,86 @@
             <div class="card-content">
                 <!-- description -->
                 <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
+                <!-- reviews -->
+                <!-- modal structure -->
+                <div id="reviews-{{recipe._id}}" class="modal modal-review">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col s12 m6 recipe-name-title">{{ recipe.recipe_name }}</div>
+                            <div class="col s12 m6 right-align-add-review">
+                                <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
+                                    class="recipe-pages-btn waves-effect waves-light btn">
+                                    Add Review
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                {% for review in recipe.reviews %}
+                                <div class="card review-cards">
+                                    <div class="card-content white-text">
+                                        <span class="card-title">
+                                            <!-- converts number into star rating -->
+                                            {% if review.recipe_rating == "5" %}
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            {% elif review.recipe_rating == "4" %}
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                            {% elif review.recipe_rating == "3" %}
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            {% elif review.recipe_rating == "2" %}
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            {% elif review.recipe_rating == "1" %}
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        </span>
+                                        <!-- recipe review description -->
+                                        <p class="recipe-review-text review-quotes center-align">
+                                            <span class="recipe-review-desc">
+                                                "{{ review.recipe_review }}"
+                                            </span>
+                                        </p>
+                                        <!-- recipe review username -->
+                                        <p class="recipe-review-username right-align">{{ review.username }}</p>
+                                        <!-- recipe review date -->
+                                        <p class="recipe-review-date right-align">{{ review.review_date }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
                 <!-- buttons -->
                 <div class="button-wrappers center-align">
-                    <!-- save -->
-                    <a class="waves-effect waves-light btn recipe-btn">Save</a>
+                    <!-- review modal trigger -->
+                    <a class="waves-effect waves-light btn recipe-btn modal-trigger"
+                        href="#reviews-{{recipe._id}}">Reviews</a>
+                    <!-- view -->
+                    <a class="waves-effect waves-light btn recipe-btn"
+                        href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View</a>
                     <!-- edit -->
                     {% if session.user | lower == recipe.created_by | lower %}
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
@@ -41,6 +114,7 @@
                     <!-- delete | modal trigger -->
                     <a class="waves-effect waves-light btn modal-trigger recipe-btn"
                         href="#delete_task_modal-{{loop.index}}">Delete</a>
+                    {% endif %}
                 </div>
                 <!-- modal content -->
                 <div id="delete_task_modal-{{loop.index}}" class="modal">
@@ -65,14 +139,12 @@
                     <div>
                         <span class="recipe-info-heading">Prep Time: </span>
                         <span class="recipe-info">{{ recipe.prep_time }}</span>
-                        <span class="recipe-info">{{ recipe.prep_min_hour }}</span>
                     </div>
                     <hr>
                     <!-- cooking time -->
                     <div>
                         <span class="recipe-info-heading">Cooking Time: </span>
                         <span class="recipe-info">{{recipe.cooking_time}}</span>
-                        <span class="recipe-info">{{ recipe.cooking_min_hour }}</span>
                     </div>
                     <hr>
                     <!-- ingredients -->
@@ -85,19 +157,12 @@
                     <hr>
                     <!-- published by -->
                     <p class="published-by">Published by {{ recipe.created_by }}</p>
-                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
-    </div>
-    <!-- saved recipes -->
-    <div class="row">
-        <div class="col s12 m12 l12">
-            <h2>Your Saved Recipes</h2>
-        </div>
-    </div>
+</div>
 
 
-    {% endblock %}
+{% endblock %}
