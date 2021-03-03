@@ -415,6 +415,40 @@ hr.view-hr {
     cursor: pointer;
 }
 
+/* edit recipe */
+#edit-recipe-background {
+    background-image: url(../images/edit-recipe-background.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.edit-recipe-header {
+    color: #116466;
+    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.edit-recipe-submit {
+    color: #116466;
+    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    border: 1px solid #116466;
+    border-radius: 3px;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(to right, #116466 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+
+.edit-recipe-submit:hover {
+    background-position: left bottom;
+    color: white;
+    cursor: pointer;
+}
+
 /* register.html */
 #background-register-image {
     background-image: url(../images/register-img.jpg);

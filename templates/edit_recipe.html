@@ -1,99 +1,110 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align light-blue-text text-darken-4">Edit Recipe</h3>
+<body id="edit-recipe-background">
+    <div class="container">
+        <h3 class="center-align add-recipe-header text-shadow">Edit Recipe</h3>
 
-<div class="row">
-    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-        <!-- recipe name -->
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="icon_prefix" value="{{ recipe.recipe_name }}" name="recipe_name" max-length="13" type="text"
-                    class="validate">
-                <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
-            </div>
-        </div>
-        <!-- recipe category -->
-        <div class="row">
-            <div class="input-field col s12">
-                <select id="category_name" name="category_name" class="validate">
-                    <option value="" disabled>Choose Category</option>
-                    {% for category in categories %}
-                    {% if category.category_name == recipe.category_name %}
-                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                    {% else %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                    {% endif %}
-                    {% endfor %}
-                </select>
-                <label class="add-recipe-label" for="category_name">Task Category</label>
-            </div>
-        </div>
-        <!-- desription -->
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="49"
-                    class="materialize-textarea" onkeyup="countChar(this)">
+        <div class="row margin-top-register">
+            <div class="col s6"></div>
+            <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+                <div class="card-panel">
+                <!-- recipe name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="icon_prefix" value="{{ recipe.recipe_name }}" name="recipe_name" max-length="13"
+                            type="text" class="validate">
+                        <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
+                    </div>
+                </div>
+                <!-- recipe category -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="category_name" name="category_name" class="validate">
+                            <option value="" disabled>Choose Category</option>
+                            {% for category in categories %}
+                            {% if category.category_name == recipe.category_name %}
+                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                        <label class="add-recipe-label" for="category_name">Task Category</label>
+                    </div>
+                </div>
+                <!-- desription -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="49"
+                            class="materialize-textarea" onkeyup="countChar(this)">
                     {{- recipe.recipe_description -}}
                 </textarea>
-                <span id="charNum" class="charnum"></span>
-                <label class="add-recipe-label" for="recipe_description">Description</label>
-            </div>
-        </div>
-        <!-- recipe image -->
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea type="url" id="image_url" name="image_url" class="materialize-textarea">
+                        <span id="charNum" class="charnum"></span>
+                        <label class="add-recipe-label" for="recipe_description">Description</label>
+                    </div>
+                </div>
+                <!-- recipe image -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea type="url" id="image_url" name="image_url" class="materialize-textarea">
                     {{- recipe.image_url -}}
                 </textarea>
-                <label class="add-recipe-label" for="image_url">Image URL</label>
-            </div>
-        </div>
-        <!-- new prep time -->
-        <div class="row">
-            <div class="input-field col s6">
-                <textarea type="time" id="prep_time" class="timepicker materialize-textarea" name="prep_time" step="1" required>
+                        <label class="add-recipe-label" for="image_url">Image URL</label>
+                    </div>
+                </div>
+                <!-- new prep time -->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea type="time" id="prep_time" class="timepicker materialize-textarea" name="prep_time"
+                            step="1" required>
                     {{- recipe.prep_time -}}
                 </textarea>
-                <label class="add-recipe-label" for="prep_time">Prep Time</label>
-            </div>
-            <!-- cooking time -->
-            <div class="input-field col s6">
-                <textarea type="time" id="cooking_time" class="materialize-textarea" name="cooking_time" step="1" required>
+                        <label class="add-recipe-label" for="prep_time">Prep Time</label>
+                    </div>
+                    <!-- cooking time -->
+                    <div class="input-field col s6">
+                        <textarea type="time" id="cooking_time" class="materialize-textarea" name="cooking_time"
+                            step="1" required>
                     {{- recipe.cooking_time -}}
                 </textarea>
-                <label class="add-recipe-label" for="cooking_time">Cooking Time</label>
-            </div>
-        </div>
-        <!-- recipe ingredients -->
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10" class="materialize-textarea">
+                        <label class="add-recipe-label" for="cooking_time">Cooking Time</label>
+                    </div>
+                </div>
+                <!-- recipe ingredients -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10"
+                            class="materialize-textarea">
                     {{- recipe.recipe_ingredients -}}
                 </textarea>
-                <label class="add-recipe-label" for="recipe_ingredients">Ingredients</label>
-            </div>
-        </div>
-        <!-- recipe steps -->
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="recipe_method" name="recipe_method" minlength="10" class="materialize-textarea">
+                        <label class="add-recipe-label" for="recipe_ingredients">Ingredients</label>
+                    </div>
+                </div>
+                <!-- recipe steps -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="recipe_method" name="recipe_method" minlength="10" class="materialize-textarea">
                     {{- recipe.recipe_method -}}
                 </textarea>
-                <label class="add-recipe-label" for="recipe_method">Steps</label>
-            </div>
+                        <label class="add-recipe-label" for="recipe_method">Steps</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <!-- cancel form -->
+                        <a href="{{ url_for('get_recipes') }}" class="btn-large red">Cancel</a>
+                        <!-- edit submit -->
+                        <button class="btn-large waves-effect waves-light" type="submit">
+                            Edit Recipe
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col s12 center-align">
-                <!-- cancel form -->
-                <a href="{{ url_for('get_recipes') }}" class="btn-large red">Cancel</a>
-                <!-- edit submit -->
-                <button class="btn-large waves-effect waves-light" type="submit">
-                    Edit Recipe
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
+    </div>
+
+</body>
 
 {% endblock %}
