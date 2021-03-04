@@ -3,7 +3,6 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('.modal').modal();
-    $('.timepicker').timepicker();
     $('.materialboxed').materialbox();
     $('input.autocomplete').autocomplete({
         data: {
