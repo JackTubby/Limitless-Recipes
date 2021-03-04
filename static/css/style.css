@@ -90,6 +90,11 @@
     color: white;
     margin: 0;
 }
+.index-div-spacing {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
 /* Query to lower font size for smaller screens */
 @media (min-width:280px) and (max-width:1212px){
 .index-h1 {
