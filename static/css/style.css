@@ -53,7 +53,6 @@
 
 .nav-text-styling {
     color: white;
-    font-size: 17px;
     font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif; 
 }
 
@@ -211,6 +210,19 @@
 .recipe-image {
     width: 8rem;
     height: 34rem;
+}
+
+/* Media Query to reduce height of recipe image for medium size screens (ipad pro) */
+@media (min-width:1400px) and (max-width:1950px){
+.recipe-image {
+    height: 28rem;
+}
+}
+
+@media (min-width:993px) and (max-width:1400px){
+.recipe-image {
+    height: 15rem;
+}
 }
 
 .recipe-desc {

@@ -2,7 +2,7 @@
 {% block content %}
 
 <body id="recipe-page-content">
-<br>
+    <br>
     <div class="row card-panel search-card">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -46,8 +46,6 @@
                     </span>
                 </div>
                 <div class="card-content">
-                    <!-- description -->
-                    <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
                     <!-- reviews -->
                     <!-- modal structure -->
                     <div id="reviews-{{recipe._id}}" class="modal modal-review">
@@ -156,6 +154,8 @@
                         <i class="far fa-window-close right close-icon"></i>
                     </div>
                     <div class="center-align recipe-info-wrapper">
+                        <!-- description -->
+                        <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
                         <!-- prep time -->
                         <div>
                             <span class="recipe-info-heading">Prep Time: </span>
