@@ -405,10 +405,8 @@ hr.view-hr {
 /* new recipe */
 #add-recipe-body {
     background-image: url(../images/add-recipe-background.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .charnum {
