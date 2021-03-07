@@ -86,11 +86,13 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-
+        today_date = date.today()
+        current_date = today_date.strftime("%d %b %y")
         register = {
             "username": request.form.get("username").lower(),
             "first_name": request.form.get("first_name"),
             "last_name": request.form.get("last_name"),
+            "register_date": current_date,
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
