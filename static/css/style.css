@@ -537,3 +537,24 @@ hr.view-hr {
     padding-top: 10px;
     font-size: 18px;
 }
+
+/* Login */
+.login-btn {
+    background-color: #116466;
+    height: 40px;
+}
+
+#login-background {
+    background-image: url(../images/edit-recipe-background.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-heading {
+    color: white;
+    font-size: 36px;
+    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 2px rgba(0,0,0);
+}
