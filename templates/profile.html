@@ -3,13 +3,13 @@
 
 <!-- session user profile name -->
 <div class="row">
+    <div class="card-panel">
     <h3 class="center-align profile-name text text-shadow">
         {{ user.first_name }}'s Profile
     </h3>
+    <div class="center-align">Registration Date: {{ user.register_date }}</div>
 </div>
-<div class="row">
-    <div class="h2">Registration Date: {{ user.register_date }}</div>
-</div>
+    </div>
 
 <!-- session user's add recipes -->
 <h2 id="recipe-page-titles" class="text-shadow">Your Recipes</h2>
