@@ -171,14 +171,6 @@
                                 <span class="recipe-info">{{recipe.cooking_time}}</span>
                             </div>
                             <hr>
-                            <!-- ingredients -->
-                            <h5 class="recipe-info-heading">Recipe Ingredients:</h5>
-                            <p class="recipe-info">{{ recipe.recipe_ingredients }}</p>
-                            <hr>
-                            <!-- steps -->
-                            <h5 class="recipe-info-heading">Recipe Steps:</h5>
-                            <p class="recipe-info">{{ recipe.recipe_method }}</p>
-                            <hr>
                             <!-- published by -->
                             <p class="published-by">Published by {{ recipe.created_by }}</p>
                         </div>
@@ -188,7 +180,6 @@
             {% endfor %}
         </div>
     </div>
-
 </body>
 
 {% endblock %}
