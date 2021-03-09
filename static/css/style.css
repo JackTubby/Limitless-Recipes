@@ -181,19 +181,37 @@
 
 /* search */
 .search-card {
+    background-color: rgba(0,0,0,0.7);
     margin: auto;
     width: 50%;
     border-radius: 30px;
+    margin-bottom: 30px;
 }
 
-.search-submit {
+/* media query for search card panel to be full width on smaller screens */
+@media (max-width:1320px){
+.search-card {
+    width: auto;
+}
+}
+
+.submit-reset-wrapper {
+    margin-top: 18px;
+}
+
+.search-reset, .search-submit {
     background-color: #116466;
+    height: 40px;
+    width: 80px;
+}
+
+.search-reset:hover, .search-submit:hover {
+    filter: brightness(1.1);
 }
 
 .search-icon {
     color: #116466;
 }
-
 /* recipe cards */
 .recipe-name {
     margin: 0;
