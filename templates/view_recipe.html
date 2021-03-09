@@ -45,11 +45,15 @@
 <div class="row center-align">
     <div class="col s12 l6">
         <h4>Ingredients:</h4>
-        <p>{{ recipe.recipe_ingredients }}</p>
+        {% for ingredient in recipe.recipe_ingredient %}
+        <p>{{ ingredient }}</p>
+        {% endfor %}
     </div>
     <div class="col s12 l6">
         <h4>Steps:</h4>
-        <p>{{ recipe.recipe_method }}</p>
+        {% for method in recipe.recipe_method %}
+        <p>{{ method }}</p>
+        {% endfor %}
     </div>
 </div>
 <hr class="view-hr">
