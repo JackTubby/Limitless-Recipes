@@ -22,16 +22,12 @@
                     </div>
                 </div>
                 <div class="col s12 l4 submit-reset-wrapper">
-                    <div class="col s6">
-                        <button type="submit" class="search-submit btn text-shadow">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <div class="col s6">
-                        <a href="{{ url_for('get_recipes') }}" class="search-reset red btn text-shadow">
-                            <i class="fas fa-undo"></i>
-                        </a>
-                    </div>
+                    <button type="submit" class="search-submit btn text-shadow">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="{{ url_for('get_recipes') }}" class="search-reset red btn text-shadow">
+                        <i class="fas fa-undo"></i>
+                    </a>
                 </div>
             </div>
         </form>
