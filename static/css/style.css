@@ -438,6 +438,30 @@ hr.view-hr {
     cursor: pointer;
 }
 
+.add-recipe-cardpanel {
+    border: 2px solid #116466;
+    border-radius: 2%;
+}
+
+.add-recipe-btns {
+    border: 2px solid #116466;
+    color: black;
+    background-color: white;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+.form-textarea {
+    border-bottom: 1px solid black ;
+    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 /* edit recipe */
 #edit-recipe-background {
     background-image: url(../images/edit-recipe-background.jpg);
