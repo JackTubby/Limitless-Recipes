@@ -31,9 +31,9 @@ def index():
 def get_recipes():
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
-    per_page = 12
+    per_page = 6
     total = mongo.db.recipes.find().count()
-    recipes = list(mongo.db.recipes.find())
+    recipes = mongo.db.recipes.find()
     reviews = list(mongo.db.reviews.find())
     paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
     pagination = Pagination(page=page, per_page=per_page, total=total)
