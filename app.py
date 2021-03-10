@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import date
+from flask_paginate import Pagination, get_page_args
 if os.path.exists("env.py"):
     import env
 
@@ -28,9 +29,21 @@ def index():
 # --- Recipe Pages --- #
 @app.route("/get_recipes")
 def get_recipes():
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    per_page = 12
+    total = mongo.db.recipes.find().count()
     recipes = list(mongo.db.recipes.find())
     reviews = list(mongo.db.reviews.find())
-    return render_template("recipe.html", recipes=recipes, reviews=reviews)
+    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+
+    return render_template(
+        "recipe.html",
+        recipes=paginatedResults,
+        reviews=reviews,
+        page=page, per_page=per_page,
+        pagination=pagination)
 
 
 @app.route("/breakfast")
