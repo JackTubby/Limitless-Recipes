@@ -32,11 +32,10 @@
             </div>
         </form>
     </div>
-    <div class="container">
         <h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
         <div class="row">
             {% for recipe in recipes %}
-            <div class="col s12 l6">
+            <div class="col s12 l3">
                 <div class="card">
                     <div class="card-image">
                         <img class="recipe-image" src="{{ recipe.image_url }}">
@@ -180,7 +179,6 @@
             {% endfor %}
         </div>
         {{ pagination.links }}
-    </div>
 </body>
 
 {% endblock %}
