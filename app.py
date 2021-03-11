@@ -31,12 +31,14 @@ def index():
 def get_recipes():
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
-    per_page = 6
+    # Sets amount of recipes on each page
+    per_page = 8
+
     if page == 1:
         offset = 0
     else:
         offset = (page - 1) * per_page
-    print(offset)
+
     total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find()
     reviews = list(mongo.db.reviews.find())
