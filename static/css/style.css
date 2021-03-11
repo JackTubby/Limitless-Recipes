@@ -218,6 +218,18 @@
     font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
+.pagination li a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 0 10px;
+    line-height: 30px;
+}
+
+.pagination li.active {
+    background-color: #116466;
+}
+
 /* recipe cards */
 .recipe-name {
     margin: 0;
