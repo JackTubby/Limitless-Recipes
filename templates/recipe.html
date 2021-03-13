@@ -54,12 +54,14 @@
                         <div class="modal-content">
                             <div class="row">
                                 <div class="col s12 m6 recipe-name-title">{{ recipe.recipe_name }}</div>
+                                {% if session.user %}
                                 <div class="col s12 m6 right-align-add-review">
                                     <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
                                         class="recipe-pages-btn waves-effect waves-light btn">
                                         Add Review
                                     </a>
                                 </div>
+                                {% endif %}
                             </div>
                             <div class="row">
                                 <div class="col s12">
@@ -110,6 +112,11 @@
                                             <p class="recipe-review-username right-align">{{ review.username }}</p>
                                             <!-- recipe review date -->
                                             <p class="recipe-review-date right-align">{{ review.review_date }}</p>
+                                            <!-- recipe review delete -->
+                                            {% if session.user | lower == recipe.created_by | lower %}
+                                            <a href="{{ url_for('delete_review', recipe_id=recipe._id, review_id=review._id) }}"
+                                                class="waves-effect waves-light btn recipe-btn">Delete</a>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     {% endfor %}
