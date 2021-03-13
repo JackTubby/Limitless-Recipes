@@ -198,17 +198,10 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Added Successfully")
         return redirect(url_for("get_recipes"))
-
-    cooking_mins_hours = mongo.db.cooking_mins_hours.find().sort(
-        "cooking_min_hour", 1)
-    prep_mins_hours = mongo.db.prep_mins_hours.find().sort(
-        "prep_min_hour", 1)
     categories = mongo.db.categories.find().sort(
         "category_name", 1)
     return render_template(
-        "add_recipe.html", categories=categories,
-        prep_mins_hours=prep_mins_hours,
-        cooking_mins_hours=cooking_mins_hours)
+        "add_recipe.html", categories=categories)
 
 
 # --- Edit Recipe --- #
@@ -220,25 +213,19 @@ def edit_recipe(recipe_id):
             "category_name": request.form.get("category_name"),
             "recipe_description": request.form.get("recipe_description"),
             "image_url": request.form.get("image_url"),
-            "prep_min_hour": request.form.get("prep_min_hour"),
             "prep_time": request.form.get("prep_time"),
-            "cooking_min_hour": request.form.get("cooking_min_hour"),
             "cooking_time": request.form.get("cooking_time"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_method": request.form.get("recipe_method"),
+            "recipe_ingredient": request.form.getlist("recipe_ingredient"),
+            "recipe_method": request.form.getlist("recipe_method"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated Successfully")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    cooking_mins_hours = mongo.db.cooking_mins_hours.find().sort(
-        "cooking_min_hour", 1)
-    prep_mins_hours = mongo.db.prep_mins_hours.find().sort("prep_min_hour", 1)
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
-        "edit_recipe.html", recipe=recipe, categories=categories,
-        prep_mins_hours=prep_mins_hours, cooking_mins_hours=cooking_mins_hours)
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 # --- Delete Recipe --- #
