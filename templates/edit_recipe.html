@@ -60,7 +60,7 @@
                             step="1" required>
                     {{- recipe.prep_time -}}
                 </textarea>
-                        <label class="add-recipe-label" for="prep_time">Prep Time</label>
+                        <label class="add-recipe-label" for="prep_time">Prep Time (minutes)</label>
                     </div>
                     <!-- cooking time -->
                     <div class="input-field col s6">
@@ -68,7 +68,7 @@
                             step="1" required>
                     {{- recipe.cooking_time -}}
                 </textarea>
-                        <label class="add-recipe-label" for="cooking_time">Cooking Time</label>
+                        <label class="add-recipe-label" for="cooking_time">Cooking Time (minutes)</label>
                     </div>
                 </div>
                 <!-- recipe ingredients -->
@@ -76,7 +76,7 @@
                     <div class="input-field col s12">
                         <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="10"
                             class="materialize-textarea">
-                    {{- recipe.recipe_ingredients -}}
+                    {{- recipe.recipe_ingredient -}}
                 </textarea>
                         <label class="add-recipe-label" for="recipe_ingredients">Ingredients</label>
                     </div>
