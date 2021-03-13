@@ -532,6 +532,12 @@ hr.view-hr {
     cursor: pointer;
 }
 
+.edit-recipe-image {
+    height: 90px;
+    width: 90px;
+    border: 4px solid #116466;
+}
+
 /* profile */
 .profile-name {
     color: #116466;
