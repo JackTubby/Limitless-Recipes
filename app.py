@@ -55,26 +55,106 @@ def get_recipes():
 
 @app.route("/breakfast")
 def breakfast():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("breakfast.html", recipes=recipes)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    # Sets amount of recipes on each page
+    per_page = 8
+
+    if page == 1:
+        offset = 0
+    else:
+        offset = (page - 1) * per_page
+
+    total = mongo.db.recipes.find().count()
+    recipes = mongo.db.recipes.find()
+    reviews = list(mongo.db.reviews.find())
+    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+
+    return render_template(
+        "breakfast.html",
+        recipes=paginatedResults,
+        reviews=reviews,
+        page=page, per_page=per_page,
+        pagination=pagination)
 
 
 @app.route("/lunch")
 def lunch():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("lunch.html", recipes=recipes)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    # Sets amount of recipes on each page
+    per_page = 8
+
+    if page == 1:
+        offset = 0
+    else:
+        offset = (page - 1) * per_page
+
+    total = mongo.db.recipes.find().count()
+    recipes = mongo.db.recipes.find()
+    reviews = list(mongo.db.reviews.find())
+    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+
+    return render_template(
+        "lunch.html",
+        recipes=paginatedResults,
+        reviews=reviews,
+        page=page, per_page=per_page,
+        pagination=pagination)
 
 
 @app.route("/dinner")
 def dinner():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("dinner.html", recipes=recipes)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    # Sets amount of recipes on each page
+    per_page = 8
+
+    if page == 1:
+        offset = 0
+    else:
+        offset = (page - 1) * per_page
+
+    total = mongo.db.recipes.find().count()
+    recipes = mongo.db.recipes.find()
+    reviews = list(mongo.db.reviews.find())
+    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+
+    return render_template(
+        "dinner.html",
+        recipes=paginatedResults,
+        reviews=reviews,
+        page=page, per_page=per_page,
+        pagination=pagination)
 
 
 @app.route("/dessert")
 def dessert():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("dessert.html", recipes=recipes)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    # Sets amount of recipes on each page
+    per_page = 8
+
+    if page == 1:
+        offset = 0
+    else:
+        offset = (page - 1) * per_page
+
+    total = mongo.db.recipes.find().count()
+    recipes = mongo.db.recipes.find()
+    reviews = list(mongo.db.reviews.find())
+    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+
+    return render_template(
+        "dessert.html",
+        recipes=paginatedResults,
+        reviews=reviews,
+        page=page, per_page=per_page,
+        pagination=pagination)
 
 
 # --- Search --- #
