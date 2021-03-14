@@ -160,9 +160,28 @@ def dessert():
 # --- Search --- #
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    # Sets amount of recipes on each page
+    per_page = 8
+
+    if page == 1:
+        offset = 0
+    else:
+        offset = (page - 1) * per_page
+
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipe.html", recipes=recipes)
+    recipes = mongo.db.recipes.find({"$text": {"$search": query}})
+    total = mongo.db.recipes.count()
+    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+
+    return render_template(
+     "recipe.html",
+     recipes=paginatedResults,
+     page=page,
+     per_page=per_page,
+     pagination=pagination)
 
 
 # --- View Recipe --- #
