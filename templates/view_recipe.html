@@ -11,7 +11,11 @@
 <!-- Recipe Image -->
 <div class="row center-align">
     <div class="col s12 l6">
+        {% if recipe.image_url %}
         <img src="{{ recipe.image_url }}" class="view-recipe-img " alt="Recipe Image" />
+        {% else %}
+        <img class="view-recipe-img" src="../static/images/recipe-page-background.jpg">
+        {% endif %}
     </div>
     <!-- Recipe Details -->
     <div class="col s12 l4 left-align">
