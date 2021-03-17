@@ -18,59 +18,65 @@
     <div class="card-panel search-card">
         <form action="{{ url_for('search') }}" method="post">
             <div class="row center-align">
-                <div class="col s12 l8">
+                <div class="col s12 l6">
                     <div class="input-field">
                         <i class="fas fa-search prefix search-icon"></i>
                         <input type="text" name="query" id="query" minlength="3" class="validate search-input" required>
                         <label for="query">Search Recipes</label>
                     </div>
                 </div>
-                <div class="col s12 l4 submit-reset-wrapper">
+                <div class="col s12 l6 submit-reset-wrapper">
                     <button type="submit" class="search-submit btn text-shadow">
                         <i class="fas fa-search"></i>
                     </button>
                     <a href="{{ url_for('get_recipes') }}" class="search-reset red btn text-shadow">
                         <i class="fas fa-undo"></i>
                     </a>
+                    <!-- Dropdown Trigger -->
+                    <a class="dropdown-trigger search-filters btn text-shadow" href='#' data-target="dropdown1">Drop
+                        Me!</a>
+                    <!-- Dropdown Structure -->
+                    <ul id="dropdown1" class="dropdown-content">
+                        <form action="{{ url_for('get_recipes') }}">
+                            <li>
+                                <label>
+                                    <input name="all" type="checkbox" />
+                                    <span>All</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input name="Breakfast" type="checkbox" />
+                                    <span>Breakfast</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input name="Lunch" type="checkbox" />
+                                    <span>Lunch</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input name="Dinner" type="checkbox" />
+                                    <span>Dinner</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input name="Dessert" type="checkbox" />
+                                    <span>Dessert</span>
+                                </label>
+                            </li>
+                            <button type="submit" class="search-submit btn text-shadow">
+                                Search
+                            </button>
+                        </form>
+                    </ul>
                 </div>
             </div>
         </form>
     </div>
-    <form action="{{ url_for('get_recipes') }}">
-        <p>
-            <label>
-                <input name="all" type="checkbox" />
-                <span>All</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input name="Breakfast" type="checkbox" />
-                <span>Breakfast</span> 
-            </label>
-        </p>
-        <p> 
-            <label>
-                <input name="Lunch" type="checkbox" />
-                <span>Lunch</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input name="Dinner" type="checkbox" />
-                <span>Dinner</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input name="Dessert" type="checkbox" />
-                <span>Dessert</span>
-            </label>
-        </p>
-        <button type="submit" class="search-submit btn text-shadow">
-            Search
-        </button>
-    </form>
     <h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
     <div class="row">
         {% for recipe in recipes %}
