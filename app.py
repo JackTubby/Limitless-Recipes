@@ -51,6 +51,11 @@ def get_recipes():
                 {"category_name": category}))
     else:
         recipes = list(mongo.db.recipes.find().sort([("_id", -1)]))
+    # gets the checkboxes that are selected
+    args = list(request.args)
+    print(args)
+    search_category = mongo.db.recipes.find({"category_name": {"$in": args}})
+    print(list(search_category))
 
     total = mongo.db.recipes.find().count()
     # Gets user reviews
@@ -61,6 +66,7 @@ def get_recipes():
     return render_template(
         "recipe.html",
         recipes=paginatedResults,
+        search_category=search_category,
         reviews=reviews,
         page=page, per_page=per_page,
         pagination=pagination)
@@ -79,8 +85,15 @@ def search():
     else:
         offset = (page - 1) * per_page
 
-    query = request.form.get("query")
-    recipes = mongo.db.recipes.find({"$text": {"$search": query}})
+    if "category" in request.args:
+        print("there is category")
+        category = request.args.get("category")
+        recipes = mongo.db.recipes.find(
+            {"$text": {"$search": category}})
+    else:
+        query = request.form.get("query")
+        recipes = mongo.db.recipes.find({"$text": {"$search": query}})
+
     total = mongo.db.recipes.count()
     paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
     pagination = Pagination(page=page, per_page=per_page, total=total)
