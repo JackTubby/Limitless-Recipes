@@ -5,10 +5,14 @@
     <br>
     <div class="col s12 center-align recipe-page-options">
         <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn waves-effect waves-light btn">All</a>
-        <a href="{{ url_for('get_recipes', category='Breakfast') }}" class="recipe-pages-btn waves-effect waves-light btn">Breakfast</a>
-        <a href="{{ url_for('get_recipes', category='Lunch') }}" class="recipe-pages-btn waves-effect waves-light btn">Lunch</a>
-        <a href="{{ url_for('get_recipes', category='Dinner') }}" class="recipe-pages-btn waves-effect waves-light btn">Dinner</a>
-        <a href="{{ url_for('get_recipes', category='Dessert') }}" class="recipe-pages-btn waves-effect waves-light btn">Dessert</a>
+        <a href="{{ url_for('get_recipes', category='Breakfast') }}"
+            class="recipe-pages-btn waves-effect waves-light btn">Breakfast</a>
+        <a href="{{ url_for('get_recipes', category='Lunch') }}"
+            class="recipe-pages-btn waves-effect waves-light btn">Lunch</a>
+        <a href="{{ url_for('get_recipes', category='Dinner') }}"
+            class="recipe-pages-btn waves-effect waves-light btn">Dinner</a>
+        <a href="{{ url_for('get_recipes', category='Dessert') }}"
+            class="recipe-pages-btn waves-effect waves-light btn">Dessert</a>
     </div>
     <br>
     <div class="card-panel search-card">
@@ -32,6 +36,41 @@
             </div>
         </form>
     </div>
+    <form action="{{ url_for('get_recipes') }}">
+        <p>
+            <label>
+                <input name="all" type="checkbox" />
+                <span>All</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="Breakfast" type="checkbox" />
+                <span>Breakfast</span> 
+            </label>
+        </p>
+        <p> 
+            <label>
+                <input name="Lunch" type="checkbox" />
+                <span>Lunch</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="Dinner" type="checkbox" />
+                <span>Dinner</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="Dessert" type="checkbox" />
+                <span>Dessert</span>
+            </label>
+        </p>
+        <button type="submit" class="search-submit btn text-shadow">
+            Search
+        </button>
+    </form>
     <h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
     <div class="row">
         {% for recipe in recipes %}
