@@ -199,10 +199,16 @@
     margin-top: 18px;
 }
 
-.search-reset, .search-submit {
+.search-reset, .search-submit{
     background-color: #116466;
     height: 40px;
     width: 80px;
+}
+
+.search-filters {
+    background-color: white;
+    height: 40px;
+    width: 110px;
 }
 
 .search-reset:hover {
