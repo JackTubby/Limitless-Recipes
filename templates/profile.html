@@ -4,12 +4,12 @@
 <!-- session user profile name -->
 <div class="row">
     <div class="card-panel">
-    <h3 class="center-align profile-name text text-shadow">
-        {{ user.first_name }}'s Profile
-    </h3>
-    <div class="center-align">Registration Date: {{ user.register_date }}</div>
-</div>
+        <h3 class="center-align profile-name text text-shadow">
+            {{ user.first_name }}'s Profile
+        </h3>
+        <div class="center-align">Registration Date: {{ user.register_date }}</div>
     </div>
+</div>
 
 <!-- session user's add recipes -->
 <h2 id="recipe-page-titles" class="text-shadow">Your Recipes</h2>
@@ -18,7 +18,11 @@
     <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-image">
+                {% if recipe.image_url %}
                 <img class="recipe-image" src="{{ recipe.image_url }}">
+                {% else %}
+                <img class="recipe-image" src="../static/images/recipe-page-background.jpg">
+                {% endif %}
                 <span class="card-title text-shadow s12">
                     <!-- recipe name -->
                     <h3 class="recipe-name"><strong>{{ recipe.recipe_name }}</strong></h3>
