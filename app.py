@@ -51,7 +51,7 @@ def get_recipes():
                 {"category_name": category}))
     else:
         recipes = list(mongo.db.recipes.find().sort([("_id", -1)]))
-    # gets the checkboxes that are selected
+    # Search cateogry filter
     args = list(request.args)
     print(args)
     search_category = mongo.db.recipes.find({"category_name": {"$in": args}})
@@ -178,6 +178,15 @@ def login():
 # --- Profile --- #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    per_page = 4
+
+    if page == 1:
+        offset = 0
+    else:
+        offset = (page - 1) * per_page
+
     # grab the session user's username from the db
     user = mongo.db.users.find_one(
         {"username": session["user"]})
@@ -186,8 +195,17 @@ def profile(username):
         recipes = list(mongo.db.recipes.find(
             {'created_by': session.get('user')}))
 
+    total = mongo.db.recipes.count()
+    paginatedResults = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+
     return render_template(
-        "profile.html", user=user, recipes=recipes)
+        "profile.html",
+        user=user,
+        recipes=paginatedResults,
+        page=page,
+        per_page=per_page,
+        pagination=pagination)
 
     return redirect(url_for("login"))
 
