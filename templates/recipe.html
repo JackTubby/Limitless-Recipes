@@ -37,17 +37,11 @@
         </form>
     </div>
     <!-- Dropdown Trigger -->
-    <a class="dropdown-trigger search-filters btn text-shadow" href='#' data-target="dropdown1">Drop
+    <a class="dropdown-trigger search-filters btn text-shadow" href="#" data-target="dropdown1">Drop
         Me!</a>
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
         <form action="{{ url_for('get_recipes') }}">
-            <li>
-                <label>
-                    <input name="all" type="checkbox" />
-                    <span>All</span>
-                </label>
-            </li>
             <li>
                 <label>
                     <input name="Breakfast" type="checkbox" />
