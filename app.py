@@ -34,7 +34,7 @@ def get_recipes():
         page_parameter='page', per_page_parameter='per_page')
     # Sets amount of recipes on each page
     per_page = 8
-
+    # Adds pages for pagination
     if page == 1:
         offset = 0
     else:
@@ -51,15 +51,14 @@ def get_recipes():
                 {"category_name": category}))
     else:
         recipes = list(mongo.db.recipes.find().sort([("_id", -1)]))
-    # Search cateogry filter
+    # Search category filter
     args = list(request.args)
-    print(args)
     search_category = mongo.db.recipes.find({"category_name": {"$in": args}})
-    print(list(search_category))
-
+    # counts total of recipes
     total = mongo.db.recipes.find().count()
     # Gets user reviews
     reviews = list(mongo.db.reviews.find())
+    #
     paginatedResults = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page, total=total)
 
@@ -75,11 +74,12 @@ def get_recipes():
 # --- Search --- #
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # pagination
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
     # Sets amount of recipes on each page
     per_page = 8
-
+    # Adds pages for pagination
     if page == 1:
         offset = 0
     else:
@@ -93,8 +93,9 @@ def search():
     else:
         query = request.form.get("query")
         recipes = mongo.db.recipes.find({"$text": {"$search": query}})
-
+    # counts total of recipes
     total = mongo.db.recipes.count()
+    #
     paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
     pagination = Pagination(page=page, per_page=per_page, total=total)
 
@@ -109,8 +110,11 @@ def search():
 # --- View Recipe --- #
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
+    # gets selected user recipe
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    # gets recipe reviews
     reviews = list(mongo.db.reviews.find())
+
     return render_template(
         "view_recipe.html", recipe_id=recipe_id,
         recipe=recipe, reviews=reviews)
@@ -234,6 +238,7 @@ def add_recipe():
             "recipe_method": request.form.getlist("recipe_method"),
             "created_by": session["user"]
         }
+        # inserts recipe into db
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Added Successfully")
         return redirect(url_for("get_recipes"))
@@ -258,6 +263,7 @@ def edit_recipe(recipe_id):
             "recipe_method": request.form.getlist("recipe_method"),
             "created_by": session["user"]
         }
+        # updates recipe in db
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated Successfully")
 
@@ -270,6 +276,7 @@ def edit_recipe(recipe_id):
 # --- Delete Recipe --- #
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    # removes recipe in db
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
     return redirect(url_for("get_recipes"))
@@ -289,6 +296,7 @@ def add_review(recipe_id):
             "recipe_review": request.form.get("recipe_review"),
             "review_date": current_date
         }
+        # adds review to db
         mongo.db.recipes.update(
             {"_id": ObjectId(recipe_id)}, {"$push": {"reviews": add_review}})
 
@@ -302,6 +310,7 @@ def add_review(recipe_id):
 # --- Delete Review --- #
 @app.route("/delete_review/<recipe_id>/<review_id>")
 def delete_review(recipe_id, review_id):
+    # deletes review in db
     mongo.db.recipes.update_one(
         {"_id": ObjectId(recipe_id)},
         {"$pull": {'reviews': {'_id': ObjectId(review_id)}}})
