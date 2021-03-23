@@ -63,6 +63,7 @@
 <hr class="view-hr">
 <!-- Recipe Reviews-->
 <div class="row">
+    {% if recipe.reviews %}
     {% for review in recipe.reviews %}
     <div class="col s12 m4 l3">
         <div class="card review-cards">
@@ -117,10 +118,14 @@
                     class="waves-effect waves-light btn recipe-btn">Delete</a>
                 {% endif %}
             </div>
-
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <div class="center-align">
+        <h3 class="no-review-message">No Reviews</h3>
+    </div>
+    {% endif %}
 </div>
 {% if session.user %}
 <div class="row">
