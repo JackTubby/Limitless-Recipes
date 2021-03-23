@@ -3,16 +3,21 @@
 
 <body id="recipe-page-content">
     <br>
-    <div class="col s12 center-align recipe-page-options">
-        <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn waves-effect waves-light btn">All</a>
-        <a href="{{ url_for('get_recipes', category='Breakfast') }}"
-            class="recipe-pages-btn waves-effect waves-light btn">Breakfast</a>
-        <a href="{{ url_for('get_recipes', category='Lunch') }}"
-            class="recipe-pages-btn waves-effect waves-light btn">Lunch</a>
-        <a href="{{ url_for('get_recipes', category='Dinner') }}"
-            class="recipe-pages-btn waves-effect waves-light btn">Dinner</a>
-        <a href="{{ url_for('get_recipes', category='Dessert') }}"
-            class="recipe-pages-btn waves-effect waves-light btn">Dessert</a>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 center-align recipe-page-options">
+                <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn tooltipped" data-position="bottom" data-tooltip="All Recipes" 
+                id="all"><i class="fas fa-globe icon-circle"></i></a>
+                <a href="{{ url_for('get_recipes', category='Breakfast') }}" class="recipe-pages-btn tooltipped" data-position="bottom" data-tooltip="Breakfast" 
+                    id="breakfast"><i class="fas fa-bacon icon-circle"></i></a>
+                <a href="{{ url_for('get_recipes', category='Lunch') }}" class="recipe-pages-btn tooltipped" data-position="bottom" data-tooltip="Lunch" 
+                    id="lunch"><i class="fas fa-hamburger icon-circle"></i></a>
+                <a href="{{ url_for('get_recipes', category='Dinner') }}" class="recipe-pages-btn tooltipped" data-position="bottom" data-tooltip="Dinner" 
+                    id="dinner"><i class="fas fa-utensils icon-circle"></i></a>
+                <a href="{{ url_for('get_recipes', category='Dessert') }}" class="recipe-pages-btn tooltipped" data-position="bottom" data-tooltip="Dessert" 
+                    id="dessert"><i class="fas fa-ice-cream icon-circle"></i></a>
+            </div>
+        </div>
     </div>
     <br>
     <div class="card-panel search-card">
