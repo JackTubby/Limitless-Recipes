@@ -40,12 +40,9 @@ def get_recipes():
     else:
         offset = (page - 1) * per_page
 
-    query = request.args.get("query")
     category = request.args.get("category")
-    if query:
-        recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     # Gets recipe category
-    elif category:
+    if category:
         recipes = list(
             mongo.db.recipes.find(
                 {"category_name": category}))
@@ -54,6 +51,7 @@ def get_recipes():
     # Search category filter
     args = list(request.args)
     search_category = mongo.db.recipes.find({"category_name": {"$in": args}})
+    print(list(search_category))
     # counts total of recipes
     total = mongo.db.recipes.find().count()
     # Gets user reviews
