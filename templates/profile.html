@@ -12,10 +12,11 @@
 </div>
 
 <!-- session user's add recipes -->
-<h2 id="recipe-page-titles" class="text-shadow">Your Recipes</h2>
+<h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
 <div class="row">
+    {% if recipes %}
     {% for recipe in recipes %}
-    <div class="col s12 m6 l3">
+    <div class="col s12 l3">
         <div class="card">
             <div class="card-image">
                 {% if recipe.image_url %}
@@ -38,15 +39,18 @@
                     <div class="modal-content">
                         <div class="row">
                             <div class="col s12 m6 recipe-name-title">{{ recipe.recipe_name }}</div>
+                            {% if session.user %}
                             <div class="col s12 m6 right-align-add-review">
                                 <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
                                     class="recipe-pages-btn waves-effect waves-light btn">
                                     Add Review
                                 </a>
                             </div>
+                            {% endif %}
                         </div>
                         <div class="row">
                             <div class="col s12">
+                                {% if recipe.reviews %}
                                 {% for review in recipe.reviews %}
                                 <div class="card review-cards">
                                     <div class="card-content white-text">
@@ -94,9 +98,19 @@
                                         <p class="recipe-review-username right-align">{{ review.username }}</p>
                                         <!-- recipe review date -->
                                         <p class="recipe-review-date right-align">{{ review.review_date }}</p>
+                                        <!-- recipe review delete -->
+                                        {% if session.user | lower == recipe.created_by | lower %}
+                                        <a href="{{ url_for('delete_review', recipe_id=recipe._id, review_id=review._id) }}"
+                                            class="waves-effect waves-light btn recipe-btn">Delete</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 {% endfor %}
+                                {% else %}
+                                <div class="center-align">
+                                    <h3 class="no-review-message">No Reviews</h3>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -145,22 +159,14 @@
                     <!-- prep time -->
                     <div>
                         <span class="recipe-info-heading">Prep Time: </span>
-                        <span class="recipe-info">{{ recipe.prep_time }}</span>
+                        <span class="recipe-info">{{ recipe.prep_time }} minutes</span>
                     </div>
                     <hr>
                     <!-- cooking time -->
                     <div>
                         <span class="recipe-info-heading">Cooking Time: </span>
-                        <span class="recipe-info">{{recipe.cooking_time}}</span>
+                        <span class="recipe-info">{{recipe.cooking_time}} minutes</span>
                     </div>
-                    <hr>
-                    <!-- ingredients -->
-                    <h5 class="recipe-info-heading">Recipe Ingredients:</h5>
-                    <p class="recipe-info">{{ recipe.recipe_ingredients }}</p>
-                    <hr>
-                    <!-- steps -->
-                    <h5 class="recipe-info-heading">Recipe Steps:</h5>
-                    <p class="recipe-info">{{ recipe.recipe_method }}</p>
                     <hr>
                     <!-- published by -->
                     <p class="published-by">Published by {{ recipe.created_by }}</p>
@@ -170,6 +176,11 @@
     </div>
     {% endfor %}
 </div>
+{% else %}
+<div class="center-align">
+    <h3 class="recipe-no-results-profile">You have not added any recipes <a href="{{ url_for('add_recipe') }}">click here</a> to add a recipe!</h3>
+</div>
+{% endif %}
 
 {{ pagination.links }}
 
