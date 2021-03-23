@@ -73,6 +73,7 @@
     </ul>
     <h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
     <div class="row">
+        {% if recipes %}
         {% for recipe in recipes %}
         <div class="col s12 l3">
             <div class="card">
@@ -108,6 +109,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s12">
+                                    {% if recipe.reviews %}
                                     {% for review in recipe.reviews %}
                                     <div class="card review-cards">
                                         <div class="card-content white-text">
@@ -163,6 +165,11 @@
                                         </div>
                                     </div>
                                     {% endfor %}
+                                    {% else %}
+                                    <div class="center-align">
+                                        <h3 class="no-review-message">No Reviews to show</h3>
+                                    </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -228,6 +235,11 @@
         </div>
         {% endfor %}
     </div>
+    {% else %}
+    <div class="center-align">
+        <h3 class="recipe-no-results">No Results</h3>
+    </div>
+    {% endif %}
     <span class="center align">
         {{ pagination.links }}
     </span>
