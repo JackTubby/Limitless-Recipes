@@ -1,3 +1,4 @@
+// Materialize jQuery
 $(document).ready(function () {
     $('.sidenav').sidenav({ inDuration: 800, outDuration: 800 });
     $(".dropdown-trigger").dropdown(
@@ -8,6 +9,9 @@ $(document).ready(function () {
     $('select').formSelect();
     $('.modal').modal();
     $('.materialboxed').materialbox();
+    $('.tooltipped').tooltip({
+        'transitionMovement': 80
+    });
     $('input.autocomplete').autocomplete({
         data: {
             "Indian": null,
