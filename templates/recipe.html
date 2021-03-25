@@ -45,29 +45,29 @@
     <a class="dropdown-trigger search-filters btn text-shadow" href="#" data-target="dropdown1">Drop
         Me!</a>
     <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
+    <ul id="dropdown1" class="dropdown-content" onclick="category_checkbox()">
         <form action="{{ url_for('get_recipes') }}">
             <li>
                 <label>
-                    <input name="Breakfast" type="checkbox" />
+                    <input class="category" name="Breakfast" type="checkbox" />
                     <span>Breakfast</span>
                 </label>
             </li>
             <li>
                 <label>
-                    <input name="Lunch" type="checkbox" />
+                    <input class="category" name="Lunch" type="checkbox" />
                     <span>Lunch</span>
                 </label>
             </li>
             <li>
                 <label>
-                    <input name="Dinner" type="checkbox" />
+                    <input class="category" name="Dinner" type="checkbox" />
                     <span>Dinner</span>
                 </label>
             </li>
             <li>
                 <label>
-                    <input name="Dessert" type="checkbox" />
+                    <input class="category" name="Dessert" type="checkbox" />
                     <span>Dessert</span>
                 </label>
             </li>
@@ -81,7 +81,7 @@
         {% if recipes %}
         {% for recipe in recipes %}
         <div class="col s12 l3">
-            <div class="card">
+            <div class="card recipe">
                 <div class="card-image">
                     {% if recipe.image_url %}
                     <img class="recipe-image" src="{{ recipe.image_url }}">
