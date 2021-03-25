@@ -49,9 +49,9 @@ def get_recipes():
     else:
         recipes = list(mongo.db.recipes.find().sort([("_id", -1)]))
     # Search category filter
-    args = list(request.args)
-    search_category = mongo.db.recipes.find({"category_name": {"$in": args}})
-    print(list(search_category))
+    # args = list(request.args)
+    # search_category = mongo.db.recipes.find({"category_name": {"$in": args}})
+    # print(list(search_category))
     # counts total of recipes
     total = mongo.db.recipes.find().count()
     # Gets user reviews
@@ -63,7 +63,7 @@ def get_recipes():
     return render_template(
         "recipe.html",
         recipes=paginatedResults,
-        search_category=search_category,
+        # search_category=search_category,
         reviews=reviews,
         page=page, per_page=per_page,
         pagination=pagination)
@@ -83,6 +83,7 @@ def search():
     else:
         offset = (page - 1) * per_page
 
+    # search functionality
     if "category" in request.args:
         print("there is category")
         category = request.args.get("category")
