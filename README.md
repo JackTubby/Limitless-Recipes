@@ -52,8 +52,35 @@ When choosing imagery I took the websites [HERE]
 
 #### Languages, Frameworks, Libraries & Program Used
 
-## Features 
+## Technologies Used
 
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593529419/Logos/html5-50_groo6o.png) [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593529419/Logos/CSS3-50_slrv0x.png) [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1597668963/Logos/js50_fcj8kt.png) [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1605958609/Logos/python50.png) [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593528776/Logos/GoogleFonts-50_mx57p6.png) [Google Fonts](https://fonts.google.com/)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1600683635/Logos/jquery-50.png) [jQuery](https://jquery.com/)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593528776/Logos/Bootstrap-50_khpj57.png) [Bootstrap](https://getbootstrap.com/)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593528776/Logos/fontawesome-50_r5df5h.png) [FontAwesome](https://fontawesome.com/)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1605958236/Logos/mongo50.png) [MongoDB](https://www.mongodb.com/)
+
+![Image](https://res.cloudinary.com/jimlynx/image/upload/v1605958236/Logos/flask50.png) [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+
+### Code validity
+
+- HTML - [W3C](https://validator.w3.org/) - Markup Validation
+- CSS - [W3C](https://jigsaw.w3.org/css-validator/) - Jigsaw CSS Validation
+- JavaScript - [JSHINT](https://jshint.com/) - JavaScript code warning & error check
+- Python - [Pyton Tester](https://extendsclass.com/python-tester.html) Python code syntax checker
+- TAGS - [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates all tags are opening and closing correctly.
 
 ## Testing
 
