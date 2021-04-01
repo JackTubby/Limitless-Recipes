@@ -524,11 +524,12 @@ hr.view-hr {
 
 /* edit recipe */
 #edit-recipe-background {
-    background-image: url(../images/edit-recipe-background.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-color: #fff;
+}
+
+.edit-recipe-cardpanel {
+    border: 2px solid #116466;
+    border-radius: 2%;
 }
 
 .edit-recipe-header {
