@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('select').formSelect();
     $('.modal').modal();
     $('.materialboxed').materialbox();
+    $('#recipe_description').characterCounter();
     $('.tooltipped').tooltip({
         'transitionMovement': 80
     });
@@ -32,6 +33,21 @@ function countChar(val) {
     }
 }
 
+// Limit amount of characters for recipe times inputs
+var max_chars = 4;
+
+$('.add_recipe_times').keydown( function(e){
+    if ($(this).val().length >= max_chars) { 
+        $(this).val($(this).val().substr(0, max_chars));
+    }
+});
+
+$('.add_recipe_times').keyup( function(e){
+    if ($(this).val().length >= max_chars) { 
+        $(this).val($(this).val().substr(0, max_chars));
+    }
+});
+
 /* Ingredient/Step add field script */
 // https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
 
@@ -42,11 +58,11 @@ $(document).ready(function () {
     var add_button = $(".add_field_button_ingredient"); //Add button ID
 
     var x = 1; //initlal text box count
-    $(add_button).click(function (ingredient) { //on add input button click
-        ingredient.preventDefault();
+    $(add_button).click(function (e) { //on add input button click
+        e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" id="recipe_ingredient" name="recipe_ingredient" placeholder="Add Ingredient" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append('<div><input type="text" class="recipe_ingredient" name="recipe_ingredient" placeholder="Add Ingredient" minlength="10" maxlength="50" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
 
@@ -62,11 +78,11 @@ $(document).ready(function () {
     var add_button = $(".add_field_button_step"); //Add button ID
 
     var x = 1; //initlal text box count
-    $(add_button).click(function (step) { //on add input button click
-        step.preventDefault();
+    $(add_button).click(function (e) { //on add input button click
+        e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" id="recipe_method" name="recipe_method" placeholder="Add Step" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append('<div><input type="text" id="recipe_method" name="recipe_method" placeholder="Add Step" minlength="10" maxlength="50" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
 
