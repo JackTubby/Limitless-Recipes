@@ -30,7 +30,7 @@ function countChar(val) {
     } else {
         $('#charNum').text(49 - len);
     }
-};
+}
 
 
 // Add ingredient functions // 
@@ -79,32 +79,4 @@ function reset_steps() {
     $('#method-steps > div').not(':first').remove();
     $('#method-steps div').children('input').val('');
     stepCounter = 1;
-}
-
-/*  Search Category filters  */
-
-function category_checkbox(this) {
-    var categoryCheckbox = document.getElementsByClassName('category')
-    var recipes = document.getElementsByClassName('recipe')
-
-    recipes.forEach(recipe => {
-        recipe.style.display = 'none'
-    })
-
-    for (i = 0; i < categoryCheckbox.length; i++) {
-        if (categoryCheckbox[i].checked) {
-            if (categoryCheckbox[i].name == "Breakfast") {
-
-            }
-            if (categoryCheckbox[i].name == "Lunch") {
-
-            }
-            if (categoryCheckbox[i].name == "Dinner") {
-
-            }
-            if (categoryCheckbox[i].name == "Dessert") {
-
-            }
-        }
-    }
 }
