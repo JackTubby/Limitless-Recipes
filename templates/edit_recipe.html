@@ -3,12 +3,12 @@
 
 <body id="edit-recipe-background">
     <div class="container">
-        <h3 class="center-align add-recipe-header text-shadow">Edit Recipe</h3>
+        <h3 class="center-align edit-recipe-header text-shadow">Edit Recipe</h3>
 
         <div class="row margin-top-register">
             <div class="col s6"></div>
             <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-                <div class="card-panel">
+                <div class="card-panel edit-recipe-cardpanel">
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
@@ -37,10 +37,8 @@
                     <!-- desription -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="49"
-                                class="materialize-textarea" onkeyup="countChar(this)">
-                    {{- recipe.recipe_description -}}
-                </textarea>
+                            <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="100"
+                                class="materialize-textarea" data-length="100" required>{{ recipe.recipe_description }}</textarea>
                             <span id="charNum" class="charnum"></span>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
@@ -60,49 +58,28 @@
                     <!-- new prep time -->
                     <div class="row">
                         <div class="input-field col s6">
-                            <textarea type="time" id="prep_time" class="materialize-textarea" name="prep_time" step="1"
-                                required>
-                    {{- recipe.prep_time -}}
-                </textarea>
-                            <label class="add-recipe-label" for="prep_time">Prep Time (minutes)</label>
+                            <input class="add_recipe_times" type="number" id="prep_time" name="prep_time" step="1"
+                                value="{{ recipe.cooking_time }}" required>
+                            <label class="add-recipe-label" for="prep_time">Preparation Time (minutes)</label>
                         </div>
                         <!-- cooking time -->
                         <div class="input-field col s6">
-                            <textarea type="time" id="cooking_time" class="materialize-textarea" name="cooking_time"
-                                step="1" required>
-                    {{- recipe.cooking_time -}}
-                </textarea>
+                            <input class="add_recipe_times" type="number" id="cooking_time" name="cooking_time" step="1"
+                                value="{{ recipe.cooking_time }}" required>
                             <label class="add-recipe-label" for="cooking_time">Cooking Time (minutes)</label>
                         </div>
                     </div>
                     <!-- recipe ingredients -->
                     <div class="row">
                         <div class="col s12">
-                            <div id="ingredient-inputs">
-                                <div id="recipe_ingredient_1">
-                                    <input id="recipe_ingredient" name="recipe_ingredient" type="text" required>
-                                    <label for="recipe_ingredient">
-                                        {% for ingredient in recipe.recipe_ingredient %}
-                                        <p>{{ ingredient }}</p>
-                                        {% endfor %}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <div class="row">
-                                    <div id="ingredient-btns">
-                                        <button onclick="add_ingredient()" type="button" class="btn add-recipe-btns">
-                                            Add Ingredient
-                                        </button>
-                                        <button onclick="remove_ingredient()" type="button" class="btn add-recipe-btns">
-                                            Remove Ingredient
-                                        </button>
-                                        <button onclick="reset_ingredients()" type="button" class="btn add-recipe-btns">
-                                            Reset
-                                        </button>
-                                    </div>
+                            <div class="row">
+                                <div id="ingredient-btns" class="input_fields_wrap_ingredient">
+                                    <button type="button" class="btn add-recipe-btns add_field_button_ingredient">Add
+                                        More Ingredients</button>
+                                    {% for ingredient in recipe.recipe_ingredient %}
+                                    <input type="text" class="recipe_ingredient" name="recipe_ingredient"
+                                        value="{{ ingredient }}" minlength="10" maxlength="50" required>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -110,31 +87,14 @@
                     <!-- recipe method -->
                     <div class="row">
                         <div class="col s12">
-                            <div id="method-steps">
-                                <div id="recipe_step_1">
-                                    <input id="recipe_method" name="recipe_method" type="text" required>
-                                    <label for="recipe_method">
-                                        {% for method in recipe.recipe_method %}
-                                        <p>{{ method }}</p>
-                                        {% endfor %}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
                             <div class="row">
-                                <div id="step-btns">
-                                    <button onclick="add_step()" type="button" class="btn add-recipe-btns">
-                                        Add Step
-                                    </button>
-                                    <button onclick="remove_step()" type="button" class="btn add-recipe-btns">
-                                        Remove Step
-                                    </button>
-                                    <button onclick="reset_steps()" type="button" class="btn add-recipe-btns">
-                                        Reset
-                                    </button>
+                                <div id="step-btns" class="input_fields_wrap_step">
+                                    <button type="button" class="btn add-recipe-btns add_field_button_step">Add More
+                                        Steps</button>
+                                    {% for method in recipe.recipe_method %}
+                                    <input type="text" id="recipe_method" name="recipe_method" value="{{ method }}"
+                                        minlength="10" maxlength="50" required>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
