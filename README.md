@@ -1,30 +1,57 @@
-# Under Development
 # Limitless Recipes
-Limitless Recipes is designed for users to upload and find recipes. [Livesite Deployed On Herkou](https://recipe-app-project-milestone3.herokuapp.com)
+
+Limitless Recipes is a website for users to find and upload recipes, accessible on a wide range of devices for all users.
+
+## Table of Contents 
+> - [User Stories](#user-stories)
+> - [UX](#ux)
+> - [Features](#features)
+> - [Technologies Used](#technologies-used)
+> - [Testing](#testing)
+> - [Code validity](#code-validity)
+> - [Deployment](#deployment)
+> - [Credits](#credits)
+> - [Acknowledgments](#acknowledgments)
+
+
+#### User Stories
+- "As a user I want to add my own recipes to the website."
+  - Using CRUD (Create) a user could input there recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](../images/recipe-form.png) [Recipe in database](recipe-database.png) [Recipe shown on website](recipe-site.png)
+- "As a user I want to be able to edit my recipe."
+  - Using CRUD (Update) a user can edit there submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](edit-recipe-button.png) [Edit recipe form](edit-recipe-form.png)
+- "As a user I want to be able to delete my recipe."
+  - Using CRUD (Delete) a user could delete there uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](delete-recipe-form.png)
+- "As a user I want to be able to easily view other users recipes."
+  - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](view-recipe-button.png) [View recipe page](view-recipe-page.png)
+- "As a user I want to be able to use a search bar to find recipes."
+  - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](search-bar.png) [Search bar returned results](search-bar-results.png)
+- "As a user I want to be able to create an account."
+  - This is accomplished by adding a form where the user can input there details and submit into the database (MongoDB). [register page form](register-img.png) [users in database](user-database.png) [Logged in](user-loggedin.png)
+- "As a user who has created an account I want to be able to login."
+  - This is completed where a user can input there details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](log-in-page.png) [Logged In](user-loggedin.png)
+- "As a user I want to be able to write a review for a recipe."
+  - This was achieved using CRUD (Create) where a user added there review and it was then submited into the database (MongoDB). [Add review button one](add-review-button-one.png) [Add review button two](add-review-button-two.png) [add review form](add-review-form.png) [add review database](review-database.png) [add review shown in website one](review-shown-one.png) [add review shown in website two](review-shown-one.png)
+- "As a user I want to be able to delete my review."
+  - This was done by using CRUD (Delete) which as user can delete there review only if it is theres. [review delete button one](review-delete.png)
+
+#### Owner Stories
+- "I want my users to be able to add there own recipes".
+- "I want my users to be able to find/view other users recipes".
+- "I want my users to be able to sign up, sign in and logout".
+- "I want my users to be able to review other user recipes".
+- "I want my users to be able to search for recipes".
 
 ## UX
 
-### Strategy 
+### Project Goals
 
-#### User Stories
-* "As a user I want to add my own recipes to the website."
-* "As a user I want to be able to find other users recipes."
-* "As a user I want to be able to use a search bar to find recipes."
-* "As a user I want to be able to create an account."
-* "As a user I want to be able to save recipes."
+### Scope
 
-#### Owner Stories
-* "I want my users to be able to add there own recipes".
-* "I want my users to be able to find/view other users recipes".
-* "I want my users to be able to sign up, sign in and logout".
-* "I want my users to be able to review other user recipes".
-* "I want my users to be able to search for recipes".
+### Structure
 
-#### Project Goals
+### Skeleton
 
-### Owner Stories
-
-### User Stories
+#### Wireframes
 
 ### Surface
 
@@ -44,13 +71,13 @@ I have chosen these set of colours for my website:
 #### Imagery
 When choosing imagery I took the websites [HERE]
 
-### Wireframes
+#### Design Decisions
 
-#### Existing Features
+## Features
 
-#### Features Left To Implement
+### Existing Features
 
-#### Languages, Frameworks, Libraries & Program Used
+### Features Left To Implement
 
 ## Technologies Used
 
@@ -88,9 +115,5 @@ When choosing imagery I took the websites [HERE]
 
 
 ## Credits 
-
-### Code
-
-### Media 
 
 ### Acknowledgements 
