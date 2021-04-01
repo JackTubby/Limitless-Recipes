@@ -32,51 +32,45 @@ function countChar(val) {
     }
 }
 
+/* Ingredient/Step add field script */
+// https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
 
-// Add ingredient functions // 
+// Ingredient input addition //
+$(document).ready(function () {
+    var max_fields = 20; //maximum input boxes allowed
+    var wrapper = $(".input_fields_wrap_ingredient"); //Fields wrapper
+    var add_button = $(".add_field_button_ingredient"); //Add button ID
 
-function add_ingredient() {
-    let newInputHTML = $(document.createElement('div')).attr("id", 'recipe_ingredient_' + ingredientCounter);
-    newInputHTML.after().html('<input type="text" name="recipe_ingredient" + id="ingredient_' + ingredientCounter + '" value="" required>');
-    newInputHTML.appendTo("#ingredient-inputs");
-    ingredientCounter++;
-}
+    var x = 1; //initlal text box count
+    $(add_button).click(function (ingredient) { //on add input button click
+        ingredient.preventDefault();
+        if (x < max_fields) { //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" id="recipe_ingredient" name="recipe_ingredient" placeholder="Add Ingredient" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
 
-function remove_ingredient() {
-    if (ingredientCounter > 1) {
-        $('#ingredient-inputs > div:last-child').remove();
-        ingredientCounter--;
-    } else {
-        $('#ingredient-inputs div').children('input').val('');
-    }
-}
+    $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
 
-function reset_ingredients() {
-    $('#ingredient-inputs > div').not(':first').remove();
-    $('#ingredient-inputs div').children('input').val('');
-    ingredientCounter = 1;
-}
+// Step input addition //
+$(document).ready(function () {
+    var max_fields = 20; //maximum input boxes allowed
+    var wrapper = $(".input_fields_wrap_step"); //Fields wrapper
+    var add_button = $(".add_field_button_step"); //Add button ID
 
-// Add steps functions // 
+    var x = 1; //initlal text box count
+    $(add_button).click(function (step) { //on add input button click
+        step.preventDefault();
+        if (x < max_fields) { //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" id="recipe_method" name="recipe_method" placeholder="Add Step" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
 
-function add_step() {
-    let newInputHTML = $(document.createElement('div')).attr("id", 'recipe_step_' + stepCounter);
-    newInputHTML.after().html('<input type="text" name="recipe_method" + id="step_' + stepCounter + '" value="" required>');
-    newInputHTML.appendTo("#method-steps");
-    stepCounter++;
-}
-
-function remove_step() {
-    if (stepCounter > 1) {
-        $('#method-steps > div:last-child').remove();
-        stepCounter--;
-    } else {
-        $('#method-steps div').children('textarea').val('');
-    }
-}
-
-function reset_steps() {
-    $('#method-steps > div').not(':first').remove();
-    $('#method-steps div').children('input').val('');
-    stepCounter = 1;
-}
+    $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
