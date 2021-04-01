@@ -16,21 +16,21 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 
 #### User Stories
 - "As a user I want to add my own recipes to the website."
-  - Using CRUD (Create) a user could input there recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](../images/recipe-form.png) [Recipe in database](recipe-database.png) [Recipe shown on website](recipe-site.png)
+  - Using CRUD (Create) a user could input there recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](images/recipe-form.png) [Recipe in database](images/recipe-database.png) [Recipe shown on website](images/recipe-site.png)
 - "As a user I want to be able to edit my recipe."
-  - Using CRUD (Update) a user can edit there submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](edit-recipe-button.png) [Edit recipe form](edit-recipe-form.png)
+  - Using CRUD (Update) a user can edit there submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](images/edit-recipe-button.png) [Edit recipe form](images/edit-recipe-form.png)
 - "As a user I want to be able to delete my recipe."
-  - Using CRUD (Delete) a user could delete there uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](delete-recipe-form.png)
+  - Using CRUD (Delete) a user could delete there uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](images/delete-recipe-form.png)
 - "As a user I want to be able to easily view other users recipes."
-  - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](view-recipe-button.png) [View recipe page](view-recipe-page.png)
+  - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](images/view-recipe-button.png) [View recipe page](images/view-recipe-page.png)
 - "As a user I want to be able to use a search bar to find recipes."
-  - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](search-bar.png) [Search bar returned results](search-bar-results.png)
+  - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](images/search-bar.png) [Search bar returned results](images/search-bar-results.png)
 - "As a user I want to be able to create an account."
-  - This is accomplished by adding a form where the user can input there details and submit into the database (MongoDB). [register page form](register-img.png) [users in database](user-database.png) [Logged in](user-loggedin.png)
+  - This is accomplished by adding a form where the user can input there details and submit into the database (MongoDB). [register page form](images/register-img.png) [users in database](images/user-database.png) [Logged in](images/user-loggedin.png)
 - "As a user who has created an account I want to be able to login."
-  - This is completed where a user can input there details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](log-in-page.png) [Logged In](user-loggedin.png)
+  - This is completed where a user can input there details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](images/log-in-page.png) [Logged In](images/user-loggedin.png)
 - "As a user I want to be able to write a review for a recipe."
-  - This was achieved using CRUD (Create) where a user added there review and it was then submited into the database (MongoDB). [Add review button one](add-review-button-one.png) [Add review button two](add-review-button-two.png) [add review form](add-review-form.png) [add review database](review-database.png) [add review shown in website one](review-shown-one.png) [add review shown in website two](review-shown-one.png)
+  - This was achieved using CRUD (Create) where a user added there review and it was then submited into the database (MongoDB). [Add review button one](images/add-review-button-one.png) [Add review button two](images/add-review-button-two.png) [add review form](images/add-review-form.png) [add review database](images/review-database.png) [add review shown in website one](images/review-shown-one.png) [add review shown in website two](images/review-shown-one.png)
 - "As a user I want to be able to delete my review."
   - This was done by using CRUD (Delete) which as user can delete there review only if it is theres. [review delete button one](review-delete.png)
 
