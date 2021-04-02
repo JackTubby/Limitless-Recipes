@@ -12,7 +12,7 @@
 </div>
 
 <!-- session user's add recipes -->
-<h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
+<h2 class="text-shadow profile-page-title">Your Recipes</h2>
 <div class="row">
     {% if recipes %}
     {% for recipe in recipes %}
@@ -178,10 +178,12 @@
 </div>
 {% else %}
 <div class="center-align">
-    <h3 class="recipe-no-results-profile">You have not added any recipes <a href="{{ url_for('add_recipe') }}">click here</a> to add a recipe!</h3>
+    <h3 class="recipe-no-results-profile">You have not added any recipes <a href="{{ url_for('add_recipe') }}">click
+            here</a> to add a recipe!</h3>
 </div>
 {% endif %}
-
-{{ pagination.links }}
+<div class="pagination-wrapper center-align">
+        {{ pagination.links }}
+</div>
 
 {% endblock %}
