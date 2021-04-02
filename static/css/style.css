@@ -571,6 +571,24 @@ hr.view-hr {
     padding-top: 8px;
 }
 
+.profile-page-title {
+    margin: 0;
+    color: #116466;
+    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    padding-bottom: 12px;
+    padding-left: 5px;
+}
+
+.pagination-wrapper {
+    background-color: #116466;
+}
+
+/* register.html */
+#background-register-image {
+    background-image: url(../images/register-img.jpg);
+;
+}
+
 /* register.html */
 #background-register-image {
     background-image: url(../images/register-img.jpg);
