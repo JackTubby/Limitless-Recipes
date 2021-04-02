@@ -295,9 +295,12 @@ def add_review(recipe_id):
             "recipe_review": request.form.get("recipe_review"),
             "review_date": current_date
         }
-        # adds review to db
+        mongo.db.reviews.insert(add_review)
+
         mongo.db.recipes.update(
             {"_id": ObjectId(recipe_id)}, {"$push": {"reviews": add_review}})
+
+        # print(review)
 
         flash("Review Added")
         return redirect(url_for("get_recipes"))
@@ -309,10 +312,14 @@ def add_review(recipe_id):
 # --- Delete Review --- #
 @app.route("/delete_review/<recipe_id>/<review_id>")
 def delete_review(recipe_id, review_id):
+    print(recipe_id)
+    print(review_id)
     # deletes review in db
     mongo.db.recipes.update_one(
         {"_id": ObjectId(recipe_id)},
-        {"$pull": {'reviews': {'_id': ObjectId(review_id)}}})
+        {"$pull": {"reviews": {"_id": ObjectId(review_id)}}})
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Deleted")
     return redirect(url_for("get_recipes"))
 
 
