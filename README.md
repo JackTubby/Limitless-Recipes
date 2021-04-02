@@ -44,13 +44,23 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 ## UX
 
 ### Project Goals
+* For users to upload there recipes onto the website.
+* Users to review other users recipes.
+* Profile page where users can see there uploaded recipes.
+* Log In/ Log out functionality.
+* Ease of use.
 
 ### Scope
+* Allow users to register an account on the website.
+* Allow registered users to Create, Read, Update and Delete (CRUD) recipes.
+* Create functionality for users to Create, Delete reviews on recipes.
+* Create using my current skills, HTML, CSS, JavaScript, Python, Flask and MongoDB
 
 ### Structure
+* Navigation bar located at the top of the website for ease of navigation through site.
+* Logged in users to be able to use CRUD functionality with recipes.
 
 ### Skeleton
-
 #### Wireframes
 
 ### Surface
@@ -71,35 +81,42 @@ I have chosen these set of colours for my website:
 #### Imagery
 When choosing imagery I took the websites [HERE]
 
-#### Design Decisions
-
 ## Features
 
 ### Existing Features
+* Created with HTML5, CSS3, Javascript, jQuery, Materialize and MongoDB.
+* Home/Index page to give the users an idea of the website with the use of imagery and text, with a call to action button to discover recipes.
+* Responsive design.
+* Footer with social media links.
+* 'Add Recipe' page for users to create there own recipe and add it to the website.
+* Reviews button which opens a form, for users to review recipes.
+* Search bar for users to search the website for specific recipes.
+* Profile page showing when the user signed up and the recipes they have added.
 
 ### Features Left To Implement
+* A future feature that would be a good addition would be a favrioute button on recipes. This button would save the recipe in the users profile for ease of use to come back to later.
 
 ## Technologies Used
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593529419/Logos/html5-50_groo6o.png) [HTML5](https://en.wikipedia.org/wiki/HTML5)
+[HTML5](https://en.wikipedia.org/wiki/HTML5)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593529419/Logos/CSS3-50_slrv0x.png) [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+[CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1597668963/Logos/js50_fcj8kt.png) [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1605958609/Logos/python50.png) [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+[Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593528776/Logos/GoogleFonts-50_mx57p6.png) [Google Fonts](https://fonts.google.com/)
+[Google Fonts](https://fonts.google.com/)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1600683635/Logos/jquery-50.png) [jQuery](https://jquery.com/)
+[jQuery](https://jquery.com/)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593528776/Logos/Bootstrap-50_khpj57.png) [Bootstrap](https://getbootstrap.com/)
+[Materialize](https://materializecss.com/)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1593528776/Logos/fontawesome-50_r5df5h.png) [FontAwesome](https://fontawesome.com/)
+[FontAwesome](https://fontawesome.com/)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1605958236/Logos/mongo50.png) [MongoDB](https://www.mongodb.com/)
+[MongoDB](https://www.mongodb.com/)
 
-![Image](https://res.cloudinary.com/jimlynx/image/upload/v1605958236/Logos/flask50.png) [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+[Flask](https://flask.palletsprojects.com/en/1.1.x/)
 
 ### Code validity
 
@@ -109,11 +126,112 @@ When choosing imagery I took the websites [HERE]
 - Python - [Pyton Tester](https://extendsclass.com/python-tester.html) Python code syntax checker
 - TAGS - [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates all tags are opening and closing correctly.
 
+## Resources 
+* Code Institute Course Content
+* Youtube
+* W3C
+* Balsamiq
+* Stack Overflow
+* Code Institute Slack community
+
 ## Testing
 
 ## Deployment
 
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JackTubby/Limitless-Recipes)
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+   - Alternatively Click [Here](https://raw.githubusercontent.com/) for a GIF demonstrating the process starting from Step 2.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [link](https://github.com/JackTubby/Limitless-Recipes) in the "GitHub Pages" section.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JackTubby/Limitless-Recipes)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JackTubby/Limitless-Recipes)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+### Creating Collections in MongoDB
+
+1. Login to your MongoDB account
+2. Create a **cluster**
+3. Create a **database**
+4. Create four **collections** in the database named:
+
+    - **users**
+    - **countries**
+    - **blogs**
+
+### Setting Up the Environment Variables
+1. Create a file called **.gitignore** in the root directory of your project
+2. Add the following text in your .gitignore file: **env.py**
+3. Create a file called **env.py**. This will contain all your environment variables
+4. Create your own personal secret key and password. In **env.py** add the following text and replace **YOURPASSWORD**, **YOUR-CLUSTER-NAME**, **YOUR-DATABASE-NAME** and **YOURSECRETKEY**    
+
+### Run the App 
+1. Open your terminal window in your IDE
+2. Type in **python3 app.py** to run the app
+
+### Heroku Deployment
+1. Create a Heroku account
+2. Create a new app and select your region
+3. In the terminal window of your local IDE type **pip3 freeze --local > requirements.txt** to create a requirements.txt file. This file is needed so that Heroku knows which files needs to be installed
+5. In the terminal window of your local IDE type **python app.py > Procfile** to create a Procfile. This file is needed so that Heroku knows which file is needed as its entry point to get the app up and running
+6. In the terminal window of your local IDE type in **heroku login** or **heroku login -i** and fill in your heroku credentials and password
+7. Commit all your files and type in the same terminal window **git push heroku master**. Now all your files are committed to Heroku
+8. Go back to your Heroku account and go to **settings**
+9. Click on **Reveal Config Vars** to reveal the keys and the values
+10. Set the keys and values as follow:
+    (**KEY: VALUE**)
+    - IP: 0.0.0.0
+    - PORT: 5000
+    - MONGO_DBNAME: YOUR-DATABASE-NAME
+    - MONGO_URI: mongodb+srv://root:**YOURPASSWORD**@**YOUR-CLUSTER-NAME**.2qobt.mongodb.net/**YOUR-DATABASE-NAME**?retryWrites=true&w=majority
+    - SECRET_KEY: YOURSECRETKEY
+11. Click on **Open app** in the right corner of your Heroku account, the application will open in a new window
+12. The live link is available from the address bar
 
 ## Credits 
 
+### Media
+
+* [Pexels](https://www.pexels.com/) was used for imagery.
+
 ### Acknowledgements 
+
+* My mentor for his feedback and advice throughout.
+* Tutor support at Code Institute for their assistance.
+* Slack community for assistance and questions.
