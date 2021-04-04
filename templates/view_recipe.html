@@ -44,6 +44,26 @@
         </h6>
     </div>
 </div>
+<div class="row">
+    <div class="col s12">
+        <div class="view-edit-delete">
+        <!-- Recipe Edit Button (opens edit_recipe.html) -->
+        {% if session.user | lower == recipe.created_by | lower %}
+        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn recipe-btn">Edit</a>
+        <!-- Recipe Delete Button (open delete modal) -->
+        <a class="btn modal-trigger recipe-btn" href="#delete_task_modal">Delete</a>
+        {% endif %}
+        </div>
+    </div>
+    <!-- Delete Modal Content -->
+    <div id="delete_task_modal" class="modal">
+        <div class="modal-content center-align">
+            <h4>Are You Sure You Want To Delete This Recipe</h4>
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                class="modal-close waves-effect waves-light btn recipe-btn">Delete</a>
+        </div>
+    </div>
+</div>
 <hr class="view-hr">
 <!-- Recipe Ingredients & Steps -->
 <div class="row center-align">
