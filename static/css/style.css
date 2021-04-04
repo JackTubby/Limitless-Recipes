@@ -148,7 +148,9 @@
 
 #recipe-page-content {
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/recipe-page-background.jpg);
-    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -243,6 +245,7 @@
 
 /* recipe cards */
 .recipe-name {
+    word-wrap: break-word;
     margin: 0;
     padding: 0;
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
@@ -254,28 +257,31 @@
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
+/* Recipe image for small screens */
 .recipe-image {
     width: 8rem;
-    height: 34rem;
+    height: 30rem;
+    object-fit: cover;
 }
 
-/* Media Query to reduce height of recipe image for medium size screens (ipad pro) */
-@media (min-width:1400px) and (max-width:1950px){
+/* Media Query to reduce height of recipe image for medium size screens (ipad) */
+@media (min-width:1650px) and (max-width:1950px){
 .recipe-image {
     height: 28rem;
 }
 }
 
-@media (min-width:993px) and (max-width:1400px){
+/* Media Query to reduce height of recipe image for Large Screens size screens (Desktop) */
+@media (min-width:993px){
 .recipe-image {
-    height: 15rem;
+    height: 28rem;
 }
 }
 
 .recipe-desc {
     padding-bottom: 10px;
     font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     word-wrap: break-word;
 }
 
@@ -292,7 +298,28 @@
     line-height: 1.5;
 }
 
+.recipe-btn {
+    color: black;
+    background-color: #116466;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    border: 1px solid #116466;
+    border-radius: 3px;
+    background: linear-gradient(to right, #116466 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+
+.recipe-btn:hover {
+    color: white !important;
+    background-position: left bottom;
+    color: #116466;
+}
+
 .see-more {
+    font-weight: 600;
+    font-size: 28px;
     color: #116466;
     cursor: pointer;
 }
@@ -320,17 +347,17 @@
 .recipe-info-heading {
     color: black;
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 22px;
+    font-size: 26px;
 }
 
 .recipe-info {
     color: black;
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .published-by {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 /* recipe queries to fix responsive on smaller screens */
@@ -370,6 +397,10 @@
 .view-recipe-headers {
     font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 36px;
+}
+
+.view-edit-delete {
+    margin-left: 25vw;
 }
 
 hr.view-hr {
