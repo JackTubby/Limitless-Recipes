@@ -431,18 +431,30 @@
 
 .back-to-recipes:hover {
     color: #116466;
+} 
+
+.recipe-header-detail-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.view-recipe-headers {
+    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
 }
 
 .view-recipe-details {
     color: #116466;
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 36px;
+    font-size: 28px;
     word-wrap: break-word;
-} 
+}
 
-.view-recipe-headers {
-    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 36px;
+/* media query for smaller screens, fixes image and recipe details */
+@media (min-width:280px) and (max-width:1212px){
+.view-recipe-headers, .view-recipe-details {
+    font-size: 26px;
+}
 }
 
 .edit-delete-info-wrapper {
@@ -464,8 +476,13 @@ hr.view-hr {
     width: 80%;
 }
 
-.view-ingredient-step-list {
-    font-size: 28px;
+.view-ingredient {
+    font-size: 26px;
+}
+
+.view-step {
+    font-size: 22px;
+    margin-bottom: 25px;
 }
 
 /* to top button on view page */
@@ -508,13 +525,6 @@ hr.view-hr {
     color: #116466;
     font-size: 22px;
     line-height: 2.2 !important;
-}
-
-/* media query for smaller screens, fixes image and recipe details */
-@media (min-width:280px) and (max-width:1212px){
-.view-recipe-headers, .view-recipe-details {
-    font-size: 28px;
-}
 }
 
 /* reviews */
