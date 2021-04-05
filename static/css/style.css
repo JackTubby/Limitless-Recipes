@@ -633,6 +633,18 @@ hr.view-hr {
     text-transform: capitalize;
 }
 
+.recipe-ingredient, .recipe-method {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width:360px){
+.recipe-ingredient, .recipe-method {
+    font-size: 14px;
+}
+}
+
 .form-textarea {
     border-bottom: 1px solid black ;
     font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -645,6 +657,7 @@ hr.view-hr {
     font-style: italic;
     color: #fff;
 }
+
 
 /* edit recipe */
 #edit-recipe-background {
