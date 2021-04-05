@@ -12,9 +12,11 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="icon_prefix" value="{{ recipe.recipe_name }}" name="recipe_name" max-length="13"
-                                type="text" class="validate">
-                            <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
+                            <input value="{{ recipe.recipe_name }}" name="recipe_name" pattern="^[a-zA-Z]+$"
+                                minlength="4" maxlength="44" type="text" data-length="44" class="validate recipe_name"
+                                required>
+                            <i>No special characters or numbers accepted</i>
+                            <label class="add-recipe-label">Recipe Name</label>
                         </div>
                     </div>
                     <!-- recipe category -->
@@ -37,22 +39,28 @@
                     <!-- desription -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="100"
-                                class="materialize-textarea" data-length="100" required>{{ recipe.recipe_description }}</textarea>
+                            <textarea name="recipe_description" minlength="10" maxlength="100"
+                                class="materialize-textarea recipe_description" data-length="100"
+                                required>{{ recipe.recipe_description }}</textarea>
                             <span id="charNum" class="charnum"></span>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
                     </div>
-                    <!-- recipe image -->
+                    <!-- Recipe Image -->
                     <div class="row">
                         <div class="col s12">
+                            {% if recipe.image_url %}
                             <img class="edit-recipe-image" src="{{ recipe.image_url }}" alt="image of the recipe">
-                        </div>
-                        <div class="input-field col s12">
-                            <textarea type="url" id="image_url" name="image_url" class="materialize-textarea">
-                    {{- recipe.image_url -}}
-                </textarea>
-                            <label class="add-recipe-label" for="image_url">Image URL</label>
+                            {% else %}
+                            <!-- If No Recipe Image It Will This (Nothing) -->
+
+                            {% endif %}
+                            <div class="input-field col s12">
+                                <textarea type="url" id="image_url" name="image_url" class="materialize-textarea">
+                                    {{- recipe.image_url -}}
+                                </textarea>
+                                <label class="add-recipe-label" for="image_url">Image URL</label>
+                            </div>
                         </div>
                     </div>
                     <!-- new prep time -->

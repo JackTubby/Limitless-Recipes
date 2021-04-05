@@ -11,8 +11,9 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="icon_prefix" name="recipe_name" max-length="13" type="text" class="validate"
-                                required>
+                            <input id="icon_prefix" name="recipe_name" pattern="^[a-zA-Z]+$" minlength="4"
+                                maxlength="44" type="text" data-length="44" class="validate recipe_name" required>
+                            <i>No special characters or numbers accepted</i>
                             <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
                         </div>
                     </div>
@@ -31,8 +32,8 @@
                     <!-- desription -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="recipe_description" name="recipe_description" minlength="10" maxlength="100"
-                                class="materialize-textarea" data-length="100" required></textarea>
+                            <textarea name="recipe_description" minlength="10" maxlength="100"
+                                class="materialize-textarea recipe_description" data-length="100" required></textarea>
                             <span id="charNum" class="charnum"></span>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
@@ -65,8 +66,9 @@
                                 <div id="ingredient-btns" class="input_fields_wrap_ingredient">
                                     <button type="button" class="btn add-recipe-btns add_field_button_ingredient">Add
                                         More Ingredients</button>
+                                    <i>maximum of 40 characters</i>
                                     <input type="text" class="recipe_ingredient" name="recipe_ingredient"
-                                        placeholder="Add Ingredient" minlength="10" maxlength="50" required>
+                                        placeholder="Add Ingredient" minlength="10" maxlength="40" required>
                                 </div>
                             </div>
                         </div>
@@ -78,8 +80,10 @@
                                 <div id="step-btns" class="input_fields_wrap_step">
                                     <button type="button" class="btn add-recipe-btns add_field_button_step">Add More
                                         Steps</button>
+                                    <i>maximum of 100 characters</i>
                                     <div><input type="text" id="recipe_method" name="recipe_method"
-                                            placeholder="Add Step" minlength="10" maxlength="50" required></div>
+                                            class="recipe_method" placeholder="Add Step" minlength="10" maxlength="100"
+                                            required></div>
                                 </div>
                             </div>
                         </div>
