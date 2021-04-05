@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('select').formSelect();
     $('.modal').modal();
     $('.materialboxed').materialbox();
-    $('#recipe_description').characterCounter();
+    $('.recipe_description, .recipe_name').characterCounter();
     $('.tooltipped').tooltip({
         'transitionMovement': 80
     });
@@ -62,7 +62,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" class="recipe_ingredient" name="recipe_ingredient" placeholder="Add Ingredient" minlength="10" maxlength="50" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append('<div><input type="text" name="recipe_ingredient" placeholder="Add Ingredient" minlength="10" maxlength="40" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" id="recipe_method" name="recipe_method" placeholder="Add Step" minlength="10" maxlength="50" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append('<div><input type="text" id="recipe_method" name="recipe_method" placeholder="Add Step" minlength="10" maxlength="80" required/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
 
