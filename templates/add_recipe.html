@@ -11,8 +11,8 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="icon_prefix" name="recipe_name" pattern="^[a-zA-Z]+$" minlength="4"
-                                maxlength="44" type="text" data-length="44" class="validate recipe_name" required>
+                            <input id="icon_prefix" name="recipe_name" minlength="4" maxlength="44" type="text"
+                                data-length="44" class="validate recipe_name" required>
                             <i>No special characters or numbers accepted</i>
                             <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
                         </div>
@@ -29,11 +29,19 @@
                             <label class="add-recipe-label" for="category_name">Task Category</label>
                         </div>
                     </div>
+                    <!-- serves -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="recipe_serves" minlength="1" maxlength="2" type="number"
+                                class="validate" required>
+                            <label class="add-recipe-label">Serves</label>
+                        </div>
+                    </div>
                     <!-- desription -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea name="recipe_description" minlength="10" maxlength="100"
-                                class="materialize-textarea recipe_description" data-length="100" required></textarea>
+                            <textarea name="recipe_description" minlength="10" maxlength="150"
+                                class="materialize-textarea recipe_description" data-length="150" required></textarea>
                             <span id="charNum" class="charnum"></span>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
@@ -64,11 +72,12 @@
                         <div class="col s12">
                             <div class="row">
                                 <div id="ingredient-btns" class="input_fields_wrap_ingredient">
-                                    <button type="button" class="btn add-recipe-btns add_field_button_ingredient recipe-ingredient">Add
+                                    <button type="button"
+                                        class="btn add-recipe-btns add_field_button_ingredient recipe-ingredient">Add
                                         More Ingredients</button>
                                     <i>maximum of 40 characters</i>
-                                    <input type="text" name="recipe_ingredient"
-                                        placeholder="Add Ingredient" minlength="10" maxlength="40" required>
+                                    <input type="text" name="recipe_ingredient" placeholder="Add Ingredient"
+                                        minlength="10" maxlength="100" required>
                                 </div>
                             </div>
                         </div>
@@ -78,12 +87,12 @@
                         <div class="col s12">
                             <div class="row">
                                 <div id="step-btns" class="input_fields_wrap_step">
-                                    <button type="button" class="btn add-recipe-btns add_field_button_step recipe-method">Add More
+                                    <button type="button"
+                                        class="btn add-recipe-btns add_field_button_step recipe-method">Add More
                                         Steps</button>
-                                    <i>maximum of 100 characters</i>
+                                    <i>maximum of 300 characters</i>
                                     <div><input type="text" id="recipe-method" name="recipe_method"
-                                            placeholder="Add Step" minlength="10" maxlength="100"
-                                            required></div>
+                                            placeholder="Add Step" minlength="10" maxlength="300" required></div>
                                 </div>
                             </div>
                         </div>
