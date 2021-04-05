@@ -48,7 +48,25 @@
     padding-left: 14px;
     color: #FFCB9A;
     font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 36px;
+    word-wrap: break-word;
+}
+
+@media (min-width:355px), (max-width:500px){
+.logo-header {
+    font-size: 24px;
+}
+}
+
+@media (min-width:307px), (max-width:355px){
+.logo-header {
+    font-size: 20px;
+}
+}
+
+@media (max-width:307px){
+.logo-header {
+    font-size: 15px;
+}
 }
 
 .nav-text-styling {
@@ -399,11 +417,20 @@
     }
 }
 
+.icon-ingredient-step {
+    color: #116466;
+}
+
 .back-to-recipes {
     font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 22px;
     margin-top: 10px;
     margin-left: 10px;
+    color: #D1E8E2;
+}
+
+.back-to-recipes:hover {
+    color: #116466;
 }
 
 .view-recipe-details {
@@ -418,14 +445,69 @@
     font-size: 36px;
 }
 
-.view-edit-delete {
-    margin-left: 25vw;
+.edit-delete-info-wrapper {
+    margin-bottom: 20px;
+}
+
+.edit-delete-info {
+    color: #116466;
+    text-decoration: underline;
+}
+
+.edit-delete-info:hover {
+    color: #D1E8E2;
 }
 
 hr.view-hr {
 	border-top: 1px solid #116466;
     border-bottom: 1px solid #fff;
     width: 80%;
+}
+
+.view-ingredient-step-list {
+    font-size: 28px;
+}
+
+/* to top button on view page */
+#top_button {
+  display: inline-block;
+  background-color: #D1E8E2;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#top_button::after {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#top_button:hover {
+  cursor: pointer;
+  background-color: #FFCB9A;
+}
+#top_button:active {
+  background-color: #116466;
+}
+#top_button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-button-icon {
+    color: #116466;
+    font-size: 22px;
+    line-height: 2.2 !important;
 }
 
 /* media query for smaller screens, fixes image and recipe details */
@@ -619,6 +701,10 @@ hr.view-hr {
     font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
     padding-bottom: 12px;
     padding-left: 5px;
+}
+
+.profile-wrapper {
+    background-color: #D1E8E2;
 }
 
 .pagination-wrapper {
