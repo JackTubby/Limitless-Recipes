@@ -135,7 +135,7 @@
                                             <!-- Review Description -->
                                             <p class="recipe-review-text review-quotes center-align">
                                                 <span class="recipe-review-desc">
-                                                    "{{ review.recipe_review }}"
+                                                    "{{ review.recipe_review }}" 
                                                 </span>
                                             </p>
                                             <!-- Review Username -->
@@ -143,7 +143,7 @@
                                             <!-- Review Date -->
                                             <p class="recipe-review-date right-align">{{ review.review_date }}</p>
                                             <!-- Review Delete Button -->
-                                            {% if session.user | lower == recipe.created_by | lower %}
+                                            {% if session.user | lower == review.username | lower %}
                                             <a href="{{ url_for('delete_review', recipe_id=recipe._id, review_id=review._id) }}"
                                                 class="waves-effect waves-light btn recipe-btn">Delete</a>
                                             {% endif %}
