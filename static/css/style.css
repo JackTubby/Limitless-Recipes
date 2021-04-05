@@ -334,6 +334,7 @@
 
 .card-title-wrapper {
     text-decoration: underline;
+    word-wrap: break-word;
     color: #116466;
     font-size: 28px;
     font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
@@ -462,6 +463,7 @@ hr.view-hr {
 
 .recipe-name-title {
     font-size: 34px;
+    word-wrap: break-word;
     color: black;
     font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
