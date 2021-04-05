@@ -85,7 +85,7 @@ def search():
 
     # search functionality
     if "category" in request.args:
-        print("there is category")
+
         category = request.args.get("category")
         recipes = mongo.db.recipes.find(
             {"$text": {"$search": category}})
@@ -230,6 +230,7 @@ def add_recipe():
             "recipe_name":  request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_serves": request.form.get("recipe_serves"),
             "image_url": request.form.get("image_url"),
             "prep_time": request.form.get("prep_time"),
             "cooking_time": request.form.get("cooking_time"),
@@ -312,8 +313,6 @@ def add_review(recipe_id):
 # --- Delete Review --- #
 @app.route("/delete_review/<recipe_id>/<review_id>")
 def delete_review(recipe_id, review_id):
-    print(recipe_id)
-    print(review_id)
     # deletes review in db
     mongo.db.recipes.update_one(
         {"_id": ObjectId(recipe_id)},
