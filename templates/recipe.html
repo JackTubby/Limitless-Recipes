@@ -27,7 +27,7 @@
     <br>
     <!-- Search Bar -->
     <div class="card-panel search-card">
-        <form action="{{ url_for('search') }}" method="post">
+        <form action="{{ url_for('search') }}" method="GET">
             <div class="row center-align">
                 <div class="col s12 l6">
                     <div class="input-field">
@@ -135,7 +135,7 @@
                                             <!-- Review Description -->
                                             <p class="recipe-review-text review-quotes center-align">
                                                 <span class="recipe-review-desc">
-                                                    "{{ review.recipe_review }}" 
+                                                    "{{ review.recipe_review }}"
                                                 </span>
                                             </p>
                                             <!-- Review Username -->

@@ -16,7 +16,7 @@
 <!-- session user's add recipes -->
 <div class="row">
     <h2 class="text-shadow profile-page-title">Your Recipes</h2>
-    {% if recipes %}
+    {% if total > 0 %}
     {% for recipe in recipes %}
     <div class="col s12 l3">
         <div class="card">
