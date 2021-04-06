@@ -29,7 +29,7 @@ def index():
 # --- Recipe Pages --- #
 @app.route("/get_recipes")
 def get_recipes():
-    # Pagination
+    # Initialize pagination
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
     # Sets amount of recipes on each page
@@ -40,33 +40,32 @@ def get_recipes():
     else:
         offset = (page - 1) * per_page
 
+    # Query MongoDB (gets recipe category)
     category = request.args.get("category")
-    # Gets recipe category
+    # Gets all the recipes with the correct category
     if category:
         recipes = list(
             mongo.db.recipes.find(
                 {"category_name": category}))
+    # Else display all recipes
     else:
         recipes = list(mongo.db.recipes.find().sort([("_id", -1)]))
-    # Search category filter
-    # args = list(request.args)
-    # search_category = mongo.db.recipes.find({"category_name": {"$in": args}})
-    # print(list(search_category))
-    # counts total of recipes
+    # total number of results
     total = mongo.db.recipes.find().count()
     # Gets user reviews
     reviews = list(mongo.db.reviews.find())
-    #
+
     paginatedResults = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page, total=total)
 
     return render_template(
         "recipe.html",
         recipes=paginatedResults,
-        # search_category=search_category,
         reviews=reviews,
-        page=page, per_page=per_page,
-        pagination=pagination)
+        page=page,
+        per_page=per_page,
+        pagination=pagination,
+        total=total)
 
 
 # --- Search --- #
@@ -83,19 +82,24 @@ def search():
     else:
         offset = (page - 1) * per_page
 
-    # search functionality
+    # search functionality / MongoDB query
     if "category" in request.args:
 
         category = request.args.get("category")
         recipes = mongo.db.recipes.find(
             {"$text": {"$search": category}})
-    else:
-        query = request.form.get("query")
+        print(recipes, "top")
+
+    if "query" in request.args:
+        query = request.args.get("query")
         recipes = mongo.db.recipes.find({"$text": {"$search": query}})
+
+
     # counts total of recipes
     total = mongo.db.recipes.count()
-    #
-    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
+
+    paginatedResults = recipes[offset: offset +
+                               per_page].sort("recipe_name")
     pagination = Pagination(page=page, per_page=per_page, total=total)
 
     return render_template(
@@ -103,7 +107,8 @@ def search():
         recipes=paginatedResults,
         page=page,
         per_page=per_page,
-        pagination=pagination)
+        pagination=pagination,
+        total=total)
 
 
 # --- View Recipe --- #
@@ -190,15 +195,18 @@ def profile(username):
     else:
         offset = (page - 1) * per_page
 
+    recipes = mongo.db.recipes.find()
+
     # grab the session user's username from the db
     user = mongo.db.users.find_one(
         {"username": session["user"]})
 
     if session["user"]:
-        recipes = list(mongo.db.recipes.find(
-            {'created_by': session.get('user')}))
+        recipes = mongo.db.recipes.find(
+            {'created_by': session.get('user')})
 
-    total = mongo.db.recipes.count()
+    total = recipes.count()
+
     paginatedResults = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page, total=total)
 
@@ -208,7 +216,8 @@ def profile(username):
         recipes=paginatedResults,
         page=page,
         per_page=per_page,
-        pagination=pagination)
+        pagination=pagination,
+        total=total)
 
     return redirect(url_for("login"))
 
