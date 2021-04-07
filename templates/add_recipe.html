@@ -11,10 +11,10 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="icon_prefix" name="recipe_name" minlength="4" maxlength="44" type="text"
-                                data-length="44" class="validate recipe_name" required>
+                            <input name="recipe_name" minlength="2" maxlength="44" type="text"
+                                data-length="44" class="recipe_name" required>
                             <i>No special characters or numbers accepted</i>
-                            <label class="add-recipe-label" for="icon_prefix">Recipe Name</label>
+                            <label class="add-recipe-label">Recipe Name</label>
                         </div>
                     </div>
                     <!-- recipe category -->
@@ -32,9 +32,9 @@
                     <!-- serves -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input name="recipe_serves" minlength="1" maxlength="2" type="number"
-                                class="validate" required>
-                            <label class="add-recipe-label">Serves</label>
+                            <input name="recipe_serves" minlength="1" maxlength="2" type="number" class="recipe_serves" required>
+                            <i>Numbers only</i>
+                            <label class="add-recipe-label">How many people does this recipe serve?</label>
                         </div>
                     </div>
                     <!-- desription -->
@@ -42,7 +42,6 @@
                         <div class="input-field col s12">
                             <textarea name="recipe_description" minlength="10" maxlength="150"
                                 class="materialize-textarea recipe_description" data-length="150" required></textarea>
-                            <span id="charNum" class="charnum"></span>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
                     </div>
@@ -75,7 +74,7 @@
                                     <button type="button"
                                         class="btn add-recipe-btns add_field_button_ingredient recipe-ingredient">Add
                                         More Ingredients</button>
-                                    <i>maximum of 40 characters</i>
+                                    <i>maximum of 100 characters</i>
                                     <input type="text" name="recipe_ingredient" placeholder="Add Ingredient"
                                         minlength="10" maxlength="100" required>
                                 </div>
