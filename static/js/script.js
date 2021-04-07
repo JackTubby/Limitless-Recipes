@@ -33,8 +33,8 @@ function countChar(val) {
     }
 }
 
-// Limit amount of characters for recipe times inputs
-var max_chars = 4;
+// Limit amount of characters for recipe inputs
+var max_chars = 3;
 
 $('.add_recipe_times').keydown( function(e){
     if ($(this).val().length >= max_chars) { 
@@ -45,6 +45,14 @@ $('.add_recipe_times').keydown( function(e){
 $('.add_recipe_times').keyup( function(e){
     if ($(this).val().length >= max_chars) { 
         $(this).val($(this).val().substr(0, max_chars));
+    }
+});
+
+var max_chars_serves = 2;
+
+$('.recipe_serves').keyup( function(e){
+    if ($(this).val().length >= max_chars_serves) { 
+        $(this).val($(this).val().substr(0, max_chars_serves));
     }
 });
 
