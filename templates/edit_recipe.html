@@ -89,13 +89,14 @@
                     <div class="row">
                         <div class="col s12">
                             <div class="row">
-                                <div id="ingredient-btns" class="input_fields_wrap_ingredient">
-                                    <button type="button" class="btn add-recipe-btns add_field_button_ingredient">Add
+                                <div id="ingredient-btns" class="edit_input_fields_wrap_ingredient">
+                                    <button type="button" class="btn add-recipe-btns edit_add_field_button_ingredient">Add
                                         More Ingredients</button>
                                     <i>maximum of 100 characters</i>
                                     {% for ingredient in recipe.recipe_ingredient %}
-                                    <input type="text" class="recipe_ingredient" name="recipe_ingredient"
+                                    <input type="text" class="edit_input recipe_ingredient" name="recipe_ingredient"
                                         value="{{ ingredient }}" minlength="10" maxlength="100" required>
+                                        <a href="#" class="remove_field">Remove</a>
                                     {% endfor %}
                                 </div>
                             </div>
@@ -105,13 +106,13 @@
                     <div class="row">
                         <div class="col s12">
                             <div class="row">
-                                <div id="step-btns" class="input_fields_wrap_step">
-                                    <button type="button" class="btn add-recipe-btns add_field_button_step">Add More
+                                <div id="step-btns" class="edit_input_fields_wrap_step">
+                                    <button type="button" class="btn add-recipe-btns edit_add_field_button_step">Add More
                                         Steps</button>
                                     <i>maximum of 300 characters</i>
                                     {% for method in recipe.recipe_method %}
                                     <input type="text" id="recipe_method" name="recipe_method" value="{{ method }}"
-                                        minlength="10" maxlength="300" required>
+                                        class="edit_input" minlength="10" maxlength="300" required>
                                     {% endfor %}
                                 </div>
                             </div>
