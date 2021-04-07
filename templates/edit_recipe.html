@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input value="{{ recipe.recipe_name }}" name="recipe_name"
-                                minlength="4" maxlength="44" type="text" data-length="44" class="validate recipe_name"
+                                minlength="2" maxlength="44" type="text" data-length="44" class="recipe_name"
                                 required>
                             <i>No special characters or numbers accepted</i>
                             <label class="add-recipe-label">Recipe Name</label>
@@ -36,13 +36,21 @@
                             <label class="add-recipe-label" for="category_name">Task Category</label>
                         </div>
                     </div>
+                    <!-- serves -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="recipe_serves" minlength="1" maxlength="2" type="number"
+                                class="validate" value="{{ recipe.recipe_serves }}" required>
+                            <i>Numbers only</i>
+                            <label class="add-recipe-label">How many people does this recipe serve?</label>
+                        </div>
+                    </div>
                     <!-- desription -->
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea name="recipe_description" minlength="10" maxlength="100"
                                 class="materialize-textarea recipe_description" data-length="100"
                                 required>{{ recipe.recipe_description }}</textarea>
-                            <span id="charNum" class="charnum"></span>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
                     </div>
@@ -84,9 +92,10 @@
                                 <div id="ingredient-btns" class="input_fields_wrap_ingredient">
                                     <button type="button" class="btn add-recipe-btns add_field_button_ingredient">Add
                                         More Ingredients</button>
+                                    <i>maximum of 100 characters</i>
                                     {% for ingredient in recipe.recipe_ingredient %}
                                     <input type="text" class="recipe_ingredient" name="recipe_ingredient"
-                                        value="{{ ingredient }}" minlength="10" maxlength="50" required>
+                                        value="{{ ingredient }}" minlength="10" maxlength="100" required>
                                     {% endfor %}
                                 </div>
                             </div>
@@ -99,9 +108,10 @@
                                 <div id="step-btns" class="input_fields_wrap_step">
                                     <button type="button" class="btn add-recipe-btns add_field_button_step">Add More
                                         Steps</button>
+                                    <i>maximum of 300 characters</i>
                                     {% for method in recipe.recipe_method %}
                                     <input type="text" id="recipe_method" name="recipe_method" value="{{ method }}"
-                                        minlength="10" maxlength="50" required>
+                                        minlength="10" maxlength="300" required>
                                     {% endfor %}
                                 </div>
                             </div>
