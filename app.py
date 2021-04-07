@@ -276,6 +276,7 @@ def edit_recipe(recipe_id):
         # updates recipe in db
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated Successfully")
+        return redirect(url_for("profile", username=session["user"]))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
@@ -289,6 +290,7 @@ def delete_recipe(recipe_id):
     # removes recipe in db
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
+    return redirect(url_for("profile", username=session["user"]))
     return redirect(url_for("get_recipes"))
 
 
