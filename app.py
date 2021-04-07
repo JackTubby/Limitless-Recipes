@@ -265,6 +265,7 @@ def edit_recipe(recipe_id):
             "recipe_name":  request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_serves": request.form.get("recipe_serves"),
             "image_url": request.form.get("image_url"),
             "prep_time": request.form.get("prep_time"),
             "cooking_time": request.form.get("cooking_time"),
