@@ -422,22 +422,31 @@ main {
   border: 4px #116466 solid;
 }
 
-@media (min-width: 280px) and (max-width: 653px) {
+@media(max-width: 653px) {
   .view-recipe-img {
     height: 46vh;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
     margin: 0;
     padding: 0;
   }
 }
 
-@media (min-width: 653px) and (max-width: 991px) {
+@media (min-width: 470px) and (max-width: 615px) {
   .view-recipe-img {
     width: 80%;
     margin-left: 0;
+    object-fit: cover;
   }
 }
+
+@media (min-width: 615px) and (max-width: 993px) {
+    .view-recipe-img {
+      width: 60%;
+      margin-left: 0;
+      object-fit: cover;
+    }
+  }
 
 .icon-ingredient-step {
   color: #116466;
