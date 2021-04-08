@@ -4,8 +4,8 @@
 <body id="recipe-page-content">
     <br>
     <div class="container">
-        <!-- Recipe Category Buttons -->
-        <div class="row">
+        <!-- Recipe Category Buttons For Large Screens -->
+        <div class="row category-buttons-large">
             <div class="col s12 center-align recipe-page-options">
                 <a href="{{ url_for('get_recipes') }}" class="recipe-pages-btn tooltipped" data-position="bottom"
                     data-tooltip="All Recipes" id="all"><i class="fas fa-globe icon-circle"></i></a>
@@ -21,6 +21,29 @@
                 <a href="{{ url_for('get_recipes', category='Dessert') }}" class="recipe-pages-btn tooltipped"
                     data-position="bottom" data-tooltip="Dessert" id="dessert"><i
                         class="fas fa-ice-cream icon-circle"></i></a>
+            </div>
+        </div>
+        <!-- Page Category Options For Small Screens -->
+        <div class="row category-buttons-small">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_recipes') }}" 
+                    class="recipe-category-sm-btn btn">All Recipes</a>
+            </div>
+            <div class="col s6 center-align">
+                <a href="{{ url_for('get_recipes', category='Breakfast') }}"
+                    class="recipe-category-sm-btn btn">Breakfast</a>
+            </div>
+            <div class="col s6 center-align">
+                <a href="{{ url_for('get_recipes', category='Lunch') }}" 
+                    class="recipe-category-sm-btn btn">Lunch</a>
+            </div>
+            <div class="col s6 center-align">
+                <a href="{{ url_for('get_recipes', category='Dinner') }}"
+                    class="recipe-category-sm-btn btn">Dinner</a>
+            </div>
+            <div class="col s6 center-align">
+                <a href="{{ url_for('get_recipes', category='Dessert') }}"
+                    class="recipe-category-sm-btn btn">Dessert</a>
             </div>
         </div>
     </div>
