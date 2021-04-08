@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lexend+Mega&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Lexend+Mega&display=swap");
 
 /* 
 #ff5252 red accent-2
@@ -15,479 +15,505 @@
 */
 /* website styles */
 .text-shadow {
-    text-shadow: 2px 2px 2px rgba(0,0,0);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0);
 }
 
 .flashes h4 {
-    line-height: 2;
+  line-height: 2;
 }
 
 .flash-message {
-    color: #FFCB9A;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-weight: 600;
+  color: #ffcb9a;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-weight: 600;
 }
 
 /* sticky footer */
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
 /* navbar */
 .navbar {
-    background-color: #116466;
+  background-color: #116466;
 }
 
 .logo-header {
-    padding-left: 14px;
-    color: #FFCB9A;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    word-wrap: break-word;
+  padding-left: 14px;
+  color: #ffcb9a;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
+  word-wrap: break-word;
 }
 
-@media (min-width:355px), (max-width:500px){
-.logo-header {
+@media (min-width: 355px), (max-width: 500px) {
+  .logo-header {
     font-size: 24px;
-}
+  }
 }
 
-@media (min-width:307px), (max-width:355px){
-.logo-header {
+@media (min-width: 307px), (max-width: 355px) {
+  .logo-header {
     font-size: 20px;
-}
+  }
 }
 
-@media (max-width:307px){
-.logo-header {
+@media (max-width: 307px) {
+  .logo-header {
     font-size: 15px;
-}
+  }
 }
 
 .nav-text-styling {
-    color: white;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif; 
+  color: white;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 .nav-text-styling:hover {
-    color: #FFCB9A;
-    text-decoration: underline;
+  color: #ffcb9a;
+  text-decoration: underline;
 }
 
 /* index.html */
-#hero-image{
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/hero-image.jpg);
-    width: auto;
-    height: 74em;
-    background-size: cover;
-    
+#hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/hero-image.jpg);
+  width: auto;
+  height: 74em;
+  background-size: cover;
 }
 
 .index-content-wrapper {
-    padding-top: 30vh;
+  padding-top: 30vh;
 }
 
 .index-h1 {
-    font-size: 72px;
-    color: #D1E8E2;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    margin: 0;
-    word-wrap: break-word;
+  font-size: 72px;
+  color: #d1e8e2;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
+  margin: 0;
+  word-wrap: break-word;
 }
 
 .index-p {
-    font-size: 38px;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    color: white;
-    margin: 0;
+  font-size: 38px;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: white;
+  margin: 0;
 }
 .index-div-spacing {
-    margin-top: 7px;
-    margin-bottom: 7px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 /* Query to lower font size for smaller screens */
-@media (min-width:280px) and (max-width:1212px){
-.index-h1 {
+@media (min-width: 280px) and (max-width: 1212px) {
+  .index-h1 {
     font-size: 48px;
-}
-.index-p {
+  }
+  .index-p {
     font-size: 24px;
-}
+  }
 }
 
 .discover-button {
-    border: 2px solid #116466;
-    font-family: 'Lexend Mega', sans-serif;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #116466;
+  font-family: "Lexend Mega", sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .discover-button:hover {
-    color: #FFCB9A;
-    background: #116466;
+  color: #ffcb9a;
+  background: #116466;
 }
 
 /* https://www.florin-pop.com/blog/2019/03/css-pulse-effect/ */
 .blob {
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-	transform: scale(1);
-	animation: pulse 2s infinite;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-	}
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
 
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-	}
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
 
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	}
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 
 /* recipe page */
 .recipe-page-options {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.recipe-category-sm-btn {
+    margin: 10px 0px;
+    background-color: #116466;
+    font-family: 'Lexend Mega', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
 }
 
 #recipe-page-content {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/recipe-page-background.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/recipe-page-background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #recipe-page-titles {
-    margin: 0;
-    color: #fff;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    padding-bottom: 12px;
-    padding-left: 5px;
+  margin: 0;
+  color: #fff;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
+  padding-bottom: 12px;
+  padding-left: 5px;
 }
 
 .recipe-pages-wrapper {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .recipe-pages-btn {
-    padding: 0 8px;
+  padding: 0 8px;
 }
 
 .icon-circle {
-    width: 188px;
-    font-size: 50px;
-    color: #fff;
-    background-color: #116466;
-    border: 4px #fff solid;
-    border-radius: 50%;
-    box-shadow: 0px 0px 2px #fff;
-    padding: 65px;
+  width: 188px;
+  font-size: 50px;
+  color: #fff;
+  background-color: #116466;
+  border: 4px #fff solid;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2px #fff;
+  padding: 65px;
 }
 
 .icon-circle:hover {
-    background: transparent;
+  background: transparent;
+}
+
+@media (min-width: 600px) {
+    .category-buttons-small {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .category-buttons-large {
+        display: none;
+    }
 }
 
 /* search */
 .search-card {
-    background-color: rgba(0,0,0,0.7);
-    margin: auto;
-    width: 50%;
-    border-radius: 30px;
-    margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: auto;
+  width: 50%;
+  border-radius: 30px;
+  margin-bottom: 30px;
 }
 
 /* media query for search card panel to be full width on smaller screens */
-@media (max-width:1320px){
-.search-card {
+@media (max-width: 1320px) {
+  .search-card {
     width: auto;
-}
+  }
 }
 
 .submit-reset-wrapper {
-    margin-top: 18px;
+  margin-top: 18px;
 }
 
-.search-reset, .search-submit{
-    background-color: #116466;
-    height: 40px;
-    width: 80px;
+.search-reset,
+.search-submit {
+  background-color: #116466;
+  height: 40px;
+  width: 80px;
 }
 
 .search-filters {
-    background-color: white;
-    height: 40px;
-    width: 110px;
+  background-color: white;
+  height: 40px;
+  width: 110px;
 }
 
 .search-reset:hover {
-    filter: brightness(1.3);
+  filter: brightness(1.3);
 }
 
 .search-icon {
-    color: #116466;
+  color: #116466;
 }
 
 .search-input {
-    color: white;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: white;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 .pagination li a {
-    color: #ffffff;
-    display: inline-block;
-    font-size: 1.8rem;
-    padding: 0 10px;
-    line-height: 30px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 0 10px;
+  line-height: 30px;
 }
 
 .pagination li.active {
-    background-color: #116466;
+  background-color: #116466;
 }
 
 /* recipe cards */
 .recipe-name {
-    word-wrap: break-word;
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 .recipe-category {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 /* Recipe image for small screens */
 .recipe-image {
-    width: 8rem;
-    height: 30rem;
-    object-fit: cover;
+  width: 8rem;
+  height: 30rem;
+  object-fit: cover;
 }
 
 /* Media Query to reduce height of recipe image for medium size screens (ipad) */
-@media (min-width:1650px) and (max-width:1950px){
-.recipe-image {
+@media (min-width: 1650px) and (max-width: 1950px) {
+  .recipe-image {
     height: 28rem;
-}
+  }
 }
 
 /* Media Query to reduce height of recipe image for Large Screens size screens (Desktop) */
-@media (min-width:993px){
-.recipe-image {
+@media (min-width: 993px) {
+  .recipe-image {
     height: 28rem;
-}
+  }
 }
 
 .recipe-desc {
-    padding-bottom: 10px;
-    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
-    word-wrap: break-word;
+  padding-bottom: 10px;
+  font-family: "Lato", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-size: 30px;
+  word-wrap: break-word;
 }
 
 .recipe-btn {
-    border: 2px solid #116466;
-    color: black;
-    background-color: white;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    line-height: 1.5;
+  border: 2px solid #116466;
+  color: black;
+  background-color: white;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 .recipe-btn {
-    color: black;
-    background-color: #116466;
-    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
-    border: 1px solid #116466;
-    border-radius: 3px;
-    background: linear-gradient(to right, #116466 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;
+  color: black;
+  background-color: #116466;
+  font-family: "Lato", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-weight: 400;
+  border: 1px solid #116466;
+  border-radius: 3px;
+  background: linear-gradient(to right, #116466 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
 }
 
 .recipe-btn:hover {
-    color: white !important;
-    background-position: left bottom;
-    color: #116466;
+  color: white !important;
+  background-position: left bottom;
+  color: #116466;
 }
 
 .see-more {
-    font-weight: 600;
-    font-size: 28px;
-    color: #116466;
-    cursor: pointer;
+  font-weight: 600;
+  font-size: 28px;
+  color: #116466;
+  cursor: pointer;
 }
 
 .see-more:hover {
-    color: #FFCB9A;
+  color: #ffcb9a;
 }
 
 .info-main-wrapper {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .card-title-wrapper {
-    text-decoration: underline;
-    word-wrap: break-word;
-    color: #116466;
-    font-size: 28px;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  text-decoration: underline;
+  word-wrap: break-word;
+  color: #116466;
+  font-size: 28px;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 .close-icon {
-    color: red;
-    font-size: 28px;
+  color: red;
+  font-size: 28px;
 }
 
 .recipe-info-heading {
-    color: black;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 26px;
+  color: black;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 26px;
 }
 
 .recipe-info {
-    color: black;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 24px;
+  color: black;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 24px;
 }
 
 .published-by {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 /* recipe queries to fix responsive on smaller screens */
-@media (min-width:993px) and (max-width:1212px){
-.recipe-name {
+@media (min-width: 993px) and (max-width: 1212px) {
+  .recipe-name {
     font-size: 28px;
-}
+  }
 }
 
 /* view recipe */
 .view-recipe-wrapper {
-    margin-left: 20em;
-    margin-top: 2em;
+  margin-left: 20em;
+  margin-top: 2em;
 }
 
 .view-recipe-img {
-    height: 46vh;
-    width: 36vw;
-    object-fit: cover;
-    margin-left: 8rem;
-    border: 4px #116466 solid;
+  height: 46vh;
+  width: 36vw;
+  object-fit: cover;
+  margin-left: 8rem;
+  border: 4px #116466 solid;
 }
 
-@media (min-width:280px) and (max-width:653px){
-.view-recipe-img {
+@media (min-width: 280px) and (max-width: 653px) {
+  .view-recipe-img {
     height: 46vh;
     width: 100%;
     object-fit: fill;
     margin: 0;
     padding: 0;
-}
+  }
 }
 
-@media (min-width:653px) and (max-width:991px){
-    .view-recipe-img {
-        width: 80%;
-        margin-left: 0;
-    }
+@media (min-width: 653px) and (max-width: 991px) {
+  .view-recipe-img {
+    width: 80%;
+    margin-left: 0;
+  }
 }
 
 .icon-ingredient-step {
-    color: #116466;
+  color: #116466;
 }
 
 .back-to-recipes {
-    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 22px;
-    margin-top: 10px;
-    margin-left: 10px;
-    color: #D1E8E2;
+  font-family: "Lato", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #d1e8e2;
 }
 
 .back-to-recipes:hover {
-    color: #116466;
-} 
+  color: #116466;
+}
 
 .recipe-header-detail-wrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .view-recipe-headers {
-    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 28px;
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-size: 28px;
 }
 
 .view-recipe-details {
-    color: #116466;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 28px;
-    word-wrap: break-word;
+  color: #116466;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 28px;
+  word-wrap: break-word;
 }
 
 /* media query for smaller screens, fixes image and recipe details */
-@media (min-width:280px) and (max-width:1212px){
-.view-recipe-headers, .view-recipe-details {
+@media (min-width: 280px) and (max-width: 1212px) {
+  .view-recipe-headers,
+  .view-recipe-details {
     font-size: 26px;
-}
+  }
 }
 
 .edit-delete-info-wrapper {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .edit-delete-info {
-    color: #116466;
-    text-decoration: underline;
+  color: #116466;
+  text-decoration: underline;
 }
 
 .edit-delete-info:hover {
-    color: #D1E8E2;
+  color: #d1e8e2;
 }
 
 hr.view-hr {
-	border-top: 1px solid #116466;
-    border-bottom: 1px solid #fff;
-    width: 80%;
+  border-top: 1px solid #116466;
+  border-bottom: 1px solid #fff;
+  width: 80%;
 }
 
 .view-ingredient {
-    font-size: 26px;
+  font-size: 26px;
 }
 
 .view-step {
-    font-size: 22px;
-    margin-bottom: 25px;
+  font-size: 22px;
+  margin-bottom: 25px;
 }
 
 /* to top button on view page */
 #top_button {
   display: inline-block;
-  background-color: #D1E8E2;
+  background-color: #d1e8e2;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -495,8 +521,7 @@ hr.view-hr {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  transition: background-color .3s, 
-    opacity .5s, visibility .5s;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
   opacity: 0;
   visibility: hidden;
   z-index: 1000;
@@ -510,7 +535,7 @@ hr.view-hr {
 }
 #top_button:hover {
   cursor: pointer;
-  background-color: #FFCB9A;
+  background-color: #ffcb9a;
 }
 #top_button:active {
   background-color: #116466;
@@ -521,22 +546,22 @@ hr.view-hr {
 }
 
 .top-button-icon {
-    color: #116466;
-    font-size: 22px;
-    line-height: 2.2 !important;
+  color: #116466;
+  font-size: 22px;
+  line-height: 2.2 !important;
 }
 
 /* reviews */
 .modal-review {
-    width: 30% !important;
+  width: 30% !important;
 }
 
 .recipe-review-text {
-    color: white;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 16px;
-    padding-top: 4px;
-    padding-bottom: 6px;
+  color: white;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 16px;
+  padding-top: 4px;
+  padding-bottom: 6px;
 }
 
 .checked {
@@ -544,287 +569,296 @@ hr.view-hr {
 }
 
 .recipe-review-desc {
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 16px;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 16px;
 }
 
 .right-align-add-review {
-    float: right;
+  float: right;
 }
 
 .recipe-name-title {
-    font-size: 34px;
-    word-wrap: break-word;
-    color: black;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  font-size: 34px;
+  word-wrap: break-word;
+  color: black;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 .review-cards {
-    background-color: #116466;
+  background-color: #116466;
 }
 
 .no-review-message {
-    font-family: 'Lato', sans-serif;
-    color: #000;
-    font-size: 26px;
-    font-style: italic;
+  font-family: "Lato", sans-serif;
+  color: #000;
+  font-size: 26px;
+  font-style: italic;
 }
 
 /* media query for review modal width */
-@media (min-width:1024px) and (max-width:1366px){
-.modal-review {
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .modal-review {
     width: 80% !important;
-}
+  }
 }
 
-@media (min-width:481px) and (max-width:768px){
-.modal-review {
+@media (min-width: 481px) and (max-width: 768px) {
+  .modal-review {
     width: 70% !important;
-}
+  }
 }
 
-@media (min-width:280px) and (max-width:653px){
-.modal-review {
+@media (min-width: 280px) and (max-width: 653px) {
+  .modal-review {
     width: 100% !important;
-}
+  }
 }
 
 /* new recipe */
 #add-recipe-body {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .charnum {
-    color: #116466;
+  color: #116466;
 }
 
 .add-recipe-header {
-    color: #116466;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: #116466;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 .add-recipe-submit {
-    color: #116466;
-    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
-    border: 1px solid #116466;
-    border-radius: 3px;
-    width: 100px;
-    height: 40px;
-    background: linear-gradient(to right, #116466 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;
+  color: #116466;
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-weight: 400;
+  border: 1px solid #116466;
+  border-radius: 3px;
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(to right, #116466 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
 }
 
 .add-recipe-submit:hover {
-    background-position: left bottom;
-    color: white;
-    cursor: pointer;
+  background-position: left bottom;
+  color: white;
+  cursor: pointer;
 }
 
 .add-recipe-cardpanel {
-    border: 2px solid #116466;
-    border-radius: 2%;
+  border: 2px solid #116466;
+  border-radius: 2%;
 }
 
 .add-recipe-btns {
-    border: 2px solid #116466;
-    color: black;
-    background-color: white;
-    font-family: 'Lato', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    line-height: 1.5;
-    text-transform: capitalize;
+  border: 2px solid #116466;
+  color: black;
+  background-color: white;
+  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-transform: capitalize;
 }
 
-.recipe-ingredient, .recipe-method {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.recipe-ingredient,
+.recipe-method {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-@media (max-width:360px){
-.recipe-ingredient, .recipe-method {
+@media (max-width: 360px) {
+  .recipe-ingredient,
+  .recipe-method {
     font-size: 14px;
-}
+  }
 }
 
 .form-textarea {
-    border-bottom: 1px solid black ;
-    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-bottom: 1px solid black;
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
 }
 
 .recipe-no-results {
-    padding-top: 4em;
-    font-family: 'Lato', sans-serif;
-    font-size: 44px;
-    font-style: italic;
-    color: #fff;
+  padding-top: 4em;
+  font-family: "Lato", sans-serif;
+  font-size: 44px;
+  font-style: italic;
+  color: #fff;
 }
-
 
 /* edit recipe */
 #edit-recipe-background {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .edit-recipe-cardpanel {
-    border: 2px solid #116466;
-    border-radius: 2%;
+  border: 2px solid #116466;
+  border-radius: 2%;
 }
 
 .edit-recipe-header {
-    color: #116466;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: #116466;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
 .edit-recipe-submit {
-    color: #116466;
-    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
-    border: 1px solid #116466;
-    border-radius: 3px;
-    width: 100px;
-    height: 40px;
-    background: linear-gradient(to right, #116466 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;
+  color: #116466;
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-weight: 400;
+  border: 1px solid #116466;
+  border-radius: 3px;
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(to right, #116466 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
 }
 
 .edit-recipe-submit:hover {
-    background-position: left bottom;
-    color: white;
-    cursor: pointer;
+  background-position: left bottom;
+  color: white;
+  cursor: pointer;
 }
 
 .edit-recipe-image {
-    height: 90px;
-    width: 90px;
-    border: 4px solid #116466;
+  height: 90px;
+  width: 90px;
+  border: 4px solid #116466;
 }
 
 /* profile */
 .profile-name {
-    color: #116466;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    font-size: 48px;
-    padding-top: 8px;
+  color: #116466;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 48px;
+  padding-top: 8px;
 }
 
 .profile-page-title {
-    margin: 0;
-    color: #116466;
-    font-family: 'Lexend Mega', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    padding-bottom: 12px;
-    padding-left: 5px;
+  margin: 0;
+  color: #116466;
+  font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
+  padding-bottom: 12px;
+  padding-left: 5px;
 }
 
 .profile-wrapper {
-    background-color: #D1E8E2;
+  background-color: #d1e8e2;
 }
 
 .pagination-wrapper {
-    background-color: #116466;
+  background-color: #116466;
 }
 
 /* register.html */
 #background-register-image {
-    background-image: url(../images/register-img.jpg);
-;
+  background-image: url(../images/register-img.jpg);
 }
 
 /* register.html */
 #background-register-image {
-    background-image: url(../images/register-img.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-image: url(../images/register-img.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .margin-register {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .register-button-text {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .register-btn {
-    color: #116466;
-    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
-    border: 1px solid #116466;
-    border-radius: 3px;
-    background: linear-gradient(to right, #116466 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;
-    height: 4rem;
+  color: #116466;
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-weight: 400;
+  border: 1px solid #116466;
+  border-radius: 3px;
+  background: linear-gradient(to right, #116466 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+  height: 4rem;
 }
 
 .register-btn:hover {
-    background-position: left bottom;
-    color: white;
-    cursor: pointer;
+  background-position: left bottom;
+  color: white;
+  cursor: pointer;
 }
 
 .recipe-no-results-profile {
-    color: black;
-    font-family: 'Lato', sans-serif;
-    font-size: 36px;
-    font-style: italic;
+  color: black;
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+  font-style: italic;
 }
 
 /* footer */
 .page-footer {
-    background-color: #116466;
+  background-color: #116466;
 }
 
 .icons {
-    padding-top: 8px;
-    color: white;
-    font-size: 40px;
-    padding-left: 14px;
-    padding-right: 14px;
+  padding-top: 8px;
+  color: white;
+  font-size: 40px;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 .icons:hover {
-    color: #FFCB9A;
+  color: #ffcb9a;
 }
 
 .copyright {
-    padding-top: 10px;
-    font-size: 18px;
+  padding-top: 10px;
+  font-size: 18px;
 }
 
 /* Login */
 .login-btn {
-    background-color: #116466;
-    height: 40px;
+  background-color: #116466;
+  height: 40px;
 }
 
 #login-background {
-    background-image: url(../images/edit-recipe-background.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-image: url(../images/edit-recipe-background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .login-heading {
-    color: white;
-    font-size: 36px;
-    font-family: 'Lexend Mega', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 2px 2px 2px rgba(0,0,0);
+  color: white;
+  font-size: 36px;
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0);
 }
 
-
-
-
+.error-background {
+  background-image: url(../images/404-background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
