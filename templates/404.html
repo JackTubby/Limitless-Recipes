@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<!--404 page presented if user navigates to a dead url or if they attempt to access member-exclusive features-->
+<div class="container error-background">
+  <div class="row">
+    <div class="col s12 center-align">
+      <a
+        href="{{ url_for ('homepage') }}"
+        class="center-align pink darken-3 waves-effect waves-light btn"
+        >Seems you got lost... Lets get home!</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}
