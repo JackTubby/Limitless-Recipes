@@ -13,9 +13,11 @@
     </div>
   </div>
 
+
   <!-- session user's add recipes -->
   <div class="row">
     <h2 class="text-shadow profile-page-title">Your Recipes</h2>
+    <h5 class="profile-page-title profile-total">You Have {{ total }} Recipes</h5>
     {% if total > 0 %} {% for recipe in recipes %}
     <div class="col s12 l3">
       <div class="card">
