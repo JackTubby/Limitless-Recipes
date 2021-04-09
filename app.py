@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import date
+from functools import wraps
 from flask_paginate import Pagination, get_page_args
 if os.path.exists("env.py"):
     import env
@@ -26,11 +27,9 @@ def index():
     return render_template("index.html")
 
 
+# Handle 404 error pages
 @app.errorhandler(404)
 def not_found_error(error):
-    """
-    Handle 404 error and render 404 error page.
-    """
     return render_template('errors/404.html', error=error), 404
 
 
@@ -250,23 +249,27 @@ def logout():
 # --- Add Recipe --- #
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    if request.method == "POST":
-        recipe = {
-            "recipe_name":  request.form.get("recipe_name"),
-            "category_name": request.form.get("category_name"),
-            "recipe_description": request.form.get("recipe_description"),
-            "recipe_serves": request.form.get("recipe_serves"),
-            "image_url": request.form.get("image_url"),
-            "prep_time": request.form.get("prep_time"),
-            "cooking_time": request.form.get("cooking_time"),
-            "recipe_ingredient": request.form.getlist("recipe_ingredient"),
-            "recipe_method": request.form.getlist("recipe_method"),
-            "created_by": session["user"]
-        }
-        # inserts recipe into db
-        mongo.db.recipes.insert_one(recipe)
-        flash("Recipe Added Successfully")
-        return redirect(url_for("get_recipes"))
+    if session["user"]:
+        if request.method == "POST":
+            recipe = {
+                "recipe_name":  request.form.get("recipe_name"),
+                "category_name": request.form.get("category_name"),
+                "recipe_description": request.form.get("recipe_description"),
+                "recipe_serves": request.form.get("recipe_serves"),
+                "image_url": request.form.get("image_url"),
+                "prep_time": request.form.get("prep_time"),
+                "cooking_time": request.form.get("cooking_time"),
+                "recipe_ingredient": request.form.getlist("recipe_ingredient"),
+                "recipe_method": request.form.getlist("recipe_method"),
+                "created_by": session["user"]
+            }
+            # inserts recipe into db
+            mongo.db.recipes.insert_one(recipe)
+            flash("Recipe Added Successfully")
+            return redirect(url_for("get_recipes"))
+    else:
+        return redirect(url_for("login"))
+
     categories = mongo.db.categories.find().sort(
         "category_name", 1)
     return render_template(
@@ -307,7 +310,6 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
     return redirect(url_for("profile", username=session["user"]))
-    return redirect(url_for("get_recipes"))
 
 
 # --- Add Review --- #
