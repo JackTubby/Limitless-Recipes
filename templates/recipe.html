@@ -26,20 +26,17 @@
         <!-- Page Category Options For Small Screens -->
         <div class="row category-buttons-small">
             <div class="col s12 center-align">
-                <a href="{{ url_for('get_recipes') }}" 
-                    class="recipe-category-sm-btn btn">All Recipes</a>
+                <a href="{{ url_for('get_recipes') }}" class="recipe-category-sm-btn btn">All Recipes</a>
             </div>
             <div class="col s6 center-align">
                 <a href="{{ url_for('get_recipes', category='Breakfast') }}"
                     class="recipe-category-sm-btn btn">Breakfast</a>
             </div>
             <div class="col s6 center-align">
-                <a href="{{ url_for('get_recipes', category='Lunch') }}" 
-                    class="recipe-category-sm-btn btn">Lunch</a>
+                <a href="{{ url_for('get_recipes', category='Lunch') }}" class="recipe-category-sm-btn btn">Lunch</a>
             </div>
             <div class="col s6 center-align">
-                <a href="{{ url_for('get_recipes', category='Dinner') }}"
-                    class="recipe-category-sm-btn btn">Dinner</a>
+                <a href="{{ url_for('get_recipes', category='Dinner') }}" class="recipe-category-sm-btn btn">Dinner</a>
             </div>
             <div class="col s6 center-align">
                 <a href="{{ url_for('get_recipes', category='Dessert') }}"
@@ -48,6 +45,7 @@
         </div>
     </div>
     <br>
+
     <!-- Search Bar -->
     <div class="card-panel search-card">
         <form action="{{ url_for('search') }}" method="GET">
@@ -74,11 +72,11 @@
         </form>
     </div>
     <!-- Recipe Title -->
-    <h2 id="recipe-page-titles" class="text-shadow">All Recipes</h2>
+    <h2 class="recipe-page-titles text-shadow">All Recipes</h2>
     <!-- Recipe Card -->
     <div class="row">
-        {% if recipes %}
-        {% for recipe in recipes %}
+        {% if recipe_count > 0 %}
+        {% for recipe in recipe_list %}
         <div class="col s12 m6 l3">
             <div class="card recipe {{ recipe._id }}">
                 <!-- Recipe Image -->
@@ -206,7 +204,7 @@
                     </div>
                     <!-- Serves -->
                     <div class="center-align">
-                    <span class="center-align recipe-info-heading">Serves:</span>
+                        <span class="center-align recipe-info-heading">Serves:</span>
                         <span class="recipe-info">{{ recipe.recipe_serves }}</span>
                     </div>
                     <div class="center-align recipe-info-wrapper">
@@ -241,10 +239,10 @@
         <h3 class="recipe-no-results">No Results</h3>
     </div>
     {% endif %}
-    <!-- Pagination Links -->
-    <span class="center align">
-        {{ pagination.links }}
-    </span>
+        <!-- Pagination Links -->
+        <span class="center align">
+            {{ pagination.links }}
+        </span>
 </body>
 
 {% endblock %}
