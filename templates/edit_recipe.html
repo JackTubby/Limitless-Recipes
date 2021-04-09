@@ -12,9 +12,8 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input value="{{ recipe.recipe_name }}" name="recipe_name"
-                                minlength="2" maxlength="44" type="text" data-length="44" class="recipe_name"
-                                required>
+                            <input value="{{ recipe.recipe_name }}" name="recipe_name" type="text" data-length="44" class="recipe_name validate" pattern="^[^\s][A-Za-z0-9\s]{2,44}$"
+                            title="2-44 Characters, A-Z only, Must begin with a letter" required>
                             <i>No special characters or numbers accepted</i>
                             <label class="add-recipe-label">Recipe Name</label>
                         </div>
@@ -39,8 +38,9 @@
                     <!-- serves -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input name="recipe_serves" minlength="1" maxlength="2" type="number"
-                                class="validate" value="{{ recipe.recipe_serves }}" required>
+                            <input value="{{ recipe.recipe_serves }}" name="recipe_serves" minlength="1" maxlength="2" type="number" class="recipe_serves validate" 
+                            min="1" step="1" title="Positive numbers only"
+                            title="2-44 Characters, A-Z only" required>
                             <i>Numbers only</i>
                             <label class="add-recipe-label">How many people does this recipe serve?</label>
                         </div>
@@ -48,9 +48,9 @@
                     <!-- desription -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea name="recipe_description" minlength="10" maxlength="100"
-                                class="materialize-textarea recipe_description" data-length="100"
-                                required>{{ recipe.recipe_description }}</textarea>
+                            <textarea name="recipe_description" minlength="10" maxlength="150"
+                            class="materialize-textarea recipe_description validate" data-length="150" required>
+                            {{- recipe.recipe_description -}}</textarea>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
                         </div>
                     </div>
@@ -64,9 +64,7 @@
 
                             {% endif %}
                             <div class="input-field col s12">
-                                <textarea type="url" id="image_url" name="image_url" class="materialize-textarea">
-                                    {{- recipe.image_url -}}
-                                </textarea>
+                                <input type="url" class="validate" id="image_url" name="image_url" pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))">
                                 <label class="add-recipe-label" for="image_url">Image URL</label>
                             </div>
                         </div>
@@ -74,14 +72,14 @@
                     <!-- new prep time -->
                     <div class="row">
                         <div class="input-field col s6">
-                            <input class="add_recipe_times" type="number" id="prep_time" name="prep_time" step="1"
-                                value="{{ recipe.cooking_time }}" required>
+                            <input class="add_recipe_times validate" min="1" type="number" name="prep_time" step="1"
+                            required value="{{ recipe.cooking_time }}">
                             <label class="add-recipe-label" for="prep_time">Preparation Time (minutes)</label>
                         </div>
                         <!-- cooking time -->
                         <div class="input-field col s6">
-                            <input class="add_recipe_times" type="number" id="cooking_time" name="cooking_time" step="1"
-                                value="{{ recipe.cooking_time }}" required>
+                            <input class="add_recipe_times validate" min="1" type="number" name="cooking_time" step="1"
+                            required value="{{ recipe.cooking_time }}">
                             <label class="add-recipe-label" for="cooking_time">Cooking Time (minutes)</label>
                         </div>
                     </div>
@@ -94,8 +92,9 @@
                                         More Ingredients</button>
                                     <i>maximum of 100 characters</i>
                                     {% for ingredient in recipe.recipe_ingredient %}
-                                    <input type="text" class="edit_input recipe_ingredient" name="recipe_ingredient"
-                                        value="{{ ingredient }}" minlength="10" maxlength="100" required>
+                                    <input type="text" name="recipe_ingredient" placeholder="Add Ingredient"
+                                    minlength="10" maxlength="100" class="validate" pattern="^[^\s][A-Za-z0-9\s]{2,44}$"
+                                    title="10-100 characters, no special characters" required value="{{ ingredient }}">
                                         <a href="#" class="remove_field">Remove</a>
                                     {% endfor %}
                                 </div>
@@ -111,8 +110,9 @@
                                         Steps</button>
                                     <i>maximum of 300 characters</i>
                                     {% for method in recipe.recipe_method %}
-                                    <input type="text" id="recipe_method" name="recipe_method" value="{{ method }}"
-                                        class="edit_input" minlength="10" maxlength="300" required>
+                                    <input type="text" id="recipe-method" name="recipe_method" class="validate"
+                                    placeholder="Add Step" minlength="10" maxlength="300" pattern="^[^\s][A-Za-z0-9\s]{2,44}$" 
+                                    required value="{{ method }}">
                                     {% endfor %}
                                 </div>
                             </div>
