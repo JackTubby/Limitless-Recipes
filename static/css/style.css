@@ -179,7 +179,7 @@ main {
   background-size: cover;
 }
 
-#recipe-page-titles {
+.recipe-page-titles {
   margin: 0;
   color: #fff;
   font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
@@ -769,6 +769,10 @@ hr.view-hr {
 
 .pagination-wrapper {
   background-color: #116466;
+}
+
+.profile-total {
+  margin-left: 16px;
 }
 
 /* register.html */
