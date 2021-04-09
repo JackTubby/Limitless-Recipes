@@ -112,73 +112,6 @@
                                 </div>
                                 {% endif %}
                             </div>
-                            <div class="row">
-                                <div class="col s12">
-                                    <!-- Review Star Rating -->
-                                    {% if recipe.reviews %}
-                                    {% for review in recipe.reviews %}
-                                    <div class="card review-cards">
-                                        <div class="card-content white-text">
-                                            <span class="card-title">
-                                                <!-- Converts Number Into A Star Rating -->
-                                                {% if review.recipe_rating == "5" %}
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                {% elif review.recipe_rating == "4" %}
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                {% elif review.recipe_rating == "3" %}
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                {% elif review.recipe_rating == "2" %}
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                {% elif review.recipe_rating == "1" %}
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                {% endif %}
-                                            </span>
-                                            <!-- Review Description -->
-                                            <p class="recipe-review-text review-quotes center-align">
-                                                <span class="recipe-review-desc">
-                                                    "{{ review.recipe_review }}"
-                                                </span>
-                                            </p>
-                                            <!-- Review Username -->
-                                            <p class="recipe-review-username right-align">{{ review.username }}</p>
-                                            <!-- Review Date -->
-                                            <p class="recipe-review-date right-align">{{ review.review_date }}</p>
-                                            <!-- Review Delete Button -->
-                                            {% if session.user | lower == review.username | lower %}
-                                            <a href="{{ url_for('delete_review', recipe_id=recipe._id, review_id=review._id) }}"
-                                                class="waves-effect waves-light btn recipe-btn">Delete</a>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                    {% else %}
-                                    <!-- If Recipe Has No Reviews This Will Show -->
-                                    <div class="center-align">
-                                        <h3 class="no-review-message">No Reviews</h3>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                            </div>
                         </div>
                         <!-- Review Modal Close -->
                         <div class="modal-footer">
@@ -187,47 +120,10 @@
                     </div>
                     <!-- Recipe Card Buttons -->
                     <div class="button-wrappers center-align">
-                        <!-- Review Modal Trigger -->
-                        <a class="btn recipe-btn modal-trigger" href="#reviews-{{recipe._id}}">Reviews</a>
                         <!-- Recipe View Button (opens view_recipe.html) -->
                         <a class=" btn recipe-btn" href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View</a>
                     </div>
                     <hr>
-                    <!-- Recipe More Card Reveal -->
-                    <h5 class="activator center-align see-more">More <i class="fas fa-info"></i></h5>
-                </div>
-                <!-- Recipe Card Reveal Content-->
-                <div class="card-reveal">
-                    <div class="card-title grey-text text-darken-4 info-main-wrapper s12 m12 l6">
-                        <span class="card-title-wrapper">{{ recipe.recipe_name }}</span>
-                        <i class="far fa-window-close right close-icon"></i>
-                    </div>
-                    <!-- Serves -->
-                    <div class="center-align">
-                        <span class="center-align recipe-info-heading">Serves:</span>
-                        <span class="recipe-info">{{ recipe.recipe_serves }}</span>
-                    </div>
-                    <div class="center-align recipe-info-wrapper">
-                        <!-- Recipe Description -->
-                        <p class="center-align recipe-desc">{{ recipe.recipe_description }}</p>
-                        <!-- Recipe Prep Time -->
-                        <div>
-                            <span class="recipe-info-heading">Prep Time: </span>
-                            <span class="recipe-info">{{ recipe.prep_time }} minutes</span>
-                        </div>
-                        <hr>
-                        <!-- Recipe Cooking Time -->
-                        <div>
-                            <span class="recipe-info-heading">Cooking Time: </span>
-                            <span class="recipe-info">{{recipe.cooking_time}} minutes</span>
-                        </div>
-                        <hr>
-                        <!-- Recipe View Button (opens to view_recipe.html) -->
-                        <a class="waves-effect waves-light btn recipe-btn"
-                            href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View</a>
-                        <!-- Recipe Published By -->
-                        <p class="published-by">Published by {{ recipe.created_by }}</p>
-                    </div>
                 </div>
             </div>
         </div>
