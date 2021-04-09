@@ -58,6 +58,9 @@ def get_recipes():
     paginatedResults = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page, total=total)
 
+    recipe_list = list(recipes)
+    recipe_count = len(recipe_list)
+
     return render_template(
         "recipe.html",
         recipes=paginatedResults,
@@ -65,7 +68,9 @@ def get_recipes():
         page=page,
         per_page=per_page,
         pagination=pagination,
-        total=total)
+        total=total,
+        recipe_list=paginatedResults,
+        recipe_count=recipe_count)
 
 
 # --- Search --- #
@@ -88,19 +93,20 @@ def search():
         category = request.args.get("category")
         recipes = mongo.db.recipes.find(
             {"$text": {"$search": category}})
-        print(recipes, "top")
 
     if "query" in request.args:
         query = request.args.get("query")
         recipes = mongo.db.recipes.find({"$text": {"$search": query}})
 
-
     # counts total of recipes
     total = mongo.db.recipes.count()
 
-    paginatedResults = recipes[offset: offset +
-                               per_page].sort("recipe_name")
+    paginatedResults = recipes[offset: offset + per_page].sort("recipe_name")
     pagination = Pagination(page=page, per_page=per_page, total=total)
+
+    recipe_list = list(recipes)
+    recipe_count = len(recipe_list)
+    print(recipe_count, "TESTTTTTTTT")
 
     return render_template(
         "recipe.html",
@@ -108,7 +114,9 @@ def search():
         page=page,
         per_page=per_page,
         pagination=pagination,
-        total=total)
+        total=total,
+        recipe_list=recipe_list,
+        recipe_count=recipe_count)
 
 
 # --- View Recipe --- #
