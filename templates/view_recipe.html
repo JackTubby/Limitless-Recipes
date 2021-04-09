@@ -43,22 +43,22 @@
             <br>
             <h4 class="view-recipe-headers">Serves:
                 <span class="view-recipe-details">{{ recipe.recipe_serves }}</span>
-            <br>
-            <h4 class="view-recipe-headers">Description:
-                <span class="view-recipe-details">{{ recipe.recipe_description }}</span>
-            </h4>
-            <br>
-            <h4 class="view-recipe-headers">Prep Time:
-                <span class="view-recipe-details">{{ recipe.prep_time }} minutes</span>
-            </h4>
-            <br>
-            <h4 class="view-recipe-headers">Cooking Time:
-                <span class="view-recipe-details">{{ recipe.cooking_time }} minutes</span>
-            </h4>
-            <br>
-            <h6 class="view-recipe-headers">By:
-                <span class="view-recipe-details"><em>{{ recipe.created_by }}</em></span>
-            </h6>
+                <br>
+                <h4 class="view-recipe-headers">Description:
+                    <span class="view-recipe-details">{{ recipe.recipe_description }}</span>
+                </h4>
+                <br>
+                <h4 class="view-recipe-headers">Prep Time:
+                    <span class="view-recipe-details">{{ recipe.prep_time }} minutes</span>
+                </h4>
+                <br>
+                <h4 class="view-recipe-headers">Cooking Time:
+                    <span class="view-recipe-details">{{ recipe.cooking_time }} minutes</span>
+                </h4>
+                <br>
+                <h6 class="view-recipe-headers">By:
+                    <span class="view-recipe-details"><em>{{ recipe.created_by }}</em></span>
+                </h6>
         </div>
     </div>
 </div>
@@ -137,8 +137,8 @@
                 <p class="recipe-review-username right-align">{{ review.username }}</p>
                 <!-- recipe review date -->
                 <p class="recipe-review-date right-align">{{ review.review_date }}</p>
-                <!-- recipe review delete -->
-                {% if session.user | lower == recipe.username | lower %}
+                <!-- Review Delete Button -->
+                {% if session.user | lower == review.username | lower %}
                 <a href="{{ url_for('delete_review', recipe_id=recipe._id, review_id=review._id) }}"
                     class="waves-effect waves-light btn recipe-btn">Delete</a>
                 {% endif %}
