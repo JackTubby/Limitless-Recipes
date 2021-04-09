@@ -26,6 +26,14 @@ def index():
     return render_template("index.html")
 
 
+@app.errorhandler(404)
+def not_found_error(error):
+    """
+    Handle 404 error and render 404 error page.
+    """
+    return render_template('errors/404.html', error=error), 404
+
+
 # --- Recipe Pages --- #
 @app.route("/get_recipes")
 def get_recipes():
@@ -345,4 +353,4 @@ def delete_review(recipe_id, review_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
