@@ -50,20 +50,20 @@
                     <!-- recipe image -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="url" class="validate" id="image_url" name="image_url">
-                            <label class="add-recipe-label" for="image_url" pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))">Image URL</label>
+                            <input type="url" class="validate" id="image_url" name="image_url" pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))">
+                            <label class="add-recipe-label" for="image_url">Image URL</label>
                         </div>
                     </div>
                     <!-- new prep time -->
                     <div class="row">
                         <div class="input-field col s6">
-                            <input class="add_recipe_times validate" min="1" type="number" id="prep_time" name="prep_time" step="1"
+                            <input class="add_recipe_times validate" min="1" type="number" name="prep_time" step="1"
                                 required>
                             <label class="add-recipe-label" for="prep_time">Preparation Time (minutes)</label>
                         </div>
                         <!-- cooking time -->
                         <div class="input-field col s6">
-                            <input class="add_recipe_times validate" min="1" type="number" id="cooking_time" name="cooking_time" step="1"
+                            <input class="add_recipe_times validate" min="1" type="number" name="cooking_time" step="1"
                                 required>
                             <label class="add-recipe-label" for="cooking_time">Cooking Time (minutes)</label>
                         </div>
@@ -79,7 +79,7 @@
                                     <i>maximum of 100 characters</i>
                                     <input type="text" name="recipe_ingredient" placeholder="Add Ingredient"
                                         minlength="10" maxlength="100" class="validate" pattern="^[^\s][A-Za-z0-9\s]{2,44}$"
-                                            title="10-100 characters, no special characters" required>
+                                        title="10-100 characters, no special characters" required>
                                 </div>
                             </div>
                         </div>
