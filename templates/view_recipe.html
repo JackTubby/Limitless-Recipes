@@ -25,9 +25,9 @@
 <div class="row center-align">
     <div class="col s12 l6">
         {% if recipe.image_url %}
-        <img src="{{ recipe.image_url }}" class="view-recipe-img " alt="Recipe Image" />
+        <img src="{{ recipe.image_url }}" class="view-recipe-img " alt="Recipe Image"/>
         {% else %}
-        <img class="view-recipe-img" src="../static/images/recipe-page-background.jpg">
+        <img class="view-recipe-img" src="../static/images/missing-image.jpg" alt="default recipe image">
         {% endif %}
     </div>
     <!-- Recipe Details -->

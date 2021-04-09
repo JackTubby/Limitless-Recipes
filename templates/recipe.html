@@ -82,10 +82,10 @@
                 <!-- Recipe Image -->
                 <div class="card-image">
                     {% if recipe.image_url %}
-                    <img class="recipe-image" src="{{ recipe.image_url }}">
+                    <img class="recipe-image" src="{{ recipe.image_url }}" alt="recipe image">
                     {% else %}
                     <!-- Fallback Recipe Image -->
-                    <img class="recipe-image" src="../static/images/recipe-page-background.jpg">
+                    <img class="recipe-image" src="../static/images/missing-image.jpg" alt="missing recipe defualt image">
                     {% endif %}
                     <span class="card-title text-shadow s12">
                         <!-- recipe name -->
