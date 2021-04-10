@@ -11,7 +11,7 @@
                 <div class="card-panel">
                     <!-- star rating -->
                     <div class="input-field col s12">
-                        <select id="recipe_rating" name="recipe_rating" class="validate modal-trigger"
+                        <select id="recipe_rating" name="recipe_rating" class="validate modal-trigger validate"
                             oninvalid="alert('You must rate this recipe!');" required>
                             <option value="" disabled selected>Rate This Recipe</option>
                             <option value="1">1 Star</option>
@@ -20,14 +20,16 @@
                             <option value="4">4 Stars</option>
                             <option value="5">5 Stars</option>
                         </select>
+                        <span class="helper-text" data-success="Incorrect!" data-error="Correct!"></span>
                     </div>
                     <!-- review desription -->
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="recipe_review" name="recipe_review" minlength="10" maxlength="49"
-                                class="materialize-textarea" onkeyup="countChar(this)" required></textarea>
+                                class="materialize-textarea validate" data-length="49" required></textarea>
                             <span id="charNum" class="charnum"></span>
                             <label class="add-recipe-label" for="recipe_review">Description</label>
+                            <span class="helper-text" data-success="Incorrect!" data-error="Correct!">Write every new step on a new line</span>
                         </div>
                     </div>
                     <!-- review submit button -->
