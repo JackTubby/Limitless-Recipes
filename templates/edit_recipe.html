@@ -6,22 +6,21 @@
         <h3 class="center-align edit-recipe-header text-shadow">Edit Recipe</h3>
 
         <div class="row margin-top-register">
-            <div class="col s6"></div>
             <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
                 <div class="card-panel edit-recipe-cardpanel">
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input value="{{ recipe.recipe_name }}" name="recipe_name" type="text" data-length="44" class="recipe_name validate" pattern="^[^\s][A-Za-z0-9\s]{2,44}$"
-                            title="2-44 Characters, A-Z only, Must begin with a letter" required>
-                            <i>No special characters or numbers accepted</i>
+                            <input value="{{ recipe.recipe_name }}" name="recipe_name" type="text" data-length="44" class="recipe_name validate" pattern="^[^\s][A-Za-z0-9\s]{1,44}$"
+                             required>
                             <label class="add-recipe-label">Recipe Name</label>
+                            <span class="helper-text" data-error="2-44 characters, contain letters only, must start with a letter" data-success="Correct!">2-44 characters, contain letters only</span>
                         </div>
                     </div>
                     <!-- recipe category -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <select id="category_name" name="category_name" class="validate">
+                            <select id="category_name" name="category_name" class="validate" title="Please select a category!">
                                 <option value="" disabled>Choose Category</option>
                                 {% for category in categories %}
                                 {% if category.category_name == recipe.category_name %}
@@ -39,10 +38,10 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input value="{{ recipe.recipe_serves }}" name="recipe_serves" minlength="1" maxlength="2" type="number" class="recipe_serves validate" 
-                            min="1" step="1" title="Positive numbers only"
+                            min="1" max="100" title="Positive numbers only"
                             title="2-44 Characters, A-Z only" required>
-                            <i>Numbers only</i>
                             <label class="add-recipe-label">How many people does this recipe serve?</label>
+                            <span class="helper-text" data-error="Positive numbers only" data-success="Correct!">Numbers only</span>
                         </div>
                     </div>
                     <!-- desription -->
@@ -52,6 +51,7 @@
                             class="materialize-textarea recipe_description validate" data-length="150" required>
                             {{- recipe.recipe_description -}}</textarea>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
+                            <span class="helper-text" data-error="10-150 Characters" data-success="Correct!">10-150 Characters</span>
                         </div>
                     </div>
                     <!-- Recipe Image -->
@@ -64,57 +64,46 @@
 
                             {% endif %}
                             <div class="input-field col s12">
-                                <input type="url" class="validate" id="image_url" name="image_url" pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))">
+                                <input type="url" class="validate" id="image_url" name="image_url" pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))" required>
                                 <label class="add-recipe-label" for="image_url">Image URL</label>
+                                <span class="helper-text" data-error="Must be a image url, jpg|jpeg|gif|png" data-success="Correct!">Image URL only</span>
                             </div>
                         </div>
                     </div>
                     <!-- new prep time -->
                     <div class="row">
                         <div class="input-field col s6">
-                            <input class="add_recipe_times validate" min="1" type="number" name="prep_time" step="1"
+                            <input class="add_recipe_times validate" min="1" max="1000" type="number" name="prep_time"
                             required value="{{ recipe.cooking_time }}">
                             <label class="add-recipe-label" for="prep_time">Preparation Time (minutes)</label>
+                            <span class="helper-text" data-error="Must be a Positive number" data-success="Correct!"></span>
                         </div>
                         <!-- cooking time -->
                         <div class="input-field col s6">
-                            <input class="add_recipe_times validate" min="1" type="number" name="cooking_time" step="1"
+                            <input class="add_recipe_times validate" min="1" max="1000" type="number" name="cooking_time"
                             required value="{{ recipe.cooking_time }}">
                             <label class="add-recipe-label" for="cooking_time">Cooking Time (minutes)</label>
+                            <span class="helper-text" data-error="Must be a Positive number" data-success="Correct!"></span>
                         </div>
                     </div>
                     <!-- recipe ingredients -->
                     <div class="row">
                         <div class="col s12">
-                            <div class="row">
-                                <div id="ingredient-btns" class="edit_input_fields_wrap_ingredient">
-                                    <button type="button" class="btn add-recipe-btns edit_add_field_button_ingredient">Add
-                                        More Ingredients</button>
-                                    <i>maximum of 100 characters</i>
-                                    {% for ingredient in recipe.recipe_ingredient %}
-                                    <input type="text" name="recipe_ingredient" placeholder="Add Ingredient"
-                                    minlength="10" maxlength="100" class="validate" pattern="^[^\s][A-Za-z0-9\s]{2,44}$"
-                                    title="10-100 characters, no special characters" required value="{{ ingredient }}">
-                                        <a href="#" class="remove_field">Remove</a>
-                                    {% endfor %}
-                                </div>
-                            </div>
+                            <textarea name="recipe_ingredient" class="materialize-textarea validate" required>
+                                {{- recipe.recipe_ingredient -}}
+                            </textarea>
+                            <label for="recipe_ingredient">Ingredient</label>
+                            <span class="helper-text" data-success="Incorrect!" data-error="Correct!">Write every new ingredient on a new line</span>
                         </div>
                     </div>
                     <!-- recipe method -->
                     <div class="row">
                         <div class="col s12">
-                            <div class="row">
-                                <div id="step-btns" class="edit_input_fields_wrap_step">
-                                    <button type="button" class="btn add-recipe-btns edit_add_field_button_step">Add More
-                                        Steps</button>
-                                    <i>maximum of 300 characters</i>
-                                    {% for method in recipe.recipe_method %}
-                                    <input type="text" id="recipe-method" name="recipe_method" class="validate"
-                                    placeholder="Add Step" minlength="10" maxlength="300" pattern="^[^\s][A-Za-z0-9\s]{2,44}$" 
-                                    required value="{{ method }}">
-                                    {% endfor %}
-                                </div>
+                                <textarea name="recipe_method" class="materialize-textarea validate" required>
+                                    {{- recipe.recipe_method -}}
+                                </textarea>
+                                <label for="recipe_method">Steps</label>
+                                <span class="helper-text" data-success="Incorrect!" data-error="Correct!">Write every new step on a new line</span>
                             </div>
                         </div>
                     </div>
@@ -132,7 +121,6 @@
             </form>
         </div>
     </div>
-
 </body>
 
 {% endblock %}
