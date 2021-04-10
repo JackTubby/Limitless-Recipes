@@ -478,7 +478,7 @@ main {
 .view-recipe-delete-review {
   font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 28px;
-  color: #116466;
+  color: #116466 !important;
 }
 
 .view-recipe-details {
