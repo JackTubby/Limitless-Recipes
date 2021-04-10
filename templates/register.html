@@ -9,33 +9,42 @@
                 <!-- username -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
-                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <input class="username validate" name="username" type="text" minlength="4" maxlength="15" data-length="15"
+                        pattern="^[^\s][A-Za-z0-9\s]{4,15}$" title="5-15 Characters, Must begin with a letter, No Special Characters" required>
                         <label for="username">Username</label>
+                        <span class="helper-text left-align" data-error="Must be between 5-15 characters, begin with a letter, contain no special characters" 
+                        data-success="Correct!">Must be between 5-15 characters, begin with a letter, contain no special characters</span>
                     </div>
                 </div>
                 <!-- first name -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="first_name" name="first_name" type="text" pattern="^[a-zA-Z]{2,15}$" class="validate"
-                            required>
+                        <input id="first_name" name="first_name" type="text" pattern="^[^\s][a-zA-Z]{0,100}$"
+                            title="Contain no spaces numbers or special characters" class="validate" required>
                         <label for="first_name">First Name</label>
+                        <span class="helper-text left-align" data-error="Contain no spaces numbers or special characters" 
+                        data-success="Correct!">Contain no spaces numbers or special characters</span>
                     </div>
                 </div>
                 <!-- last name -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="last_name" name="last_name" type="text" pattern="^[a-zA-Z]{2,15}$" class="validate"
-                            required>
+                        <input id="last_name" name="last_name" type="text" pattern="^[^\s][a-zA-Z]{0,100}$"
+                            title="Contain no spaces numbers or special characters" class="validate" required>
                         <label for="last_name">Last Name</label>
+                        <span class="helper-text left-align" data-error="Contain no spaces numbers or special characters" 
+                        data-success="Correct!">Contain no spaces numbers or special characters</span>
                     </div>
                 </div>
                 <!-- password -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" name="password" type="password" minlength="5" maxlength="15"
-                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <input class="password validate" name="password" type="password" minlength="5" maxlength="20" 
+                            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$" data-length="20"
+                            title="Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters" required>
                         <label for="password">Password</label>
+                        <span class="helper-text left-align" data-error="Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters" 
+                        data-success="Correct!">Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters</span>
                     </div>
                 </div>
                 <!-- register -->
