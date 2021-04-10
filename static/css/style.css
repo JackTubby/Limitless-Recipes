@@ -475,6 +475,12 @@ main {
   font-size: 28px;
 }
 
+.view-recipe-delete-review {
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 28px;
+  color: #116466;
+}
+
 .view-recipe-details {
   color: #116466;
   font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
@@ -873,4 +879,9 @@ hr.view-hr {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+/* error page */
+.error-wrapper {
+  margin: auto;
 }
