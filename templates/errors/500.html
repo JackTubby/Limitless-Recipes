@@ -4,7 +4,7 @@
 <!-- 500 page -->
 <div class="row center-align">
   <div class="gif-error">
-    <img src="../../static/images/error.gif" alt="gif for error page">
+    <img src="{{ url_for('static', filename='img/error.gif') }}" alt="gif for error page">
   </div>
   <h2>404 Error..</h2>
   <a href="{{ url_for ('index') }}" class="add-recipe-submit btn">
