@@ -26,37 +26,37 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 
 #### User Stories 
 - "As a user I want to add my own recipes to the website."
-  - Using CRUD (Create) a user could input there recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.png)
+  - Using CRUD (Create) a user could input there recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
 - "As a user I want to be able to edit my recipe."
-  - Using CRUD (Update) a user can edit there submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_imgedit-recipe-button.png) [Edit recipe form](readme_img/edit-recipe-form.png)
+  - Using CRUD (Update) a user can edit there submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.PNG) [Edit recipe form](readme_img/edit-recipe-form.PNG)
 - "As a user I want to be able to delete my recipe."
-  - Using CRUD (Delete) a user could delete there uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-form.png)
+  - Using CRUD (Delete) a user could delete there uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-form.PNG)
 - "As a user I want to be able to easily view other users recipes."
-  - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](readme_img/view-recipe-button.png) [View recipe page](readme_img/view-recipe-page.png)
+  - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
 - "As a user I want to be able to use a search bar to find recipes."
-  - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](readme_img/search-bar.png) [Search bar returned results](readme_img/search-bar-results.png)
+  - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](readme_img/search-bar.PNG) [Search bar returned results](readme_img/search-bar-results.PNG)
 - "As a user I want to be able to create an account."
-  - This is accomplished by adding a form where the user can input there details and submit into the database (MongoDB). [register page form](readme_img/register-img.png) [Logged in](readme_img/user-loggedin.png)
+  - This is accomplished by adding a form where the user can input there details and submit into the database (MongoDB). [register page form](readme_img/register-img.PNG) [Logged in](readme_img/user-loggedin.PNG)
 - "As a user who has created an account I want to be able to login."
-  - This is completed where a user can input there details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](readme_img/log-in-page.png) [Logged In](readme_img/user-loggedin.png)
+  - This is completed where a user can input there details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](readme_img/log-in-page.PNG) [Logged In](readme_img/user-loggedin.PNG)
 - "As a user I want to be able to write a review for a recipe."
-  - This was achieved using CRUD (Create) where a user added there review and it was then submited into the database (MongoDB). [Add review button one](readme_img/add-review-button-one.png) [Add review button two](readme_img/add-review-button-two.png) [add review form](readme_img/add-review-form.png) [add review shown in website one](readme_img/review-shown-one.png) [add review shown in website two](readme_img/review-shown-one.png)
+  - This was achieved using CRUD (Create) where a user added there review and it was then submited into the database (MongoDB). [Add review button one](readme_img/add-review-button-one.PNG) [Add review button two](readme_img/add-review-button-two.PNG) [add review form](readme_img/add-review-form.PNG) [add review shown in website one](readme_img/review-shown-one.PNG) [add review shown in website two](readme_img/review-shown-one.PNG)
 - "As a user I want to be able to delete my review."
-  - This was done by using CRUD (Delete) which as user can delete there review only if it is theres. [review delete button one](readme_img/review-delete.png)
+  - This was done by using CRUD (Delete) which as user can delete there review only if it is theres. [review delete button one](readme_img/review-delete.PNG)
 
 <span id="owner-stories"></span>
 
 #### Owner Stories
 - "I want my users to be able to add there own recipes". 
-  - [Add recipe form](readme_img/recipe-form.png) [Recipe shown on website](readme_img/recipe-site.png)
+  - [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
 - "I want my users to be able to find/view other users recipes".
-  - [View recipe button](readme_img/view-recipe-button.png) [View recipe page](readme_img/view-recipe-page.png)
+  - [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
 - "I want my users to be able to sign up, sign in and logout". 
-  - [register page form](readme_img/register-img.png) [Log In Page](readme_img/log-in-page.png) [Log Out Page]()
+  - [register page form](readme_img/register-img.PNG) [Log In Page](readme_img/log-in-page.PNG) [Log Out Button]()
 - "I want my users to be able to review other user recipes".
-  -  [Add review button one](readme_img/add-review-button-one.png) [Add review button two](readme_img/add-review-button-two.png) [add review form](readme_img/add-review-form.png) [add review shown in website one](readme_img/review-shown-one.png) [add review shown in website two](readme_img/review-shown-one.png)
+  -  [Add review button one](readme_img/add-review-button-one.PNG) [Add review button two](readme_img/add-review-button-two.PNG) [add review form](readme_img/add-review-form.PNG) [add review shown in website one](readme_img/review-shown-one.PNG) [add review shown in website two](readme_img/review-shown-one.PNG)
 - "I want my users to be able to search for recipes".
-  - [search bar](readme_img/search-bar.png) [Search bar returned results](readme_img/search-bar-results.png)
+  - [search bar](readme_img/search-bar.PNG) [Search bar returned results](readme_img/search-bar-results.PNG)
 <span id="ux"></span>
 
 ## UX
