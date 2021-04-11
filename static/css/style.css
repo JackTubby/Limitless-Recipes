@@ -447,9 +447,6 @@ main {
     }
   }
 
-.icon-ingredient-step {
-  color: #116466;
-}
 
 .back-to-recipes {
   font-family: "Lato", "Franklin Gothic Medium", "Arial Narrow", Arial,
@@ -513,10 +510,6 @@ hr.view-hr {
   border-top: 1px solid #116466;
   border-bottom: 1px solid #fff;
   width: 80%;
-}
-
-.view-ingredient {
-  font-size: 26px;
 }
 
 .view-step {
@@ -680,20 +673,6 @@ hr.view-hr {
   margin-bottom: 10px;
   line-height: 1.5;
   text-transform: capitalize;
-}
-
-.recipe-ingredient,
-.recipe-method {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@media (max-width: 360px) {
-  .recipe-ingredient,
-  .recipe-method {
-    font-size: 14px;
-  }
 }
 
 .form-textarea {
@@ -871,14 +850,6 @@ hr.view-hr {
   font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
     sans-serif;
   text-shadow: 2px 2px 2px rgba(0, 0, 0);
-}
-
-.error-background {
-  background-image: url(../images/404-background.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 /* error page */
