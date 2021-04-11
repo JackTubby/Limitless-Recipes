@@ -328,7 +328,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 * [Pexels](https://www.pexels.com/) was used for imagery.
 
-<span id="acknowledgements"></span>
+<span id="acknowledgments"></span>
 
 ### Acknowledgements 
 * Mentor Can Sucullu for his feedback and advice throughout, Mentor Precious Ijege for his support and knowledge.
