@@ -85,7 +85,7 @@
                     <img class="recipe-image" src="{{ recipe.image_url }}" alt="recipe image">
                     {% else %}
                     <!-- Fallback Recipe Image -->
-                    <img class="recipe-image" src="../static/images/missing-image.jpg" alt="missing recipe defualt image">
+                    <img class="recipe-image" src="{{ url_for('static', filename='images/missing-image.jpg') }}" alt="missing recipe defualt image">
                     {% endif %}
                     <span class="card-title text-shadow s12">
                         <!-- recipe name -->
