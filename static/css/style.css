@@ -517,6 +517,19 @@ hr.view-hr {
   margin-bottom: 25px;
 }
 
+.icon-ingredient-step {
+  color: #116466;
+  padding-right: 5px;
+}
+
+.view-ingredient {
+  font-size: 22px;
+}
+
+.view-step {
+  font-size: 24px;
+}
+
 /* to top button on view page */
 #top_button {
   display: inline-block;
