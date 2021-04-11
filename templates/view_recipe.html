@@ -27,7 +27,7 @@
         {% if recipe.image_url %}
         <img src="{{ recipe.image_url }}" class="view-recipe-img " alt="Recipe Image" />
         {% else %}
-        <img class="view-recipe-img" src="../static/images/missing-image.jpg" alt="default recipe image">
+        <img class="view-recipe-img" src="{{ url_for('static', filename='images/missing-image.jpg') }}" alt="default recipe image">
         {% endif %}
     </div>
     <!-- Recipe Details -->
