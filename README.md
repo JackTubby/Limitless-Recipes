@@ -207,9 +207,9 @@ Wireframes are created with [balsamiq](https://balsamiq.com/)
   - JShint is a JavaScript validator that is used to check whether there were any errors in the JavaScript code.
 - [PEP8](http://pep8online.com/)
   - The PEP8 validator is used to check whether there were any errors in the Python code.
-- Python - [Pyton Tester](https://extendsclass.com/python-tester.html) 
+- [Pyton Tester](https://extendsclass.com/python-tester.html) 
   - Python code syntax checker
-- TAGS - [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) 
+- [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) 
   - Validates all tags are opening and closing correctly.
 
 <span id="testing"></span>
