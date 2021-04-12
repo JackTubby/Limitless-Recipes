@@ -90,11 +90,11 @@ I have chosen these set of colours for my website:
 * #ffcb9a A beige colour used for the main title on the navbar and important messages for example when a recipe is added
 * #116466 A dark green used throughout as the main theme colour, I found this colour easy on the eye and flowed well with the rest of the styles.
 * #d1e8e2 A light blue, used for the profile page as it gives good contrast between the recipe cards and username titles.
-* white was used for alot of text with backgrounds as I found it popped well against multicolour backgrounds. 
+* white was used for a lot of text with backgrounds as I found it popped well against multicolour backgrounds. 
 * black was used in key places against a white background to make text stand out.
 
 #### Icons
-In the project, icons were obtained from [Font Awesome](https://fontawesome.com/). Icons were used it two different settings, one way was functional such as social media. The others were for lists in the recipes such as ingredients and steps.
+In the project, icons were obtained from [Font Awesome](https://fontawesome.com/). Icons were used for two different settings, one way was functional such as social media. The others were for lists in the recipes such as ingredients and steps.
 
 #### Typography
 * "Lexend Mega" Used for main pieces of content like titles and headings.
