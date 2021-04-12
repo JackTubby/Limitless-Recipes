@@ -131,7 +131,6 @@ Review ID's are also stored in the recipe collection as an array in there corris
 #### Wireframes
 - Wireframes are created with 
   - [balsamiq](https://balsamiq.com/)
-  - [My Wireframes](static/wireframes/recipe-wireframes.pdf)
   - [Wireframes for Limitless Recipes](static/wireframes/recipe-wireframes.pdf)
 
   **Any changes from the wireframes were design choices whilst developing**
