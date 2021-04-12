@@ -5,6 +5,8 @@
 
 Limitless Recipes is a website for users to find and upload recipes, accessible on a wide range of devices for all users.
 
+[Live Site](https://recipe-app-project-milestone3.herokuapp.com/)
+
 ## Table of Contents 
 > - [User Stories](#user-stories)
 > - [Owner Stories](#owner-stories)
