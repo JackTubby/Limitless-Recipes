@@ -26,6 +26,7 @@
         {% if recipe.image_url %}
         <img src="{{ recipe.image_url }}" class="view-recipe-img " alt="Recipe Image" />
         {% else %}
+        <!-- Fall Back Image -->
         <img class="view-recipe-img" src="{{ url_for('static', filename='images/missing-image.jpg') }}"
             alt="default recipe image">
         {% endif %}
