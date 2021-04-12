@@ -758,12 +758,6 @@ hr.view-hr {
 .profile-total {
   margin-left: 16px;
 }
-
-/* register.html */
-#background-register-image {
-  background-image: url(../images/register-img.jpg);
-}
-
 /* register.html */
 #background-register-image {
   background-image: url(../images/register-img.jpg);
@@ -774,7 +768,7 @@ hr.view-hr {
 }
 
 .margin-register {
-  margin-top: 50px;
+  padding-top: 60px;
 }
 
 .register-button-text {
