@@ -146,7 +146,7 @@ Review ID's are also stored in the recipe collection as an array in there corris
 * Footer with social media links.
 * 'Add Recipe' page for users to create thier own recipe and add it to the website.
 * Reviews button which opens a form, for users to review recipes.
-* Search bar for users to search the website for specific recipes.
+* Search bar for users to search the website for specific recipes using the recipe name or the user who added it.
 * Profile page showing when the user signed up and the recipes they have added.
 
 <span id="f-features"></span>
