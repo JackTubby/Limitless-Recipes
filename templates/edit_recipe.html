@@ -73,10 +73,10 @@
                             {% endif %}
                             <div class="input-field col s12">
                                 <input type="url" class="validate" id="image_url" name="image_url"
-                                    pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))" required>
-                                <label class="add-recipe-label" for="image_url">{{ recipe.image_url }}</label>
+                                    value="{{ recipe.image_url }}" pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))" required>
+                                <label class="add-recipe-label" for="image_url">Image URL</label>
                                 <span class="helper-text" data-error="Must be a image url, jpg|jpeg|gif|png"
-                                    data-success="Correct!">{{Image URL only}}</span>
+                                    data-success="Correct!">Image URL only</span>
                             </div>
                         </div>
                     </div>
