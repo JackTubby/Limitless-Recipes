@@ -26,28 +26,28 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 
 #### User Stories 
 - "As a user I want to add my own recipes to the website."
-  - Using CRUD (Create) a user could input there recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
+  - Using CRUD (Create) a user could input thier recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
 - "As a user I want to be able to edit my recipe."
-  - Using CRUD (Update) a user can edit there submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.PNG) [Edit recipe form](readme_img/edit-recipe-form.PNG)
+  - Using CRUD (Update) a user can edit thier submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.PNG) [Edit recipe form](readme_img/edit-recipe-form.PNG)
 - "As a user I want to be able to delete my recipe."
-  - Using CRUD (Delete) a user could delete there uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-form.PNG)
+  - Using CRUD (Delete) a user could delete thier uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-form.PNG)
 - "As a user I want to be able to easily view other users recipes."
   - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
 - "As a user I want to be able to use a search bar to find recipes."
   - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](readme_img/search-bar.PNG) [Search bar returned results](readme_img/search-bar-results.PNG)
 - "As a user I want to be able to create an account."
-  - This is accomplished by adding a form where the user can input there details and submit into the database (MongoDB). [register page form](readme_img/register-img.PNG) [Logged in](readme_img/user-loggedin.PNG)
+  - This is accomplished by adding a form where the user can input thier details and submit into the database (MongoDB). [register page form](readme_img/register-img.PNG) [Logged in](readme_img/user-loggedin.PNG)
 - "As a user who has created an account I want to be able to login."
-  - This is completed where a user can input there details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](readme_img/log-in-page.PNG) [Logged In](readme_img/user-loggedin.PNG)
+  - This is completed where a user can input thier details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](readme_img/log-in-page.PNG) [Logged In](readme_img/user-loggedin.PNG)
 - "As a user I want to be able to write a review for a recipe."
-  - This was achieved using CRUD (Create) where a user added there review and it was then submited into the database (MongoDB). [Add review button one](readme_img/add-review-button-one.PNG) [Add review button two](readme_img/add-review-button-two.PNG) [add review form](readme_img/add-review-form.PNG) [add review shown in website one](readme_img/review-shown-one.PNG) [add review shown in website two](readme_img/review-shown-one.PNG)
+  - This was achieved using CRUD (Create) where a user added thier review and it was then submited into the database (MongoDB). [Add review button one](readme_img/add-review-button-one.PNG) [Add review button two](readme_img/add-review-button-two.PNG) [add review form](readme_img/add-review-form.PNG) [add review shown in website one](readme_img/review-shown-one.PNG) [add review shown in website two](readme_img/review-shown-one.PNG)
 - "As a user I want to be able to delete my review."
-  - This was done by using CRUD (Delete) which as user can delete there review only if it is theres. [review delete button one](readme_img/review-delete.PNG)
+  - This was done by using CRUD (Delete) which as user can delete thier review only if it is thiers. [review delete button one](readme_img/review-delete.PNG)
 
 <span id="owner-stories"></span>
 
 #### Owner Stories
-- "I want my users to be able to add there own recipes". 
+- "I want my users to be able to add thier own recipes". 
   - [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
 - "I want my users to be able to find/view other users recipes".
   - [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
@@ -64,9 +64,9 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 <span id="project-goals"></span>
 
 ### Project Goals
-* For users to upload there recipes onto the website.
+* For users to upload theri recipes onto the website.
 * Users to review other users recipes.
-* Profile page where users can see there uploaded recipes.
+* Profile page where users can see thier uploaded recipes.
 * Log In/ Log out functionality.
 * Ease of use.
 * Users can make full use of CRUD functionality for the recipes.
@@ -141,7 +141,7 @@ Wireframes are created with [balsamiq](https://balsamiq.com/)
 * Home/Index page to give the users an idea of the website with the use of imagery and text, with a call to action button to discover recipes.
 * Responsive design.
 * Footer with social media links.
-* 'Add Recipe' page for users to create there own recipe and add it to the website.
+* 'Add Recipe' page for users to create thier own recipe and add it to the website.
 * Reviews button which opens a form, for users to review recipes.
 * Search bar for users to search the website for specific recipes.
 * Profile page showing when the user signed up and the recipes they have added.
@@ -150,7 +150,7 @@ Wireframes are created with [balsamiq](https://balsamiq.com/)
 
 ### Features Left To Implement
 * A future feature that would be a good addition would be a favrioute button on recipes. This button would save the recipe in the users profile for ease of use to come back to later.
-* A future feature I would like to implement would be for more functionality for users to edit there usernames or even delete there account.
+* A future feature I would like to implement would be for more functionality for users to edit thier usernames or even delete thier account.
 
 <span id="technologies used"></span>
 
