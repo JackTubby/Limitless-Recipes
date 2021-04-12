@@ -22,7 +22,6 @@
 >   - [Recipe Page](#recipe)
 >   - [Index](#index)
 >   - [error](#error)
-> - [Manual Testing](#manual)
 > - [Responsive Testing](#responsive)
 
 <span id="uo-stories"></span>
@@ -203,6 +202,8 @@ Autopepe8 installed as a dependency for checking code as written, all python ran
 * All error pages checked.
 
 ##### **All Tested with multiple accounts and non registered user**
+
+<span id="responsive"></span>
 
 ### Responsive Tests
 
