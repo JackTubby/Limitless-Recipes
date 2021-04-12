@@ -30,7 +30,7 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 - "As a user I want to be able to edit my recipe."
   - Using CRUD (Update) a user can edit thier submitted recipes using a provided form, which updates the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.PNG) [Edit recipe form](readme_img/edit-recipe-form.PNG)
 - "As a user I want to be able to delete my recipe."
-  - Using CRUD (Delete) a user could delete thier uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-form.PNG)
+  - Using CRUD (Delete) a user could delete thier uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-button.PNG)
 - "As a user I want to be able to easily view other users recipes."
   - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
 - "As a user I want to be able to use a search bar to find recipes."
@@ -40,7 +40,7 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 - "As a user who has created an account I want to be able to login."
   - This is completed where a user can input thier details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](readme_img/log-in-page.PNG) [Logged In](readme_img/user-loggedin.PNG)
 - "As a user I want to be able to write a review for a recipe."
-  - This was achieved using CRUD (Create) where a user added thier review and it was then submited into the database (MongoDB). [Add review button one](readme_img/add-review-button-one.PNG) [Add review button two](readme_img/add-review-button-two.PNG) [add review form](readme_img/add-review-form.PNG) [add review shown in website one](readme_img/review-shown-one.PNG) [add review shown in website two](readme_img/review-shown-one.PNG)
+  - This was achieved using CRUD (Create) where a user added thier review and it was then submited into the database (MongoDB).[Add review button](readme_img/review-button.PNG) [add review form](readme_img/add-review-form.PNG) [review showing](readme_img/review-button.PNG)
 - "As a user I want to be able to delete my review."
   - This was done by using CRUD (Delete) which as a user they can only delete thier reviews. [review delete button one](readme_img/review-delete.PNG)
 
@@ -52,9 +52,9 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 - "I want my users to be able to find/view other users recipes".
   - [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
 - "I want my users to be able to sign up, sign in and logout". 
-  - [register page form](readme_img/register-img.PNG) [Log In Page](readme_img/log-in-page.PNG) [Log Out Button]()
+  - [register page form](readme_img/register-img.PNG) [Log In Page](readme_img/log-in-page.PNG) [Log Out Button](readme_img/log-out-button.png) 
 - "I want my users to be able to review other user recipes".
-  -  [Add review button one](readme_img/add-review-button-one.PNG) [Add review button two](readme_img/add-review-button-two.PNG) [add review form](readme_img/add-review-form.PNG) [add review shown in website one](readme_img/review-shown-one.PNG) [add review shown in website two](readme_img/review-shown-one.PNG)
+  - [Add review button](readme_img/review-button.PNG) [add review form](readme_img/add-review-form.PNG)  [review showing](readme_img/review-button.PNG)
 - "I want my users to be able to search for recipes".
   - [search bar](readme_img/search-bar.PNG) [Search bar returned results](readme_img/search-bar-results.PNG)
 <span id="ux"></span>
