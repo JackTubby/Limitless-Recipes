@@ -1,6 +1,8 @@
 # Limitless Recipes
 <span id="recipes"></span>
 
+![Database Layout](readme_img/limitless-recipes.png)
+
 Limitless Recipes is a website for users to find and upload recipes, accessible on a wide range of devices for all users.
 
 ## Table of Contents 
