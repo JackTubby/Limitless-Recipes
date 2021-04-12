@@ -6,7 +6,6 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import date
-from functools import wraps
 from flask_paginate import Pagination, get_page_args
 if os.path.exists("env.py"):
     import env
@@ -27,17 +26,20 @@ def index():
     return render_template("index.html")
 
 
-# Handle 404 error pages
+# --- Error Pages --- #
+# Handle 404 errors
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('errors/404.html', error=error), 404
 
 
+# Handle 500 errors
 @app.errorhandler(500)
 def server_error(e):
     return render_template("errors/500.html"), 500
 
 
+# Handle 403 erros
 @app.errorhandler(403)
 def forbidden(e):
     return render_template("errors/403.html"), 403
@@ -108,6 +110,7 @@ def search():
         recipes = mongo.db.recipes.find(
             {"$text": {"$search": category}})
 
+    # finds the recipe with the query
     if "query" in request.args:
         query = request.args.get("query")
         recipes = mongo.db.recipes.find({"$text": {"$search": query}})
@@ -145,8 +148,9 @@ def view_recipe(recipe_id):
         return render_template(
             "view_recipe.html", recipe=recipe, reviews=reviews)
 
-        if not recipe:
-            return redirect(url_for("get_recipes"))
+    # if no recipe redirect to get_recipes
+    if not recipe:
+        return redirect(url_for("get_recipes"))
 
     # no reviews available
     return render_template(
@@ -160,12 +164,14 @@ def register():
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        # if the user exists flash message will show
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
+        # gets to todays date
         today_date = date.today()
         current_date = today_date.strftime("%d %b %y")
+        # gets form data and inserts to the db
         register = {
             "username": request.form.get("username").lower(),
             "first_name": request.form.get("first_name"),
@@ -215,6 +221,7 @@ def login():
 # --- Profile --- #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # checks user is in session
     if "user" in session:
         # Gets session user
         session_user = session["user"]
@@ -228,16 +235,16 @@ def profile(username):
                 offset = 0
             else:
                 offset = (page - 1) * per_page
-
+            # gets recipes
             recipes = mongo.db.recipes.find()
 
             # grab the session user's username from the db
             user = mongo.db.users.find_one(
                 {"username": session["user"]})
-
+            # gets the recipes added by the user
             recipes = mongo.db.recipes.find(
                 {'created_by': session.get('user')})
-
+            # counts there total recipes
             total = recipes.count()
 
             paginatedResults = recipes[offset: offset + per_page]
@@ -269,7 +276,9 @@ def logout():
 # --- Add Recipe --- #
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # checks user is in session
     if "user" in session:
+        # gets form data
         if request.method == "POST":
             recipe = {
                 "recipe_name":  request.form.get("recipe_name"),
@@ -285,7 +294,9 @@ def add_recipe():
             }
             # inserts recipe into db
             mongo.db.recipes.insert_one(recipe)
+            # if added successfully it will flash this message
             flash("Recipe Added Successfully")
+            # if added successfully will return to get_recipes
             return redirect(url_for("get_recipes"))
         categories = mongo.db.categories.find().sort(
             "category_name", 1)
@@ -322,6 +333,7 @@ def edit_recipe(recipe_id):
                 }
                 # updates recipe in db
                 mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+                # if edit is successfull flash this message
                 flash("Recipe Updated Successfully")
                 return redirect(url_for("profile", username=session["user"]))
             categories = mongo.db.categories.find().sort("category_name", 1)
@@ -335,6 +347,7 @@ def edit_recipe(recipe_id):
 # --- Delete Recipe --- #
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    # checks user is in session
     if "user" in session:
         # Gets session user
         session_user = session["user"]
@@ -344,6 +357,7 @@ def delete_recipe(recipe_id):
         if recipe["created_by"] == session_user:
             # removes recipe in db
             mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+            # if recipe is deleted will flash this message
             flash("Recipe Deleted")
             return redirect(url_for("profile", username=session["user"]))
         return redirect(url_for("get_recipes"))
@@ -361,25 +375,26 @@ def add_review(recipe_id):
         # Checks recipe creator is same as session user
         if recipe["created_by"] != session_user:
             if request.method == "POST":
-
+                # gets the date
                 today_date = date.today()
                 current_date = today_date.strftime("%d %b %y")
+                # gets form data
                 add_review = {
                     "username": session["user"],
                     "recipe_rating": request.form.get("recipe_rating"),
                     "recipe_review": request.form.get("recipe_review"),
                     "review_date": current_date
                 }
+                # inserts data into db
                 review = mongo.db.reviews.insert_one(add_review)
                 review_id = review.inserted_id
-
+                # push review ID to recipe collection as an array in the recipe
                 mongo.db.recipes.update(
                     {"_id": ObjectId(recipe_id)}, {
                         "$push": {"reviews": ObjectId(review_id)}})
-
+                # if review added flash this image
                 flash("Review Added")
                 return redirect(url_for("get_recipes"))
-
             return render_template(
                 "add_review.html", recipe_id=recipe_id)
         return redirect(url_for("profile", username=session["user"]))
@@ -412,6 +427,7 @@ def delete_review(recipe_id, review_id):
     return redirect(url_for("login"))
 
 
+# --- Run the app --- #
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
