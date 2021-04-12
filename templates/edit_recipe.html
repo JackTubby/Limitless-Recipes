@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<body id="edit-recipe-background">
+<main id="edit-recipe-background">
     <div class="container">
         <!-- Page title -->
         <h3 class="center-align edit-recipe-header text-shadow">Edit Recipe</h3>
@@ -45,7 +45,7 @@
                         <div class="input-field col s12">
                             <input value="{{ recipe.recipe_serves }}" name="recipe_serves" minlength="1" maxlength="2"
                                 type="number" class="recipe_serves validate" min="1" max="100"
-                                title="Positive numbers only" title="2-44 Characters, A-Z only" required>
+                                title="Positive numbers only" required>
                             <label class="add-recipe-label">How many people does this recipe serve?</label>
                             <span class="helper-text" data-error="Positive numbers only" data-success="Correct!">Numbers
                                 only</span>
@@ -134,6 +134,6 @@
             </form>
         </div>
     </div>
-</body>
+</main>
 
 {% endblock %}
