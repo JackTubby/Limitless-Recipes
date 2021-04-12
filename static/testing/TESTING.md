@@ -228,7 +228,8 @@ Autopepe8 installed as a dependency for checking code as written, all python ran
 ### Known Issues and Bugs
 - **Issue with the search pagination** On the recipes and search function the pagnation will create a new page for every 8 recipes, If I then search and return less than 8 recipes the page numbers will stay at the bottom, if I click page 2 this will show the message ['no results'](../../readme_img/no-results.PNG). If a search takes place and returns 9 results the pagination will work fine and the 9th recipe will be shown on the [next page](../../readme_img/next-page.PNG). After speaking with a tutor and time limitations it was a bug that could not be fixed, but with the tutor agreeing that this causes no major issues and pagination does work correctly and results are returned as they should.
   - **Update** Since writing this known issue and added more recipes to the website, the bug seems to of fixed, Because of time limitations I will keep this bug in known issues.
-- Warning in app.py for pagination 'page' [Seen here](../../readme_img/page-error.PNG) After testing found this causes no issues on the website, spoke with tutor who said this is okay to note in known issues.
+- **Warning in app.py for pagination 'page'** [Seen here](../../readme_img/page-error.PNG) After testing found this causes no issues on the website, spoke with tutor who said this is okay to note in known issues.
+- **DeprecationWarning: count is deprecated. Use Collection.count_documents instead.total = mongo.db.recipes.find().count()** In the console there is this warning, after doing research and checking with a tutor I have found this will cause no errors.
 
 ### Deployment
 * Ensured deployed page on Heroku loads up correctly.
