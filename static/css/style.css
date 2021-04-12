@@ -15,7 +15,6 @@
   font-weight: 600;
 }
 
-/* sticky footer */
 body {
   display: flex;
   min-height: 100vh;
@@ -209,7 +208,7 @@ main {
     }
 }
 
-/* search */
+/* search on recipe page */
 .search-card {
   background-color: rgba(0, 0, 0, 0.7);
   margin: auto;
@@ -255,6 +254,8 @@ main {
   font-family: "Lexend Mega", "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
+
+/* Pagination on recipe page */
 .pagination li a {
   color: #ffffff;
   display: inline-block;
@@ -267,7 +268,7 @@ main {
   background-color: #116466;
 }
 
-/* recipe cards */
+/* recipe cards on recipe page */
 .recipe-name {
   word-wrap: break-word;
   margin: 0;
@@ -343,34 +344,6 @@ main {
   color: #116466;
 }
 
-.see-more {
-  font-weight: 600;
-  font-size: 28px;
-  color: #116466;
-  cursor: pointer;
-}
-
-.see-more:hover {
-  color: #ffcb9a;
-}
-
-.info-main-wrapper {
-  margin-bottom: 20px;
-}
-
-.card-title-wrapper {
-  text-decoration: underline;
-  word-wrap: break-word;
-  color: #116466;
-  font-size: 28px;
-  font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
-}
-
-.close-icon {
-  color: red;
-  font-size: 28px;
-}
-
 .recipe-info-heading {
   color: black;
   font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
@@ -395,11 +368,6 @@ main {
 }
 
 /* view recipe */
-.view-recipe-wrapper {
-  margin-left: 20em;
-  margin-top: 2em;
-}
-
 .view-recipe-img {
   height: 46vh;
   width: 36vw;
@@ -459,12 +427,6 @@ main {
   font-size: 28px;
 }
 
-.view-recipe-delete-review {
-  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 28px;
-  color: #116466 !important;
-}
-
 .view-recipe-details {
   color: #116466;
   font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
@@ -493,7 +455,7 @@ main {
   color: #d1e8e2;
 }
 
-hr.view-hr {
+.view-hr {
   border-top: 1px solid #116466;
   border-bottom: 1px solid #fff;
   width: 80%;
@@ -558,11 +520,7 @@ hr.view-hr {
   line-height: 2.2 !important;
 }
 
-/* reviews */
-.modal-review {
-  width: 30% !important;
-}
-
+/* Reviews on view page */
 .recipe-review-text {
   color: white;
   font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
@@ -578,10 +536,6 @@ hr.view-hr {
 .recipe-review-desc {
   font-family: "Lato", "Segoe UI", Tahoma, Verdana, sans-serif;
   font-size: 16px;
-}
-
-.right-align-add-review {
-  float: right;
 }
 
 .recipe-name-title {
@@ -602,23 +556,10 @@ hr.view-hr {
   font-style: italic;
 }
 
-/* media query for review modal width */
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .modal-review {
-    width: 80% !important;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .modal-review {
-    width: 70% !important;
-  }
-}
-
-@media (min-width: 280px) and (max-width: 653px) {
-  .modal-review {
-    width: 100% !important;
-  }
+.view-recipe-delete-review {
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 28px;
+  color: #116466 !important;
 }
 
 /* new recipe */
@@ -758,6 +699,9 @@ hr.view-hr {
 .profile-total {
   margin-left: 16px;
 }
+
+/*//// Login and Register Styling ////*/
+
 /* register.html */
 #background-register-image {
   background-image: url(../images/register-img.jpg);
@@ -802,28 +746,6 @@ hr.view-hr {
   font-style: italic;
 }
 
-/* footer */
-.page-footer {
-  background-color: #116466;
-}
-
-.icons {
-  padding-top: 8px;
-  color: white;
-  font-size: 40px;
-  padding-left: 14px;
-  padding-right: 14px;
-}
-
-.icons:hover {
-  color: #ffcb9a;
-}
-
-.copyright {
-  padding-top: 10px;
-  font-size: 18px;
-}
-
 /* Login */
 .login-btn {
   background-color: #116466;
@@ -844,6 +766,46 @@ hr.view-hr {
   font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
     sans-serif;
   text-shadow: 2px 2px 2px rgba(0, 0, 0);
+}
+
+.login-button-text {
+  font-size: 24px;
+}
+
+.login-btn {
+  color: #116466;
+  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-weight: 400;
+  border: 1px solid #116466;
+  border-radius: 3px;
+  background: linear-gradient(to right, #116466 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+  height: 4rem;
+}
+
+/* footer */
+.page-footer {
+  background-color: #116466;
+}
+
+.icons {
+  padding-top: 8px;
+  color: white;
+  font-size: 40px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.icons:hover {
+  color: #ffcb9a;
+}
+
+.copyright {
+  padding-top: 10px;
+  font-size: 18px;
 }
 
 /* error page */
