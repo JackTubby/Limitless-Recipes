@@ -28,7 +28,7 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 - "As a user I want to add my own recipes to the website."
   - Using CRUD (Create) a user could input thier recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
 - "As a user I want to be able to edit my recipe."
-  - Using CRUD (Update) a user can edit thier submitted recipes using a provided form, which updated the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.PNG) [Edit recipe form](readme_img/edit-recipe-form.PNG)
+  - Using CRUD (Update) a user can edit thier submitted recipes using a provided form, which updates the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.PNG) [Edit recipe form](readme_img/edit-recipe-form.PNG)
 - "As a user I want to be able to delete my recipe."
   - Using CRUD (Delete) a user could delete thier uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-form.PNG)
 - "As a user I want to be able to easily view other users recipes."
@@ -42,7 +42,7 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 - "As a user I want to be able to write a review for a recipe."
   - This was achieved using CRUD (Create) where a user added thier review and it was then submited into the database (MongoDB). [Add review button one](readme_img/add-review-button-one.PNG) [Add review button two](readme_img/add-review-button-two.PNG) [add review form](readme_img/add-review-form.PNG) [add review shown in website one](readme_img/review-shown-one.PNG) [add review shown in website two](readme_img/review-shown-one.PNG)
 - "As a user I want to be able to delete my review."
-  - This was done by using CRUD (Delete) which as user can delete thier review only if it is thiers. [review delete button one](readme_img/review-delete.PNG)
+  - This was done by using CRUD (Delete) which as a user they can only delete thier reviews. [review delete button one](readme_img/review-delete.PNG)
 
 <span id="owner-stories"></span>
 
@@ -90,14 +90,14 @@ I have chosen these set of colours for my website:
 * #ffcb9a A beige colour used for the main title on the navbar and important messages for example when a recipe is added
 * #116466 A dark green used throughout as the main theme colour, I found this colour easy on the eye and flowed well with the rest of the styles.
 * #d1e8e2 A light blue, used for the profile page as it gives good contrast between the recipe cards and username titles.
-* white White was used for alot of text with backgrounds as I found it poped well against multicolour backgrounds. 
-* black Black was used in key places when against a white background to make text stand out.
+* white was used for alot of text with backgrounds as I found it popped well against multicolour backgrounds. 
+* black was used in key places against a white background to make text stand out.
 
 #### Icons
 In the project, icons were obtained from [Font Awesome](https://fontawesome.com/). Icons were used it two different settings, one way was functional such as social media. The others were for lists in the recipes such as ingredients and steps.
 
 #### Typography
-* "Lexend Mega" Used for main pecies of content like titles and headings.
+* "Lexend Mega" Used for main pieces of content like titles and headings.
 * "Lato" Used for most of the text throughout the website, as it is a clean font and makes it very user-friendly and easy to read.
 
 #### Imagery
