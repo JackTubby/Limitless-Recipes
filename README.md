@@ -131,7 +131,7 @@ Review ID's are also stored in the recipe collection as an array in there corris
 #### Wireframes
 - Wireframes are created with 
   - [balsamiq](https://balsamiq.com/)
-  - [My Wireframes](static/wireframes/recipesWireframes.pdf)
+  - [My Wireframes](static/wireframes/recipe-wireframes.pdf)
 
 <span id="features"></span>
 
@@ -152,7 +152,7 @@ Review ID's are also stored in the recipe collection as an array in there corris
 <span id="f-features"></span>
 
 ### Features Left To Implement
-* A future feature that would be a good addition would be a favrioute button on recipes. This button would save the recipe in the users profile for ease of use to come back to later.
+* A future feature that would be a good addition would be a favorite button on recipes. This button would save the recipe in the users profile for ease of use to come back to later.
 * A future feature I would like to implement would be for more functionality for users to edit thier usernames or even delete thier account.
 
 <span id="technologies used"></span>
@@ -177,7 +177,7 @@ Review ID's are also stored in the recipe collection as an array in there corris
 - [Materialize](https://materializecss.com/)
   - Materialized is used for the design framework
 - [FontAwesome](https://fontawesome.com/)
-  - FontAwesome is used for icons in the websit such as social links.
+  - FontAwesome is used for icons in the website such as social links.
 - [MongoDB](https://www.mongodb.com/)
   - MongoDB is used as the database for the project.
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
