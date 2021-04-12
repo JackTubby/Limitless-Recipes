@@ -2,11 +2,11 @@
 {% block content %}
 
 <body id="login-background">
-    <!-- Page heading -->
-    <h3 class="center-align login-heading">Log In</h3>
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel">
+                <!-- Page heading -->
+                <h3 class="center-align login-heading">Log In</h3>
                 <!-- username -->
                 <div class="row">
                     <div class="input-field col s12">
@@ -23,8 +23,8 @@
                 </div>
                 <!-- login -->
                 <div class="row">
-                    <button type="submit" class="col s12 login-btn btn main-text-styling">
-                        Log In <i class="fas fa-sign-in-alt"></i>
+                    <button type="submit" class="col s12 btn register-btn main-text-styling login-button-text">
+                        Log In <i class="fas fa-chevron-right login-button-text"></i>
                     </button>
                 </div>
                 <!-- don't have an account link to register -->
