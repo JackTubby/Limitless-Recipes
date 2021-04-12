@@ -760,14 +760,6 @@ main {
   background-size: cover;
 }
 
-.login-heading {
-  color: white;
-  font-size: 36px;
-  font-family: "Lexend Mega", "Franklin Gothic Medium", "Arial Narrow", Arial,
-    sans-serif;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0);
-}
-
 .login-button-text {
   font-size: 24px;
 }
