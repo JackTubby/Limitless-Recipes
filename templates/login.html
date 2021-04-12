@@ -2,9 +2,8 @@
 {% block content %}
 
 <body id="login-background">
-
+    <!-- Page heading -->
     <h3 class="center-align login-heading">Log In</h3>
-
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel">
@@ -28,6 +27,7 @@
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
+                <!-- don't have an account link to register -->
                 <div class="row">
                     <p class="center-align">
                         Dont't have an account?

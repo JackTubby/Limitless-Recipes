@@ -5,15 +5,19 @@
     <div class="row center-align margin-register">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel">
+                <!-- Page header -->
                 <h3 class="main-text-styling">Sign Up</h3>
                 <!-- username -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input class="username validate" name="username" type="text" minlength="4" maxlength="15" data-length="15"
-                        pattern="^[^\s][A-Za-z0-9\s]{4,15}$" title="5-15 Characters, Must begin with a letter, No Special Characters" required>
+                        <input class="username validate" name="username" type="text" minlength="4" maxlength="15"
+                            data-length="15" pattern="^[^\s][A-Za-z0-9\s]{4,15}$"
+                            title="5-15 Characters, Must begin with a letter, No Special Characters" required>
                         <label for="username">Username</label>
-                        <span class="helper-text left-align" data-error="Must be between 5-15 characters, begin with a letter, contain no special characters" 
-                        data-success="Correct!">Must be between 5-15 characters, begin with a letter, contain no special characters</span>
+                        <span class="helper-text left-align"
+                            data-error="Must be between 5-15 characters, begin with a letter, contain no special characters"
+                            data-success="Correct!">Must be between 5-15 characters, begin with a letter, contain no
+                            special characters</span>
                     </div>
                 </div>
                 <!-- first name -->
@@ -22,8 +26,9 @@
                         <input id="first_name" name="first_name" type="text" pattern="^[^\s][a-zA-Z]{0,100}$"
                             title="Contain no spaces numbers or special characters" class="validate" required>
                         <label for="first_name">First Name</label>
-                        <span class="helper-text left-align" data-error="Contain no spaces numbers or special characters" 
-                        data-success="Correct!">Contain no spaces numbers or special characters</span>
+                        <span class="helper-text left-align"
+                            data-error="Contain no spaces numbers or special characters" data-success="Correct!">Contain
+                            no spaces numbers or special characters</span>
                     </div>
                 </div>
                 <!-- last name -->
@@ -32,19 +37,23 @@
                         <input id="last_name" name="last_name" type="text" pattern="^[^\s][a-zA-Z]{0,100}$"
                             title="Contain no spaces numbers or special characters" class="validate" required>
                         <label for="last_name">Last Name</label>
-                        <span class="helper-text left-align" data-error="Contain no spaces numbers or special characters" 
-                        data-success="Correct!">Contain no spaces numbers or special characters</span>
+                        <span class="helper-text left-align"
+                            data-error="Contain no spaces numbers or special characters" data-success="Correct!">Contain
+                            no spaces numbers or special characters</span>
                     </div>
                 </div>
                 <!-- password -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input class="password validate" name="password" type="password" minlength="5" maxlength="20" 
+                        <input class="password validate" name="password" type="password" minlength="5" maxlength="20"
                             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$" data-length="20"
-                            title="Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters" required>
+                            title="Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters"
+                            required>
                         <label for="password">Password</label>
-                        <span class="helper-text left-align" data-error="Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters" 
-                        data-success="Correct!">Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters</span>
+                        <span class="helper-text left-align"
+                            data-error="Must contain at least one number, and one uppercase and lowercase letter, and between 5-20 characters"
+                            data-success="Correct!">Must contain at least one number, and one uppercase and lowercase
+                            letter, and between 5-20 characters</span>
                     </div>
                 </div>
                 <!-- register -->
@@ -53,6 +62,7 @@
                         Sign Up <i class="fas fa-chevron-right register-button-text"></i>
                     </button>
                 </div>
+                <!-- If a user has an account this will take them to the login page -->
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">

@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% block content %}
 
 <body class="profile-wrapper">
@@ -13,8 +13,6 @@
       </div>
     </div>
   </div>
-
-
   <!-- session user's add recipes -->
   <div class="row">
     <h2 class="text-shadow profile-page-title">Your Recipes</h2>
@@ -24,9 +22,9 @@
       <div class="card">
         <div class="card-image">
           {% if recipe.image_url %}
-          <img class="recipe-image" src="{{ recipe.image_url }}" alt="recipe image"/>
+          <img class="recipe-image" src="{{ recipe.image_url }}" alt="recipe image" />
           {% else %}
-          <img class="recipe-image" src="../static/images/missing-image.jpg" alt="defualt recipe image"/>
+          <img class="recipe-image" src="../static/images/missing-image.jpg" alt="defualt recipe image" />
           {% endif %}
           <span class="card-title text-shadow s12">
             <!-- recipe name -->
@@ -57,8 +55,7 @@
           <div id="delete_task_modal-{{loop.index}}" class="modal">
             <div class="modal-content center-align">
               <h4>Are You Sure You Want To Delete This Recipe</h4>
-              <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                class="modal-close btn recipe-btn">Yes</a>
+              <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-close btn recipe-btn">Yes</a>
               <button class="modal-close btn recipe-btn">No</button>
             </div>
           </div>
@@ -68,6 +65,7 @@
     </div>
     {% endfor %}
   </div>
+  <!-- If user has no added recipes it will show this message which takes them to 'add_recipes' -->
   {% else %}
   <div class="center-align">
     <h3 class="recipe-no-results-profile">
@@ -76,6 +74,7 @@
     </h3>
   </div>
   {% endif %}
+  <!-- Pagination links -->
   <div class="pagination-wrapper center-align">{{ pagination.links }}</div>
 </body>
 {% endblock %}

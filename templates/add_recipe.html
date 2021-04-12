@@ -11,9 +11,13 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input name="recipe_name" type="text" data-length="44" class="recipe_name validate" pattern="^[^\s][A-Za-z0-9\s]{1,44}$" required>
+                            <input name="recipe_name" type="text" data-length="44" class="recipe_name validate"
+                                pattern="^[^\s][A-Za-z0-9\s]{1,44}$" required>
                             <label class="add-recipe-label">Recipe Name</label>
-                            <span class="helper-text" data-error="2-44 characters, contain letters only, must start with a letter" data-success="Correct!">2-44 characters, contain letters only, must start with a letter</span>
+                            <span class="helper-text"
+                                data-error="2-44 characters, contain letters only, must start with a letter"
+                                data-success="Correct!">2-44 characters, contain letters only, must start with a
+                                letter</span>
                         </div>
                     </div>
                     <!-- recipe category -->
@@ -22,7 +26,8 @@
                             <select id="category_name" name="category_name" class="validate" required>
                                 <option value="" disabled selected>Choose Category</option>
                                 {% for category in categories %}
-                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                <option value="{{ category.category_name }}" class="validate">{{ category.category_name
+                                    }}</option>
                                 {% endfor %}
                             </select>
                             <label for="category_name">Recipe Category</label>
@@ -31,28 +36,33 @@
                     <!-- serves -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input name="recipe_serves" minlength="1" maxlength="2" type="number" class="recipe_serves validate" 
-                                min="1" max="100" title="Positive numbers only"
+                            <input name="recipe_serves" minlength="1" maxlength="2" type="number"
+                                class="recipe_serves validate" min="1" max="100" title="Positive numbers only"
                                 title="2-44 Characters, A-Z only" required>
                             <label class="add-recipe-label">How many people does this recipe serve?</label>
-                            <span class="helper-text" data-error="Positive numbers only" data-success="Correct!">Numbers only</span>
+                            <span class="helper-text" data-error="Positive numbers only" data-success="Correct!">Numbers
+                                only</span>
                         </div>
                     </div>
                     <!-- desription -->
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea name="recipe_description" minlength="10" maxlength="150"
-                                class="materialize-textarea recipe_description validate" data-length="150" required></textarea>
+                                class="materialize-textarea recipe_description validate" data-length="150"
+                                required></textarea>
                             <label class="add-recipe-label" for="recipe_description">Description</label>
-                            <span class="helper-text" data-error="10-150 Characters" data-success="Correct!">10-150 Characters</span>
+                            <span class="helper-text" data-error="10-150 Characters" data-success="Correct!">10-150
+                                Characters</span>
                         </div>
                     </div>
                     <!-- recipe image -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="url" class="validate" id="image_url" name="image_url" pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))" required>
+                            <input type="url" class="validate" id="image_url" name="image_url"
+                                pattern="(https?:\/\/.*(?:jpg|jpeg|gif|png))" required>
                             <label class="add-recipe-label" for="image_url">Image URL</label>
-                            <span class="helper-text" data-error="Must be a image url, jpg|jpeg|gif|png" data-success="Correct!">Image URL only</span>
+                            <span class="helper-text" data-error="Must be a image url, jpg|jpeg|gif|png"
+                                data-success="Correct!">Image URL only</span>
                         </div>
                     </div>
                     <!-- new prep time -->
@@ -61,22 +71,26 @@
                             <input class="add_recipe_times validate" min="1" max="1000" type="number" name="prep_time"
                                 required>
                             <label class="add-recipe-label" for="prep_time">Preparation Time (minutes)</label>
-                            <span class="helper-text" data-error="Must be a Positive number" data-success="Correct!"></span>
+                            <span class="helper-text" data-error="Must be a Positive number"
+                                data-success="Correct!"></span>
                         </div>
                         <!-- cooking time -->
                         <div class="input-field col s6">
-                            <input class="add_recipe_times validate" min="1" max="1000" type="number" name="cooking_time"
-                                required>
+                            <input class="add_recipe_times validate" min="1" max="1000" type="number"
+                                name="cooking_time" required>
                             <label class="add-recipe-label" for="cooking_time">Cooking Time (minutes)</label>
-                            <span class="helper-text" data-error="Must be a Positive number" data-success="Correct!"></span>
+                            <span class="helper-text" data-error="Must be a Positive number"
+                                data-success="Correct!"></span>
                         </div>
                     </div>
                     <!-- recipe ingredients -->
                     <div class="row">
                         <div class="col s12">
-                            <textarea name="recipe_ingredient" class="materialize-textarea validate" required></textarea>
+                            <textarea name="recipe_ingredient" class="materialize-textarea validate"
+                                required></textarea>
                             <label for="recipe_ingredient">Ingredients</label>
-                            <span class="helper-text" data-error="Incorrect!" data-success="Correct!">Write every new ingredient on a new line</span>
+                            <span class="helper-text" data-error="Incorrect!" data-success="Correct!">Write every new
+                                ingredient on a new line</span>
                         </div>
                     </div>
                     <!-- recipe method -->
@@ -84,7 +98,8 @@
                         <div class="col s12">
                             <textarea name="recipe_method" class="materialize-textarea validate" required></textarea>
                             <label for="recipe_method">Instructions</label>
-                            <span class="helper-text" data-success="Correct!" data-error="Incorrect!">Write every new step on a new line</span>
+                            <span class="helper-text" data-success="Correct!" data-error="Incorrect!">Write every new
+                                step on a new line</span>
                         </div>
                     </div>
                     <!-- recipe submit button -->
@@ -99,5 +114,4 @@
         </div>
     </div>
 </body>
-
 {% endblock %}

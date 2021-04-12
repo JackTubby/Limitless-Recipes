@@ -45,7 +45,6 @@
         </div>
     </div>
     <br>
-
     <!-- Search Bar -->
     <div class="card-panel search-card">
         <form action="{{ url_for('search') }}" method="GET">
@@ -85,7 +84,8 @@
                     <img class="recipe-image" src="{{ recipe.image_url }}" alt="recipe image">
                     {% else %}
                     <!-- Fallback Recipe Image -->
-                    <img class="recipe-image" src="{{ url_for('static', filename='images/missing-image.jpg') }}" alt="missing recipe defualt image">
+                    <img class="recipe-image" src="{{ url_for('static', filename='images/missing-image.jpg') }}"
+                        alt="missing recipe defualt image">
                     {% endif %}
                     <span class="card-title text-shadow s12">
                         <!-- recipe name -->
@@ -96,28 +96,6 @@
                     </span>
                 </div>
                 <div class="card-content">
-                    <!-- Reviews Modal -->
-                    <div id="reviews-{{recipe._id}}" class="modal modal-review">
-                        <div class="modal-content">
-                            <div class="row">
-                                <!-- Recipe Name In Review Modal -->
-                                <div class="col s12 m6 recipe-name-title">{{ recipe.recipe_name }}</div>
-                                <!-- Add Review Button -->
-                                {% if session.user %}
-                                <div class="col s12 m6 right-align-add-review">
-                                    <a href="{{ url_for('add_review', recipe_id=recipe._id) }}"
-                                        class="recipe-pages-btn waves-effect waves-light btn">
-                                        Add Review
-                                    </a>
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <!-- Review Modal Close -->
-                        <div class="modal-footer">
-                            <a class="modal-close waves-effect waves-green btn-flat">Close</a>
-                        </div>
-                    </div>
                     <!-- Recipe Card Buttons -->
                     <div class="button-wrappers center-align">
                         <!-- Recipe View Button (opens view_recipe.html) -->
@@ -135,10 +113,9 @@
         <h3 class="recipe-no-results">No Results</h3>
     </div>
     {% endif %}
-        <!-- Pagination Links -->
-        <span class="center align">
-            {{ pagination.links }}
-        </span>
+    <!-- Pagination Links -->
+    <span class="center align">
+        {{ pagination.links }}
+    </span>
 </body>
-
 {% endblock %}
