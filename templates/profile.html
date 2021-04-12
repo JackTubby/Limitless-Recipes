@@ -24,7 +24,8 @@
           {% if recipe.image_url %}
           <img class="recipe-image" src="{{ recipe.image_url }}" alt="recipe image" />
           {% else %}
-          <img class="recipe-image" src="../static/images/missing-image.jpg" alt="defualt recipe image" />
+          <!-- Fall Back Image -->
+          <img class="recipe-image" src="{{ url_for('static', filename='images/missing-image.jpg') }}" alt="defualt recipe image" />
           {% endif %}
           <span class="card-title text-shadow s12">
             <!-- recipe name -->
