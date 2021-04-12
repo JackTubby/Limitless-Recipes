@@ -191,11 +191,11 @@ Review ID's are also stored in the recipe collection as an array in there corris
 - [GitHub](https://github.com/)
   - GitHub is used to host the project.
 - [Heroku](https://dashboard.heroku.com/)
-  - Heroku is used as the cloud plateform to deploy the app.
+  - Heroku is used as the cloud platform to deploy the app.
 - [Balsamiq](https://balsamiq.com/)
   - Balsamiq is used for creating wireframes
 - [Gitpod](https://www.gitpod.io/)
-  - Gitpod was used to devlop the project.
+  - Gitpod was used to develop the project.
 
 **Testing Tools/ Code validity**
 - [Chrome dev tools](https://developer.chrome.com/docs/devtools/open/)
