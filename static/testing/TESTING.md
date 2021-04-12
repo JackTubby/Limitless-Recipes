@@ -51,24 +51,28 @@
 <span id="html"></span>
 
 #### HTML 
-Passed [W3C Code Validator](https://validator.w3.org/)
-
+- [W3C Code Validator](https://validator.w3.org/)
+  - Passed with one warning that can be ignored due to design decisions [Validation HTML](../../readme_img/html-validation.png)
 <span id="css"></span>
 
 #### CSS
-Passed [W3C CSS Validator]()
-- **1 error** - 97 .index-h1 Value Error : text-shadow Too many values or values are not recognized : 2px 2px 2px 2px rgb(0, 0, 0, 0.5) **Fixed**
+- [W3C CSS Validator]()
+  - **1 error** - 97 .index-h1 Value Error : text-shadow Too many values or values are not recognized : 2px 2px 2px 2px rgb(0, 0, 0, 0.5) **Fixed**
+  - Passed [Validation CSS](../../readme_img/css-validation.png)
 
 <span id="js"></span>
 
 #### JavaScript
-Passed [JSHint](https://jigsaw.w3.org/css-validator/)
-- Two warnings - Missing semicolons on line number 68 and 88 **Corrected**
+- [JSHint](https://jigsaw.w3.org/css-validator/)
+  - Two warnings - Missing semicolons on line number 68 and 88 **Corrected**
+  - Passed [JShint Validation](../../readme_img/jshint.png)
 
 <span id="py"></span>
 
 #### Python 
-Autopepe8 installed as a dependency for checking code as written, all python ran through [ExtendsClass Python Syntax Checker](https://extendsclass.com/python-tester.html)
+- Autopepe8 installed as a dependency for checking code as written, all python ran through 
+- [ExtendsClass Python Syntax Checker](https://extendsclass.com/python-tester.html)
+  - Passed [ExtendsClass Validation](../../readme_img/python-syntax.png)
 
 <span id="crud"></span>
 
