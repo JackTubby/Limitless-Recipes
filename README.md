@@ -26,37 +26,37 @@ Limitless Recipes is a website for users to find and upload recipes, accessible 
 
 #### User Stories 
 - "As a user I want to add my own recipes to the website."
-  - Using CRUD (Create) a user could input thier recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
+  - Using CRUD (Create) a user could input thier recipe by using a form, which submitted to the database (MongoDB) then shown on the website. [Add recipe form](readme_img/recipe-form.png) [Recipe shown on website](readme_img/recipe-site.png)
 - "As a user I want to be able to edit my recipe."
-  - Using CRUD (Update) a user can edit thier submitted recipes using a provided form, which updates the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.PNG) [Edit recipe form](readme_img/edit-recipe-form.PNG)
+  - Using CRUD (Update) a user can edit thier submitted recipes using a provided form, which updates the database (MongoDB), showing the updated version the website. [Edit recipe button](readme_img/edit-recipe-button.png) [Edit recipe form](readme_img/edit-recipe-form.png)
 - "As a user I want to be able to delete my recipe."
-  - Using CRUD (Delete) a user could delete thier uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-button.PNG)
+  - Using CRUD (Delete) a user could delete thier uploaded recipe from the database, which would then remove it from the website. [Delete recipe button](readme_img/delete-recipe-button.png)
 - "As a user I want to be able to easily view other users recipes."
-  - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
+  - Using a button on the website called 'view', it opens the specific users website into a full page to be viewed easily. [View recipe button](readme_img/view-recipe-button.png) [View recipe page](readme_img/view-recipe-page.png)
 - "As a user I want to be able to use a search bar to find recipes."
-  - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](readme_img/search-bar.PNG) [Search bar returned results](readme_img/search-bar-results.PNG)
+  - Using CRUD (Read) a user can search the database (MongoDB) to find a specific recipe, it will then return results. [search bar](readme_img/search-bar.png) [Search bar returned results](readme_img/search-bar-results.png)
 - "As a user I want to be able to create an account."
-  - This is accomplished by adding a form where the user can input thier details and submit into the database (MongoDB). [register page form](readme_img/register-img.PNG) [Logged in](readme_img/user-loggedin.PNG)
+  - This is accomplished by adding a form where the user can input thier details and submit into the database (MongoDB). [register page form](readme_img/register-img.png) [Logged in](readme_img/user-loggedin.png)
 - "As a user who has created an account I want to be able to login."
-  - This is completed where a user can input thier details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](readme_img/log-in-page.PNG) [Logged In](readme_img/user-loggedin.PNG)
+  - This is completed where a user can input thier details previously used to sign up, which is then checked in the database (MongoDB) and is then logged in. [Log In Page](readme_img/log-in-page.png) [Logged In](readme_img/user-loggedin.png)
 - "As a user I want to be able to write a review for a recipe."
-  - This was achieved using CRUD (Create) where a user added thier review and it was then submited into the database (MongoDB).[Add review button](readme_img/review-button.PNG) [add review form](readme_img/add-review-form.PNG) [review showing](readme_img/review-button.PNG)
+  - This was achieved using CRUD (Create) where a user added thier review and it was then submited into the database (MongoDB).[Add review button](readme_img/review-button.png) [add review form](readme_img/add-review-form.png) [review showing](readme_img/review-button.png)
 - "As a user I want to be able to delete my review."
-  - This was done by using CRUD (Delete) which as a user they can only delete thier reviews. [review delete button one](readme_img/review-delete.PNG)
+  - This was done by using CRUD (Delete) which as a user they can only delete thier reviews. [review delete button one](readme_img/review-delete.png)
 
 <span id="owner-stories"></span>
 
 #### Owner Stories
 - "I want my users to be able to add thier own recipes". 
-  - [Add recipe form](readme_img/recipe-form.PNG) [Recipe shown on website](readme_img/recipe-site.PNG)
+  - [Add recipe form](readme_img/recipe-form.png) [Recipe shown on website](readme_img/recipe-site.png)
 - "I want my users to be able to find/view other users recipes".
-  - [View recipe button](readme_img/view-recipe-button.PNG) [View recipe page](readme_img/view-recipe-page.PNG)
+  - [View recipe button](readme_img/view-recipe-button.png) [View recipe page](readme_img/view-recipe-page.png)
 - "I want my users to be able to sign up, sign in and logout". 
-  - [register page form](readme_img/register-img.PNG) [Log In Page](readme_img/log-in-page.PNG) [Log Out Button](readme_img/log-out-button.png) 
+  - [register page form](readme_img/register-img.png) [Log In Page](readme_img/log-in-page.png) [Log Out Button](readme_img/log-out-button.png) 
 - "I want my users to be able to review other user recipes".
-  - [Add review button](readme_img/review-button.PNG) [add review form](readme_img/add-review-form.PNG)  [review showing](readme_img/review-button.PNG)
+  - [Add review button](readme_img/review-button.png) [add review form](readme_img/add-review-form.png)  [review showing](readme_img/review-button.png)
 - "I want my users to be able to search for recipes".
-  - [search bar](readme_img/search-bar.PNG) [Search bar returned results](readme_img/search-bar-results.PNG)
+  - [search bar](readme_img/search-bar.png) [Search bar returned results](readme_img/search-bar-results.png)
 <span id="ux"></span>
 
 ## UX
@@ -122,13 +122,16 @@ When choosing imagery I used [Pexels](https://www.pexels.com/). Images were used
 
 #### Information Architecture
 The project has four collections in MongoDB, the layout implemented is:
-![Database Layout](readme_img/database_layout)
+![Database Layout](readme_img/database-layout.png)
+
+Review ID's are also stored in the recipe collection as an array in there corrisponding recipe.
 
 <span id="wireframes"></span>
 
 #### Wireframes
-Wireframes are created with [balsamiq](https://balsamiq.com/)
-[Wireframes](static/wireframes/recipesWireframes.pdf)
+- Wireframes are created with 
+  - [balsamiq](https://balsamiq.com/)
+  - [My Wireframes](static/wireframes/recipesWireframes.pdf)
 
 <span id="features"></span>
 
@@ -181,7 +184,7 @@ Wireframes are created with [balsamiq](https://balsamiq.com/)
   - Flask is the web framework used to provide libraries, tools and technologies for the app.
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
   - Jinja is used for templating Python.
-- [https://werkzeug.palletsprojects.com/en/1.0.x/](https://jinja.palletsprojects.com/en/2.11.x/)
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
   - Werkzeug is used for password hashing and authentication and autohorization.
 - [Git](https://git-scm.com/)
   - Git was used for version control.
@@ -227,11 +230,10 @@ The project was deployed to GitHub Pages using the following steps...
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JackTubby/Limitless-Recipes)
 2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-   - Alternatively Click [Here](https://raw.githubusercontent.com/) for a GIF demonstrating the process starting from Step 2.
 3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
 4. Under "Source", click the dropdown called "None" and select "Master Branch".
 5. The page will automatically refresh.
-6. Scroll back down through the page to locate the now published site [link](https://github.com/JackTubby/Limitless-Recipes) in the "GitHub Pages" section.
+6. Scroll back down through the page to locate the now published site [Link](https://github.com/JackTubby/Limitless-Recipes) in the "GitHub Pages" section.
 
 ### Forking the GitHub Repository
 
@@ -320,7 +322,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 <span id="credits"></span>
 
 ## Credits 
-* [Recipes](https://www.bbc.co.uk/food/recipes)
+* [BBC Recipes](https://www.bbc.co.uk/food/recipes)
 * [Documentation for assist with creating to top button](https://paulund.co.uk/how-to-create-an-animated-scroll-to-top-button-with-jquery)
 * [Pattern Attribute W3Schools](https://www.w3schools.com/tags/att_input_pattern.asp)
 
