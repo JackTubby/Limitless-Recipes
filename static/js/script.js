@@ -25,22 +25,22 @@ $(document).ready(function () {
 // Limit amount of characters for recipe inputs
 var max_chars = 3;
 
-$('.add_recipe_times').keydown( function(e){
-    if ($(this).val().length >= max_chars) { 
+$('.add_recipe_times').keydown(function (e) {
+    if ($(this).val().length >= max_chars) {
         $(this).val($(this).val().substr(0, max_chars));
     }
 });
 
-$('.add_recipe_times').keyup( function(e){
-    if ($(this).val().length >= max_chars) { 
+$('.add_recipe_times').keyup(function (e) {
+    if ($(this).val().length >= max_chars) {
         $(this).val($(this).val().substr(0, max_chars));
     }
 });
 
 var max_chars_serves = 2;
 
-$('.recipe_serves').keyup( function(e){
-    if ($(this).val().length >= max_chars_serves) { 
+$('.recipe_serves').keyup(function (e) {
+    if ($(this).val().length >= max_chars_serves) {
         $(this).val($(this).val().substr(0, max_chars_serves));
     }
 });
@@ -48,16 +48,16 @@ $('.recipe_serves').keyup( function(e){
 // To top button view page //
 var btn = $('#top_button');
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
 });
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
+btn.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
 });
 
 // Adds validation to select elements // 
